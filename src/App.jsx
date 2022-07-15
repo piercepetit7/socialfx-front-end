@@ -13,7 +13,7 @@ import * as eventService from './services/eventService'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
-  const [events, setEvents] =  useState
+  const [events, setEvents] =  useState([])
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -30,7 +30,7 @@ const App = () => {
 
   const handleAddEvent = async eventData => {
     const newEvent = await eventService.create(eventData)
-    setEvents([...events. newEvent])
+    setEvents([...events, newEvent])
     navigate('/') // check route later
   }
 
