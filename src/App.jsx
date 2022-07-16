@@ -29,11 +29,22 @@ const App = () => {
     setUser(authService.getUser())
   }
 
-  const handleAddEvent = async eventData => {
+  const handleAddEvent = async (eventData, photo) => {
     const newEvent = await eventService.create(eventData)
+    if (photo) {
+      eventPhotoHelper(photo.eventData)
+    }
     console.log(newEvent)
     setEvents([...events, newEvent])
     navigate(`/events/${newEvent._id}`) // check route later
+  }
+
+  const handleUpdateEvent = await updatedEventData => {
+    const updatedEvent = await eventService.updateEvent(updatedEventData)
+    const newEventArray = events.map(event =>
+      event._id === updatedEvent._id ? updatedEvent : event)
+      setEvents(newEventArray)
+      navigate("/")
   }
 
 
