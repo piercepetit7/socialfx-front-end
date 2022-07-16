@@ -11,6 +11,7 @@ import * as authService from './services/authService'
 import AddEvent from './pages/AddEvent/AddEvent'
 import * as eventService from './services/eventService'
 import AddDetails from './pages/AddDetails/AddDetails'
+import EventList from './pages/EventList/EventList'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -23,6 +24,13 @@ const App = () => {
     navigate('/')
   }
 
+  useEffect(() => {
+    const fetchAllEvents = async () => {
+      const eventData = await eventService.getAll()
+      setEvents(eventData)
+    }
+    fetchAllEvents()
+  },[])
 
 
   const handleSignupOrLogin = () => {
@@ -45,6 +53,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Landing user={user} />} />
             <Route path="/add" element={<AddEvent handleAddEvent={handleAddEvent} />} />
+            <Route path="/all" element={<EventList events={events}/>} />
             <Route path="/events/:eventId" element={<AddDetails handleAddEvent={handleAddEvent} />} />
             <Route
               path="/signup"
