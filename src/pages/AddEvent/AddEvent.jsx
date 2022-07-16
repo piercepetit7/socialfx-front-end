@@ -8,8 +8,9 @@ const AddEvent = (props) => {
     eventName: '',
     eventDate: {type: Date},
     eventDetails: '',
-
   })
+  const [eventPhotoData, setEventPhotoData] = useState({})
+
   const handleChange = e => {
     setFormData({
       ...formData,
@@ -19,11 +20,14 @@ const AddEvent = (props) => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-      props.handleAddEvent(formData)
+      props.handleAddEvent(formData, eventPhotoData.photo)
       // change to item and act page ^
     } catch (err) {
       console.log(err)
     }
+  }
+  const handleChangePhoto = (evt) => {
+    setEventPhotoData({ photo: evt.target.files[0] })
   }
 
   const {eventName, eventDate, eventDetails } = formData
@@ -65,6 +69,17 @@ const AddEvent = (props) => {
             value={eventDetails}
             name="eventDetails"
             onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="photo-upload">
+            Upload Photo
+          </label>
+          <input
+            type="file"
+            id="photo-upload"
+            name="eventPhoto"
+            onChange={handleChangePhoto}
           />
         </div>
         <button disabled={isFormInvalid()}>
