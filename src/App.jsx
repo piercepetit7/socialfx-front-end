@@ -10,6 +10,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import AddEvent from './pages/AddEvent/AddEvent'
 import * as eventService from './services/eventService'
+import AddDetails from './pages/AddDetails/AddDetails'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -30,8 +31,9 @@ const App = () => {
 
   const handleAddEvent = async eventData => {
     const newEvent = await eventService.create(eventData)
+    console.log(newEvent)
     setEvents([...events, newEvent])
-    navigate('/') // check route later
+    navigate(`/events/${newEvent._id}`) // check route later
   }
 
 
@@ -43,6 +45,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Landing user={user} />} />
             <Route path="/add" element={<AddEvent handleAddEvent={handleAddEvent} />} />
+            <Route path="/events/:eventId" element={<AddDetails handleAddEvent={handleAddEvent} />} />
             <Route
               path="/signup"
               element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}

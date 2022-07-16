@@ -20,7 +20,6 @@ const AddEvent = (props) => {
     e.preventDefault()
     try {
       props.handleAddEvent(formData)
-      navigate('/')
       // change to item and act page ^
     } catch (err) {
       console.log(err)
@@ -51,7 +50,11 @@ const AddEvent = (props) => {
         <div>
           <label htmlFor="eventDate">Event Date</label>
           <input
-            type="date"
+            type="datetime-local"
+            id="eventDate"
+            value={eventDate}
+            name="eventDate"
+            onChange={handleChange}
           />
         </div>
         <div>

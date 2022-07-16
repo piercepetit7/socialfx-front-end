@@ -14,6 +14,11 @@ async function create(eventData) {
   return await res.json()
 }
 
+async function show(eventId) {
+  const res = await fetch(`${BASE_URL}/${eventId}`)
+  return await res.json()
+}
+
 async function getAll() {
   const res = await fetch(BASE_URL)
   return await res.json()
@@ -45,5 +50,6 @@ export {
   create,
   getAll,
   deleteEvent,
-  updateEvent
+  updateEvent,
+  show,
 }
