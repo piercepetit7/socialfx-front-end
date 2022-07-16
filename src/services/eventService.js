@@ -45,6 +45,17 @@ async function updateEvent(eventData) {
   return await res.json()
 }
 
+async function addPhoto(photoData, eventId) {
+  const res = await fetch(`${BASE_URL}/${eventId}/add-photo`, {
+    method: "PUT",
+    headers: { 
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+    },
+    body: photoData
+  })
+  return await res.json()
+}
+
 
 export { 
   create,
@@ -52,4 +63,5 @@ export {
   deleteEvent,
   updateEvent,
   show,
+  addPhoto,
 }
