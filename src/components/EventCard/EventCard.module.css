@@ -1,0 +1,27 @@
+.owner{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  position: relative;
+}
+
+.cards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  margin: 40px;
+  position: relative;
+  max-width: 250px;
+  max-height: 350px;
+  box-shadow: 0 40px 60px -6px black;
+  display: inline-flex;
+}
+
+.card_desc {
+  display: inline-block;
+  font-size: 15px;
+}
