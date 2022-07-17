@@ -3,15 +3,15 @@ import GuestList from '../../components/GuestList/GuestList'
 import Activities from '../../components/Activities/Activities'
 import FoodSupplies from '../../components/FoodSupplies/FoodSupplies'
 import CommentForm from '../../components/CommentForm/CommentForm'
-import CommentForm from '../../components/CommentForm/CommentForm';
+
 
 
 const EventShow = (props) => {
   const [component, setComponent] = useState('GuestList')
 
-  if(!props.events.length){
-    return <h1>No Events</h1>
-  }
+  // if(!props?.events?.length){
+  //   return <h1>No Events</h1>
+  // }
 
   return (
     <>
@@ -26,15 +26,10 @@ const EventShow = (props) => {
         <button onClick={() => setComponent('Comments')}>Comments</button>
       </div>
       <div id='mainright-right'>
-        if({component === 'GuestList' && <GuestList />}) {
-          <GuestList />
-        } else if({component === 'Activities' && <Activities />}) {
-          <Activities />
-        } else if({component === 'FoodSupplies' && <FoodSupplies />}) {
-          <FoodSupplies />
-        } else({component === 'Comments' && <CommentForm />}) {
-          <CommentForm />
-        }
+        { component === 'GuestList' && <GuestList /> }
+        { component === 'Activities' && <Activities /> }
+        { component === 'FoodSupplies' && <FoodSupplies /> }
+        { component === 'Comments' && <CommentForm /> }
       </div>
     </div>
     

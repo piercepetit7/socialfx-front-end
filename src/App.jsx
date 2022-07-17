@@ -12,6 +12,7 @@ import AddEvent from './pages/AddEvent/AddEvent'
 import * as eventService from './services/eventService'
 import AddDetails from './pages/AddDetails/AddDetails'
 import EventList from './pages/EventList/EventList'
+import EventShow from './pages/EventShow/EventShow'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
