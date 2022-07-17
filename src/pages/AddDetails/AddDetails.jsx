@@ -64,7 +64,8 @@ return (
       
       <div className="form-step form-step-active">
         <div className="input-group">
-          <label htmlFor="activity">Activity</label>
+          <label htmlFor
+          ="activity">Activity</label>
           <input type="text" name="activity" id="activity" />
         </div>
         <div className="input-group">
