@@ -24,45 +24,37 @@ const App = () => {
     navigate('/')
   }
 
-  useEffect(() => {
-    const fetchAllEvents = async () => {
-      const eventData = await eventService.getAll()
-      setEvents(eventData)
-    }
-    fetchAllEvents()
-  },[])
 
-console.log(events)
+
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
   }
 
   const handleAddEvent = async (eventData, photo) => {
     const newEvent = await eventService.create(eventData)
-    // if (photo) {
-    //   eventPhotoHelper(photo.eventData)
-    // }
-    console.log(newEvent)
+    if (photo) {
+      newEvent.photo = await eventPhotoHelper(photo.eventData._id)
+    }
+
     setEvents([...events, newEvent])
     navigate(`/events/${newEvent._id}`) // check route later
   }
 
-  // const handleUpdateEvent = await updatedEventData => {
-  //   const updatedEvent = await eventService.updateEvent(updatedEventData)
-  //   const newEventArray = events.map(event =>
-  //     event._id === updatedEvent._id ? updatedEvent : event)
-  //     setEvents(newEventArray)
-  //     navigate("/")
-  // }
   const handleUpdateEvent = async (updatedEventData) => {
     const updatedEvent = await eventService.updateEvent(updatedEventData)
-    const newEventArray = events.map(event =>
+    const newEventsArray = events.map(event =>
       event._id === updatedEvent._id ? updatedEvent : event)
-      setEvents(newEventArray)
+      setEvents(newEventsArray)
       navigate("/")
   }
 
-
+  const eventPhotoHelper = async (photo, id) => {
+    const photoData = new FormData()
+    photoData.append('photo', photo)
+    return await eventService.addPhoto(photoData, id)
+  }
+  
+  
   return (
     <>
       <div className='App'>
