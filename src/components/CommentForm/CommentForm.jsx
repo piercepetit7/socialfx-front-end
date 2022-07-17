@@ -4,7 +4,7 @@ import * as eventService from '../../services/eventService'
 
 
 
-const CommentsForm = () => {
+const CommentForm = () => {
   const formElement = useRef()
   const [formData, setFormData] = useState({
     comment:''
@@ -40,4 +40,4 @@ const CommentsForm = () => {
   );
 }
 
-export default CommentsForm;
+export default CommentForm;
