@@ -54,7 +54,6 @@ const App = () => {
     return await eventService.addPhoto(photoData, id)
   }
   
-  
   return (
     <>
       <div className='App'>
