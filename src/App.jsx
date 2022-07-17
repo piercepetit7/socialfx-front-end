@@ -39,7 +39,7 @@ const App = () => {
     navigate(`/events/${newEvent._id}`) // check route later
   }
 
-  const handleUpdateEvent = await updatedEventData => {
+  const handleUpdateEvent = async (updatedEventData) => {
     const updatedEvent = await eventService.updateEvent(updatedEventData)
     const newEventArray = events.map(event =>
       event._id === updatedEvent._id ? updatedEvent : event)
@@ -54,7 +54,7 @@ const App = () => {
         <NavBar user={user} handleLogout={handleLogout} />
         <main>
           <Routes>
-            <Route path="/" element={<Landing user={user} />} />
+            <Route path="/" element={<Landing user={user}/>} />
             <Route path="/add" element={<AddEvent handleAddEvent={handleAddEvent} />} />
             <Route path="/events/:eventId" element={<AddDetails handleAddEvent={handleAddEvent} />} />
             <Route
