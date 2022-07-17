@@ -1,7 +1,7 @@
 const EventCard = (props) => {
   return (
     <>
-      <h1>Event Card</h1>
+      <h1 className="owner">{props.event.eventName}</h1>
     </>
   )
 }
