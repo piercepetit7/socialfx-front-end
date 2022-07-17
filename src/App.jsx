@@ -34,9 +34,8 @@ const App = () => {
   const handleAddEvent = async (eventData, photo) => {
     const newEvent = await eventService.create(eventData)
     if (photo) {
-      newEvent.photo = await eventPhotoHelper(photo.eventData._id)
+      newEvent.photo = await eventPhotoHelper(photo, newEvent._id)
     }
-
     setEvents([...events, newEvent])
     navigate(`/events/${newEvent._id}`) // check route later
   }
