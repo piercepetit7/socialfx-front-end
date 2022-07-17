@@ -32,14 +32,14 @@ const App = () => {
   const handleAddEvent = async (eventData, photo) => {
     const newEvent = await eventService.create(eventData)
     if (photo) {
-      await eventPhotoHelper(photo.eventData._id)
+      newEvent.photo = await eventPhotoHelper(photo.eventData._id)
     }
 
     setEvents([...events, newEvent])
     navigate(`/events/${newEvent._id}`) // check route later
   }
 
-  const handleUpdateEvent = async updatedEventData => {
+  const handleUpdateEvent = async (updatedEventData) => {
     const updatedEvent = await eventService.updateEvent(updatedEventData)
     const newEventsArray = events.map(event =>
       event._id === updatedEvent._id ? updatedEvent : event)
