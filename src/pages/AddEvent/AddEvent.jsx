@@ -78,11 +78,12 @@ const AddEvent = (props) => {
           <input
             type="file"
             id="photo-upload"
-            name="eventPhoto"
+            className="form-control"
+            name="photo"
             onChange={handleChangePhoto}
           />
         </div>
-        <button disabled={isFormInvalid()}>
+        <button disabled={isFormInvalid()} type='submit'>
           Add Event
         </button>
         <Link to="/">
