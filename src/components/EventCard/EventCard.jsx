@@ -1,8 +1,12 @@
+import styles from './EventCard.module.css'
+
 const EventCard = (props) => {
   return (
-    <>
-      <h1 className="owner">{props.event.eventName}</h1>
-    </>
+    <div className={styles.card}>
+      <h1 className={styles.owner}>{props.event.eventName}
+      <p className={styles.card_desc}>{props.event.eventDetails}</p>
+      </h1>
+    </div>
   )
 }
 
