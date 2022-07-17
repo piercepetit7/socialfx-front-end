@@ -32,7 +32,7 @@ const App = () => {
     fetchAllEvents()
   },[])
 
-
+console.log(events)
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
   }
@@ -54,6 +54,13 @@ const App = () => {
   //     setEvents(newEventArray)
   //     navigate("/")
   // }
+  const handleUpdateEvent = async (updatedEventData) => {
+    const updatedEvent = await eventService.updateEvent(updatedEventData)
+    const newEventArray = events.map(event =>
+      event._id === updatedEvent._id ? updatedEvent : event)
+      setEvents(newEventArray)
+      navigate("/")
+  }
 
 
   return (
@@ -62,7 +69,7 @@ const App = () => {
         <NavBar user={user} handleLogout={handleLogout} />
         <main>
           <Routes>
-            <Route path="/" element={<Landing user={user} />} />
+            <Route path="/" element={<Landing user={user}/>} />
             <Route path="/add" element={<AddEvent handleAddEvent={handleAddEvent} />} />
             <Route path="/all" element={<EventList events={events}/>} />
             <Route path="/events/:eventId" element={<AddDetails handleAddEvent={handleAddEvent} />} />

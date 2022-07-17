@@ -20,9 +20,14 @@ async function show(eventId) {
 }
 
 async function getAll() {
-  const res = await fetch(BASE_URL)
+  const res = await fetch(BASE_URL, {
+    headers: { 
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+    }
+  })
   return await res.json()
 }
+
 async function deleteEvent(eventId) {
   const res = await fetch(`${BASE_URL}/${eventId}`, {
     method: "DELETE",
