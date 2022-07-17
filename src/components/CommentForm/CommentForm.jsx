@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-
+import * as eventService from '../../services/eventService'
 
 
 
@@ -16,7 +16,7 @@ const CommentsForm = () => {
 
   const handleCommentSubmit = evt => {
     evt.preventDefault()
-    console.log('button works!')
+    eventService.createComment()
   }
 
   return (

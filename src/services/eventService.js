@@ -61,6 +61,18 @@ async function addPhoto(photoData, eventId) {
   return await res.json()
 }
 
+async function createComment(commentData, eventId) {
+  const res = await fetch(`${BASE_URL}/${eventId}/comments`, {
+    method: "POST",
+    headers: { 
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(commentData)
+  })
+  return await res.json()
+}
+
 
 export { 
   create,
@@ -69,4 +81,5 @@ export {
   updateEvent,
   show,
   addPhoto,
+  createComment
 }
