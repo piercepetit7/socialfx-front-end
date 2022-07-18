@@ -3,7 +3,7 @@ import { Navigate, useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react';
 
 
-const EventCard = ({event, randEvtImgId, user}) => {
+const EventCard = ({event, randEvtImgId, user, props}) => {
   const navigate = useNavigate()
 
 
@@ -26,7 +26,7 @@ const EventCard = ({event, randEvtImgId, user}) => {
         <Link to=''>View Event Details</Link>
       {user?.profile === event.owner?._id && 
       <div className='card-footer'>
-        <button className='delete-btn'>Delete</button>
+        <button onClick={() => props.handleDeleteEvent(props.event._id)} className='delete-btn'>Delete</button>
       </div>
       }
     </div>
