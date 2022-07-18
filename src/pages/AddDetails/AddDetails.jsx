@@ -1,12 +1,17 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { show } from '../../services/eventService'
+import ActInfo from './DetailsInfo/ActInfo';
+import ItemInfo from './DetailsInfo/ItemInfo';
+import GuestListInfo from './DetailsInfo/GuestListInfo';
+
 
 const AddDetails = (props) => {
   const {eventId} = useParams()
   console.log('EVENTID',eventId)
 	const navigate = useNavigate()
   const [event, setEvent] = useState()
+  const [page, setPage] = useState(0)
   const [formData, setFormData] = useState({
     activities: '',
     guestList: '',
@@ -38,77 +43,61 @@ const AddDetails = (props) => {
     fetchEvent()
   },[])
   
-return (
-  <>
-    <div className="event-header">
-      <h1>Add details</h1>
-      <h3>{event?.eventName}</h3>
-      <h4>{event?.eventDate}</h4>
-      <h5>{event?.eventDetails}</h5>
-    </div>
-    <section>
-    <form action="#" className="form">
-      <h1 className="text-center">Add Details to your event</h1>
-      
-      <div className="progressbar">
-        <div className="progress" id="progress"></div>
-        
-        <div
-          className="progress-step progress-step-active"
-          data-title="Intro"
-        ></div>
-        <div className="progress-step" data-title="Activities"></div>
-        <div className="progress-step" data-title="Items"></div>
-        <div className="progress-step" data-title="GuestList"></div>
-      </div>
-      
-      <div className="form-step form-step-active">
-        <div className="input-group">
-          <label htmlFor
-          ="activity">Activity</label>
-          <input type="text" name="activity" id="activity" />
-        </div>
-        <div className="input-group">
-          <label htmlFor="actComment">Activity Comment</label>
-          <input type="text" name="actComment" id="actComment" />
-        </div>
-        <div className="">
-          <botton className="btn btn-next width-50 ml-auto">Next</botton>
-        </div>
-      </div>
-      <div className="form-step">
-        <div className="input-group">
-          <label htmlFor="item">Items</label>
-          <input type="text" name="item" id="item" />
-        </div>
-        <div className="input-group">
-          <label htmlFor="itemComment">Item Comment</label>
-          <input type="text" name="itemComment" id="itemComment" />
-        </div>
-        <div className="btns-group">
-          <botton className="btn btn-prev">Previous</botton>
-          <botton className="btn btn-next">Next</botton>
-        </div>
-      </div>
-      <div className="form-step">
-        <div className="input-group">
-          <label htmlFor="gList">Enter Guest Name</label>
-          <input type="text" name="gList" id="gList" />
-        </div>
-        <div className="input-group">
-          <label htmlFor="cGList">Current Guest List</label>
-          <input type="text" name="cGList" id="cGList" />
-        </div>
-        <div className="btns-group">
-          <botton className="btn btn-prev">Previous</botton>
-          <input type="submit" value="Submit" className="btn" />
-        </div>
-      </div>
-    </form>
-    </section>
-  </>
-)
+  const FormTitles = ["Activities", "Items", "GuestList"]
 
-
+  const PageDisplay = () => {
+    if (page === 0) {
+      return <ActInfo formData={formData} setFormData={setFormData} />;
+    } else if (page === 1) {
+      return <ItemInfo formData={formData} setFormData={setFormData} />;
+    } else {
+      return <GuestListInfo formData={formData} setFormData={setFormData} />;
+    }
+  };
+  return (
+    <>
+      <div className="event-header">
+        <h1>Add details</h1>
+        <h3>{event?.eventName}</h3>
+        <h4>{event?.eventDate}</h4>
+        <h5>{event?.eventDetails}</h5>
+      </div>
+      <div className="form">
+        <div className="progressbar">
+          <div
+            style={{ width: page === 0 ? "33.3%" : page == 1 ? "66.6%" : "100%" }}
+          ></div>
+        </div>
+        <div className="form-container">
+          <div className="header">
+            <h1>{FormTitles[page]}</h1>
+          </div>
+          <div className="body">{PageDisplay()}</div>
+          <div className="footer">
+            <button
+              disabled={page == 0}
+              onClick={() => {
+                setPage((currPage) => currPage - 1);
+              }}
+            >
+              Prev
+            </button>
+            <button
+              onClick={() => {
+                if (page === FormTitles.length - 1) {
+                  alert("FORM SUBMITTED");
+                  console.log("FORMDATABABY",formData);
+                } else {
+                  setPage((currPage) => currPage + 1);
+                }
+              }}
+            >
+              {page === FormTitles.length - 1 ? "Submit" : "Next"}
+            </button>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
-export default AddDetails
+export default AddDetails;
