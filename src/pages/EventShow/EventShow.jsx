@@ -9,14 +9,14 @@ import CommentForm from '../../components/CommentForm/CommentForm'
 const EventShow = (props) => {
   const [component, setComponent] = useState('GuestList')
 
-  // if(!props?.events?.length){
-  //   return <h1>No Events</h1>
-  // }
+  if(!props?.events?.length){
+    return <h1>No Events</h1>
+  }
 
   return (
     <>
+      <h1>Hello</h1>
     <div id='mainleft-showPage'>
-
     </div> 
     <div id='mainright-showPage'>
       <div id='mainright-left'>
