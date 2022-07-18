@@ -1,10 +1,11 @@
 import styles from './EventCard.module.css'
-import { Navigate, useNavigate, Link } from 'react-router-dom';
+import {  Link } from 'react-router-dom';
 import { useState } from 'react';
+import EventShow from '../../pages/EventShow/EventShow';
 
-const EventCard = ({event, randEvtImgId, user, handleDeleteEvent}) => {
-  const navigate = useNavigate()
-
+const EventCard = ({event, randEvtImgId, user, handleDeleteEvent, EventShow}) => {
+  // const navigate = useNavigate()
+  console.log(event)
 
   return (
     <>
@@ -22,11 +23,11 @@ const EventCard = ({event, randEvtImgId, user, handleDeleteEvent}) => {
         <p className={styles.card_desc}>{event.eventDetails}</p>
         <p className={styles.owner}>{event.owner.name}</p>
       </h1>      
-        <Link to=''>View Event Details</Link>
+        <Link to={`/events/${event._id}`} event={event} EventShow={EventShow}>View Event Details</Link>
       {user?.profile === event.owner?._id && 
       <div className='card-footer'>
         <button onClick={() => handleDeleteEvent(event._id)} className='delete-btn'>Delete</button>
-        <Link to='/edit' state={(event)} className='edit-btn'>Edit</Link>
+        <Link to='/edit' event={event} className='edit-btn'>Edit</Link>
       </div>
       }
     </div>
