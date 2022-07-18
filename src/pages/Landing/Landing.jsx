@@ -35,7 +35,7 @@ const Landing = ({ user }) => {
               <img src={`https://picsum.photos/id/452/640/480`} className="d-block w-320" alt="..." />
             </div>
             <div className="carousel-item">
-              <img src={`https://unsplash.com/photos/UrzN-8K1PCE`} className="d-block w-320" alt="..." />
+              <img src={`https://picsum.photos/id/590/640/480`} className="d-block w-320" alt="..." />
             </div>
           </div>
         </div>
