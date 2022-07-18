@@ -1,0 +1,37 @@
+.nav{
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  margin-left: 0;
+}
+
+.username{
+  justify-content: left;
+  display: flex;
+  margin-right: 200px;
+}
+
+.event{
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.add_event{
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.all_events{
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.log_out{
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.change{
+  margin-right: 15px;
+  text-decoration: none;
+}
