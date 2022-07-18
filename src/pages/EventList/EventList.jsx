@@ -21,7 +21,8 @@ const EventList = (props) => {
 
   return (
     <>
-    <h1>list</h1>
+    <h1 className={styles.header}>Current Events</h1>
+    <div className={styles.card}>
     {props.events.map(event =>
         <EventCard 
         key={event._id} 
@@ -29,8 +30,10 @@ const EventList = (props) => {
         randEvtImgId={evtIds[Math.floor(Math.random()*(evtIds.length))]}
         user={props.user}
         handleDeleteEvent={props.handleDeleteEvent}
+        className={styles.card}
         />
       )}
+      </div>
     </>
   );
 }

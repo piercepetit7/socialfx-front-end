@@ -6,3 +6,16 @@
   justify-content: center;
   gap: 20px;
 }
+
+.header{
+  text-align: center;
+  align-items: center;
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.card{
+  justify-content: center;
+  display: grid;
+}
