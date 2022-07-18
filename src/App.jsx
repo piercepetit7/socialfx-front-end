@@ -37,7 +37,7 @@ const App = () => {
       newEvent.photo = await eventPhotoHelper(photo, newEvent._id)
     }
     setEvents([...events, newEvent])
-    navigate(`/events/${newEvent._id}`) // check route later
+    navigate(`/events/${newEvent._id}/details`) // check route later
   }
 
   const handleUpdateEvent = async (updatedEventData) => {
@@ -63,7 +63,7 @@ const App = () => {
             <Route path="/" element={<Landing user={user}/>} />
             <Route path="/add" element={<AddEvent handleAddEvent={handleAddEvent} />} />
             <Route path="/all" element={<EventList events={events} setEvents={setEvents}/>} />
-            <Route path="/events/:eventId" element={<AddDetails handleAddEvent={handleAddEvent} />} />
+            <Route path="/events/:eventId/details" element={<AddDetails handleAddEvent={handleAddEvent} />} />
             <Route
               path="/signup"
               element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
