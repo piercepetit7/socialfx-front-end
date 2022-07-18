@@ -45,7 +45,7 @@ const App = () => {
     const newEventsArray = events.map(event =>
       event._id === updatedEvent._id ? updatedEvent : event)
       setEvents(newEventsArray)
-      navigate("/")
+      
   }
 
   const eventPhotoHelper = async (photo, id) => {
@@ -63,7 +63,7 @@ const App = () => {
             <Route path="/" element={<Landing user={user}/>} />
             <Route path="/add" element={<AddEvent handleAddEvent={handleAddEvent} />} />
             <Route path="/all" element={<EventList events={events} user={user} setEvents={setEvents}/>} />
-            <Route path="/events/:eventId/details" element={<AddDetails handleAddEvent={handleAddEvent} />} />
+            <Route path="/events/:eventId/details" element={<AddDetails handleUpdateEvent={handleUpdateEvent} />} />
             <Route
               path="/signup"
               element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
