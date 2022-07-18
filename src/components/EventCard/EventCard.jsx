@@ -15,7 +15,7 @@ const EventCard = ({event, randEvtImgId}) => {
           : `https://picsum.photos/id/${randEvtImgId}/640/480`
         } 
         alt="Events"
-        style={{width: "640px"}}
+        style={{width: "500px"}}
       />
       <h1 className={styles.owner}>{event.eventName}
         <p className={styles.card_desc}>{event.eventDetails}</p>
