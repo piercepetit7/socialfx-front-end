@@ -1,12 +1,13 @@
 import styles from './EventCard.module.css'
 import { Navigate, useNavigate, Link } from 'react-router-dom';
+import { useState } from 'react';
 
-
-const EventCard = ({event, randEvtImgId}) => {
+const EventCard = ({event, randEvtImgId, user, handleDeleteEvent}) => {
   const navigate = useNavigate()
 
 
   return (
+    <>
     <div className={styles.card}>
       <img 
         src={
@@ -17,11 +18,19 @@ const EventCard = ({event, randEvtImgId}) => {
         alt="Events"
         style={{width: "500px"}}
       />
-      <h1 className={styles.owner}>{event.eventName}
+      <h1 className={styles.name}>{event.eventName}
         <p className={styles.card_desc}>{event.eventDetails}</p>
+        <p className={styles.owner}>{event.owner.name}</p>
       </h1>      
         <Link to=''>View Event Details</Link>
+      {user?.profile === event.owner?._id && 
+      <div className='card-footer'>
+        <button onClick={() => handleDeleteEvent(event._id)} className='delete-btn'>Delete</button>
+        <Link to='/edit' state={(event)} className='edit-btn'>Edit</Link>
+      </div>
+      }
     </div>
+    </>
   )
 }
 

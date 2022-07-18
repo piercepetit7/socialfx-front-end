@@ -53,6 +53,12 @@ const App = () => {
     photoData.append('photo', photo)
     return await eventService.addPhoto(photoData, id)
   }
+
+  const handleDeleteEvent = async eventId => {
+    const deletedEvent = await eventService.deleteEvent(eventId)
+    const newEventsArray = events.filter(event => event._id !== deletedEvent._id)
+    setEvents(newEventsArray)
+  }
   
   return (
     <>
@@ -62,7 +68,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Landing user={user}/>} />
             <Route path="/add" element={<AddEvent handleAddEvent={handleAddEvent} />} />
-            <Route path="/all" element={<EventList events={events} user={user} setEvents={setEvents}/>} />
+            <Route path="/all" element={<EventList handleDeleteEvent={handleDeleteEvent} events={events} user={user} setEvents={setEvents}/>} />
             <Route path="/events/:eventId/details" element={<AddDetails handleAddEvent={handleAddEvent} />} />
             <Route
               path="/signup"
