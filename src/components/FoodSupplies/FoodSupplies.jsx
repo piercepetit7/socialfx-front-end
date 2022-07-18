@@ -35,7 +35,7 @@ const FoodSupplies = () => {
       <div>
         <h2>Host is bringing:</h2>
         <div>
-          <ul>
+          {/* <ul>
             {events.items.map((item, idx) =>
               <li> {items.itemName}
                 <form onSubmit={handleDeleteItem} >
@@ -43,7 +43,7 @@ const FoodSupplies = () => {
                 </form>
                 </li>
             )}
-          </ul>
+          </ul> */}
         </div>
       </div>
 

@@ -37,7 +37,7 @@ const App = () => {
       newEvent.photo = await eventPhotoHelper(photo, newEvent._id)
     }
     setEvents([...events, newEvent])
-    navigate(`/events/${newEvent._id}/details`) // check route later
+    navigate(`/events/${newEvent._id}/details`)
   }
 
   const handleUpdateEvent = async (updatedEventData) => {
@@ -67,20 +67,25 @@ const App = () => {
         <main>
           <Routes>
             <Route path="/" element={<Landing user={user}/>} />
-            <Route path="/add" element={<AddEvent handleAddEvent={handleAddEvent} />} />
-            <Route path="/events/:eventId/details" element={<AddDetails handleUpdateEvent={handleUpdateEvent} />} />
+            <Route path="/add" element={<AddEvent handleAddEvent={handleAddEvent} events={events}/>} />
+            <Route path="/all" element={<EventList handleDeleteEvent={handleDeleteEvent} events={events} user={user} setEvents={setEvents}/>} />
+            <Route path="/events/:eventId/details" element={<AddDetails handleUpdateEvent={handleUpdateEvent} events={events}/>} />
             <Route path="/all" element={<EventList handleDeleteEvent={handleDeleteEvent} events={events} user={user} setEvents={setEvents}/>} />
             <Route
               path="/signup"
-              element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
+              element={<Signup handleSignupOrLogin={handleSignupOrLogin} events={events}/>}
             />
             <Route
               path="/login"
-              element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
+              element={<Login handleSignupOrLogin={handleSignupOrLogin} events={events}/>}
             />
             <Route
               path="/profiles"
               element={user ? <Profiles /> : <Navigate to="/login" />}
+            />
+            <Route
+              path="/events/:eventId"
+              element={<EventShow events={events}/>}
             />
             <Route
               path="/changePassword"
