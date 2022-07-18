@@ -62,7 +62,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Landing user={user}/>} />
             <Route path="/add" element={<AddEvent handleAddEvent={handleAddEvent} />} />
-            <Route path="/all" element={<EventList events={events} setEvents={setEvents}/>} />
+            <Route path="/all" element={<EventList events={events} user={user} setEvents={setEvents}/>} />
             <Route path="/events/:eventId/details" element={<AddDetails handleAddEvent={handleAddEvent} />} />
             <Route
               path="/signup"
