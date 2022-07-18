@@ -55,7 +55,9 @@ const App = () => {
   }
 
   const handleDeleteEvent = async eventId => {
-    console.log(eventId)
+    const deletedEvent = await eventService.deleteEvent(eventId)
+    const newEventsArray = events.filter(event => event._id !== deletedEvent._id)
+    setEvents(newEventsArray)
   }
   
   return (
