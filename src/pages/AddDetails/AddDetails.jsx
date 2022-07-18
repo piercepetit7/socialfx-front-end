@@ -3,7 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { show } from '../../services/eventService'
 import ActForm from './components/AddAct';
 import ItemForm from './components/AddItem';
-import GuestListInfo from './DetailsInfo/GuestListInfo';
+
 
 
 const AddDetails = (props) => {
