@@ -7,7 +7,7 @@ import * as eventService from '../../services/eventService'
 const CommentForm = () => {
   const formElement = useRef()
   const [formData, setFormData] = useState({
-    comment:''
+    content:''
   })
 
   const handleChange = evt => {
@@ -25,8 +25,8 @@ const CommentForm = () => {
         <label htmlFor="comment-input">Comment:</label>
         <textarea 
           type="text" 
-          name="comment"
-          value={formData.comment}
+          name="content"
+          value={formData.content}
           onChange={handleChange}
         />
         <button

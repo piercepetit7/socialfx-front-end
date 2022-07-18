@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { show } from '../../services/eventService'
-import ActInfo from './DetailsInfo/ActInfo';
-import ItemInfo from './DetailsInfo/ItemInfo';
+import ActForm from './components/AddAct';
+import ItemForm from './components/AddItem';
 import GuestListInfo from './DetailsInfo/GuestListInfo';
 
 
@@ -55,6 +55,11 @@ const AddDetails = (props) => {
         <h3>{event?.eventName}</h3>
         <h4>{event?.eventDate}</h4>
         <h5>{event?.eventDetails}</h5>
+      </div>
+      <div>
+        <ActForm />
+        <br/>
+        <ItemForm />
       </div>
     </>
   )
