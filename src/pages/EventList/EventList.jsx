@@ -27,6 +27,7 @@ const EventList = (props) => {
         key={event._id} 
         event={event}
         randEvtImgId={evtIds[Math.floor(Math.random()*(evtIds.length))]}
+        user={props.user}
         />
       )}
     </>
