@@ -15,6 +15,7 @@ const ItemForm = (props) => {
     eventService.updateEvent(formData, props.event)
     console.log('****ADD ITEM*****')
     console.log(formData)
+    console.log(props.event)
   }
 
 
