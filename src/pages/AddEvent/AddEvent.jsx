@@ -86,7 +86,7 @@ const AddEvent = (props) => {
         <button disabled={isFormInvalid()} type='submit'>
           Add Event
         </button>
-        <Link to="/">
+        <Link to="/" state={eventPhotoData}>
           <button>Cancel</button>
         </Link>
       </form>
