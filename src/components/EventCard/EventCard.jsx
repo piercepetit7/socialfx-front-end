@@ -3,7 +3,7 @@ import {  Link,  } from 'react-router-dom';
 
 const EventCard = ({event, randEvtImgId, user, handleDeleteEvent, EventShow}) => {
   
-
+  // console.log('event card', event)
   return (
     <>
     <div className={styles.card}>
