@@ -1,6 +1,10 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
+import * as eventService from '../../../services/eventService'
+import { useParams } from 'react-router-dom'
 
 const ItemForm = (props) => {
+  const {eventId} = useParams()
+  const formElement = useRef()
   const [formData, setFormData] = useState({
     itemName:'',
     itemType:''
@@ -10,13 +14,18 @@ const ItemForm = (props) => {
   }
 
   const handleItemSubmit = evt => {
-    
+    evt.preventDefault()
+    eventService.createAddItem(formData, eventId)
+    console.log('****ADD ITEM*****')
+    console.log('*formData*',formData)
   }
+  console.log(eventId)
+  
 
 
   return (
     <>
-    <form onSubmit={handleItemSubmit}>
+    <form ref={formElement} onSubmit={handleItemSubmit}>
       <label>Item Name:</label>
       <input
         type="text"
@@ -26,10 +35,10 @@ const ItemForm = (props) => {
         onChange={handleChange}
       />
       <br />
-      <label>Item Name:</label>
+      <label>Item Type:</label>
       <input
         type="text"
-        placeholder="Item Type..."
+        placeholder="Food or Supplies..."
         name="itemType"
         value={formData.itemType}
         onChange={handleChange}
