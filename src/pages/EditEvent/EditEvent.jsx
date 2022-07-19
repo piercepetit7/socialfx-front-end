@@ -4,9 +4,9 @@ import { Link, useNavigate, useLocation } from 'react-router-dom'
 
 const EditEvent = (props) => {
   const navigate = useNavigate()
-  const {event} = useLocation()
+  const location = useLocation()
   const {photo} = useLocation()
-  const [formData, setFormData] = useState({event})
+  const [formData, setFormData] = useState(location.state.event)
   const [eventPhotoData, setEventPhotoData] = useState({photo})
 
   const handleChange = e => {
@@ -18,7 +18,7 @@ const EditEvent = (props) => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-      props.handleAddEvent(formData, eventPhotoData.photo)
+      props.handleEditEvent(formData, eventPhotoData.photo)
       // change to item and act page ^
     } catch (err) {
       console.log(err)
@@ -36,7 +36,7 @@ const EditEvent = (props) => {
 
   return (
     <>
-      <h1>Add Event</h1>
+      <h1>Edit Event</h1>
       <form onSubmit={handleSubmit} autoComplete="off">
         <div>
           <label htmlFor="eventName">Event Name</label>
@@ -82,7 +82,7 @@ const EditEvent = (props) => {
           />
         </div>
         <button disabled={isFormInvalid()} type='submit'>
-          Add Event
+          Edit Event
         </button>
         <Link to="/">
           <button>Cancel</button>
