@@ -1,7 +1,15 @@
+import styles from './Activities.module.css'
+
 const Activities = () => {
   return (
     <>
-      <h1>Activities</h1>
+      <div className={styles.main}>
+        <div className={styles.mainNextDiv}>
+          <div className={styles.commentArea}>
+            <h1>Activities Tab</h1>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

@@ -1,7 +1,9 @@
 import CommentForm from '../CommentForm/CommentForm';
 import styles from './CommentTab.module.css'
 
-const CommentTab = () => {
+const CommentTab = (props) => {
+
+  // console.log(props)
   return (
     <>
       <div className={styles.main}>
@@ -9,7 +11,7 @@ const CommentTab = () => {
           <div className={styles.commentArea}>
             <h1>CommentTab</h1>
           </div>
-          <CommentForm />
+          <CommentForm event={props.state}/>
         </div>
       </div>
     </>
