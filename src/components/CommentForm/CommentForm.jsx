@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef} from 'react';
 import * as eventService from '../../services/eventService'
 
 
@@ -14,12 +14,14 @@ const CommentForm = (props) => {
     setFormData({...formData, [evt.target.name]: evt.target.value})
   }
 
-  const handleCommentSubmit = evt => {
+  const handleCommentSubmit = async (evt) => {
     evt.preventDefault()
-    eventService.createComment(formData, props.event.event._id)
-    console.log(formData)
+    const comment = await eventService.createComment(formData, props.event._id)
+    props.setComments([...props.comments, comment])
+    setFormData({content:''})
   }
-// console.log('HELLO', props.event.event._id)
+
+
 
   return (
     <>
@@ -34,7 +36,7 @@ const CommentForm = (props) => {
         <button
           type='submit'
           >
-            Add Comment!
+            Add Comment!!!!
         </button>
       </form>
 

@@ -23,7 +23,7 @@ const EventShow = (props) => {
       setEvent(eventData)
     }
     fetchEvent()
-  },[])
+  },[location.state.event._id])
 
   // if(!props?.events?.length){
   //   return <h1>No Events</h1>
@@ -66,7 +66,7 @@ const EventShow = (props) => {
           { component === 'GuestList' ? <GuestList />: "" }
           { component === 'Activities' ? <Activities />: "" }
           { component === 'FoodSupplies' ? <FoodSupplies />: "" }
-          { component === 'Comments' ? <CommentTab state={{event}}/>: "" }
+          { component === 'Comments' ? <CommentTab event={event}/>: "" }
           </div>
         </div>
       </div>
