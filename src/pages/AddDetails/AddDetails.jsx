@@ -59,7 +59,7 @@ const AddDetails = (props) => {
       <div>
         <ActForm />
         <br/>
-        <ItemForm />
+        <ItemForm state={{event}}/>
       </div>
     </>
   )
