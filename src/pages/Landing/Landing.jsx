@@ -29,10 +29,10 @@ const Landing = ({ user }) => {
           </div>
           <div className="carousel-inner">
             <div className="carousel-item active">
-              <img src={`https://picsum.photos/id/390/640/480`} className="d-block w-320" alt="..." />
+              <img src={`https://picsum.photos/id/390/640/480`} className="d-block w-320" alt="Person jumping into a lake while friends stand on a dock." />
             </div>
             <div className="carousel-item">
-              <img src={`https://picsum.photos/id/452/640/480`} className="d-block w-320" alt="..." />
+              <img src={`https://picsum.photos/id/452/640/480`} className="d-block w-320" alt="People in a crowd at a concert." />
             </div>
             <div className="carousel-item">
               <img src={`https://picsum.photos/id/590/640/480`} className="d-block w-320" alt="..." />

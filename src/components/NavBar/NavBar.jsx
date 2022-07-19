@@ -11,8 +11,8 @@ const NavBar = ({ user, handleLogout }) => {
         <Link to="/" className={styles.event}>Home</Link>
         <Link to="/add" className={styles.add_event}> Add Events</Link>
         <Link to='/all' className={styles.all_events}>All Events</Link>
-        <Link to="" onClick={handleLogout} className={styles.log_out}>LOG OUT</Link>
         <Link to="/changePassword" className={styles.change}>Change Password</Link>
+        <Link to="" onClick={handleLogout} className={styles.log_out}>LOG OUT</Link>
       </nav>
       }
     </header>

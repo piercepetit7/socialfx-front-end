@@ -1,7 +1,15 @@
+import styles from './GuestList.module.css'
+
 const GuestList = () => {
   return (
     <>
-      <h1>hello</h1>
+      <div className={styles.main}>
+        <div className={styles.mainNextDiv}>
+          <div className={styles.commentArea}>
+            <h1>GuestList Tab</h1>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

@@ -1,17 +1,20 @@
 import { useState, useEffect, React } from 'react';
-//import GuestList from '../../components/GuestList/GuestList'
-//import Activities from '../../components/Activities/Activities'
+import GuestList from '../../components/GuestList/GuestList'
+import Activities from '../../components/Activities/Activities'
 import FoodSupplies from '../../components/FoodSupplies/FoodSupplies'
-import CommentForm from '../../components/CommentForm/CommentForm'
+import CommentTab from '../../components/CommentTab/CommentTab';
 import { show } from '../../services/eventService'
 import { useLocation } from 'react-router-dom';
+import styles from './EventShow.module.css'
+import { Link } from 'react-router-dom';
 
 const EventShow = (props) => {
-  const [component, setComponent] = useState('Comments')
+  const [component, setComponent] = useState('FoodSupplies')
   const [event, setEvent] = useState({}) 
   const location = useLocation()
   console.log('*************************')
   console.log(typeof location.state.event._id)
+  console.log('event show', props.state)
 
   useEffect(()=>{
     const fetchEvent = async() => {
@@ -20,7 +23,7 @@ const EventShow = (props) => {
       setEvent(eventData)
     }
     fetchEvent()
-  },[])
+  },[location.state.event._id])
 
   // if(!props?.events?.length){
   //   return <h1>No Events</h1>
@@ -29,24 +32,44 @@ const EventShow = (props) => {
 
   return (
     <>
-      <h1>Hello</h1>
-    <div id='mainleft-showPage'>
-    </div> 
-    <div id='mainright-showPage'>
-      <div id='mainright-left'>
-        {/* <button onClick={() => setComponent('GuestList')}>Guest List</button> */}
-        {/* <button onClick={() => setComponent('Activities')}>Activities</button> */}
-        <button onClick={() => setComponent('FoodSupplies')}>Food/Supplies</button>
-        <button onClick={() => setComponent('Comments')}>Comments</button>
+      <div className={styles.eventShowMainBody}>
+        <div className={styles.mainLeftShowPage}>
+          <div>
+            <h1 className={styles.eventTitle}>{event.eventName}</h1>
+            <img 
+              src={
+              event.eventPhoto
+              ? event.eventPhoto
+              : `https://picsum.photos/id/131/640/480`
+              } 
+              alt="Events"
+              style={{width: "20vw"}}
+              />
+          </div>
+          <div>
+            <h3 className={styles.details}>Details:</h3>
+            <p>{event.eventDetails}</p>
+            {props.user?.profile === event.owner?._id && 
+              <Link to='/edit' state={{event}} className='edit-btn'>Edit</Link>
+            }
+          
+          </div>
+        </div> 
+        <div className={styles.mainRightShowPage}>
+          <div className={styles.mainRightLeft}>
+            <button className={styles.tab} onClick={() => setComponent('GuestList')}> Guest List</button>
+            <button className={styles.tab} onClick={() => setComponent('Activities')}>Activities</button>
+            <button className={styles.tab} onClick={() => setComponent('FoodSupplies')}>Food/Supplies</button>
+            <button className={styles.tab} onClick={() => setComponent('Comments')}>Comments</button>
+          </div>
+          <div className={styles.mainRightRight}>
+          { component === 'GuestList' ? <GuestList />: "" }
+          { component === 'Activities' ? <Activities />: "" }
+          { component === 'FoodSupplies' ? <FoodSupplies />: "" }
+          { component === 'Comments' ? <CommentTab event={event}/>: "" }
+          </div>
+        </div>
       </div>
-      <div id='mainright-right'>
-        {/* { component === 'GuestList' ? <GuestList />: "" } */}
-        {/* { component === 'Activities' ? <Activities />: "" } */}
-        { component === 'FoodSupplies' ? <FoodSupplies />: "" }
-        { component === 'Comments' ? <CommentForm />: "" }
-      </div>
-    </div>
-    
     </>
   );
 }

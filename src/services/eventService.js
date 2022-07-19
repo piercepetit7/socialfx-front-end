@@ -50,6 +50,18 @@ async function updateEvent(eventData) {
   return await res.json()
 }
 
+async function editEvent(eventData) {
+  const res = await fetch(`${BASE_URL}/${eventData._id}`, {
+    method: "PUT",
+    headers: { 
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(eventData)
+  })
+  return await res.json()
+}
+
 async function addPhoto(photoData, eventId) {
   const res = await fetch(`${BASE_URL}/${eventId}/add-photo`, {
     method: "PUT",
@@ -62,6 +74,7 @@ async function addPhoto(photoData, eventId) {
 }
 
 async function createComment(commentData, eventId) {
+  console.log('****eventSERVICE',commentData)
   const res = await fetch(`${BASE_URL}/${eventId}/comments`, {
     method: "POST",
     headers: { 
@@ -72,7 +85,28 @@ async function createComment(commentData, eventId) {
   })
   return await res.json()
 }
-
+async function createAddItem(itemData, eventId) {
+  const res = await fetch(`${BASE_URL}/${eventId}/details`, {
+    method: "POST",
+    headers: { 
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(itemData)
+  })
+  return await res.json()
+}
+async function createAddAct(actData, eventId) {
+  const res = await fetch(`${BASE_URL}/${eventId}/details`, {
+    method: "POST",
+    headers: { 
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(actData)
+  })
+  return await res.json()
+}
 async function createItem(itemData, eventId) {
   const res = await fetch(`${BASE_URL}/${eventId}/add-item`, {
     method: "POST",
@@ -95,6 +129,18 @@ async function deleteItem(eventId) {
   return await res.json()
 }
 
+async function getAllComments(commentData, eventId) {
+  const res = await fetch(`${BASE_URL}/${eventId}/comments`, {
+    method: "GET",
+    headers: { 
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(commentData)
+  })
+  return await res.json()
+}
+
 export { 
   create,
   getAll,
@@ -103,7 +149,10 @@ export {
   show,
   addPhoto,
   createComment,
+  createAddItem,
+  createAddAct,
   createItem,
   deleteItem,
-  
+  editEvent,
+  getAllComments
 }
