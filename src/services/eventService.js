@@ -74,6 +74,7 @@ async function addPhoto(photoData, eventId) {
 }
 
 async function createComment(commentData, eventId) {
+  console.log('****eventSERVICE',commentData)
   const res = await fetch(`${BASE_URL}/${eventId}/comments`, {
     method: "POST",
     headers: { 
