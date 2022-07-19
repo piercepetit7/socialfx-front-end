@@ -67,6 +67,7 @@ const App = () => {
     const editedEvent = await eventService.editEvent(eventData)
     const newEventArray = events.map(event => event._id === editedEvent._id ? editedEvent : event)
     setEvents(newEventArray)
+    navigate('/all')
   }
   
   return (
