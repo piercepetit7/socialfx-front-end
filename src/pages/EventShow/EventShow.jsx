@@ -1,6 +1,6 @@
 import { useState, useEffect, React } from 'react';
-//import GuestList from '../../components/GuestList/GuestList'
-//import Activities from '../../components/Activities/Activities'
+import GuestList from '../../components/GuestList/GuestList'
+import Activities from '../../components/Activities/Activities'
 import FoodSupplies from '../../components/FoodSupplies/FoodSupplies'
 import CommentTab from '../../components/CommentTab/CommentTab';
 import CommentForm from '../../components/CommentForm/CommentForm'
@@ -56,14 +56,14 @@ const EventShow = (props) => {
         </div> 
         <div className={styles.mainRightShowPage}>
           <div className={styles.mainRightLeft}>
-            {/* <button className={styles.tab} onClick={() => setComponent('GuestList')}>Guest List</button> */}
-            {/* <button className={styles.tab} onClick={() => setComponent('Activities')}>Activities</button> */}
+            <button className={styles.tab} onClick={() => setComponent('GuestList')}>Guest List</button>
+            <button className={styles.tab} onClick={() => setComponent('Activities')}>Activities</button>
             <button className={styles.tab} onClick={() => setComponent('FoodSupplies')}>Food/Supplies</button>
             <button className={styles.tab} onClick={() => setComponent('Comments')}>Comments</button>
           </div>
           <div className={styles.mainRightRight}>
-          {/* { component === 'GuestList' ? <GuestList />: "" } */}
-          {/* { component === 'Activities' ? <Activities />: "" } */}
+          { component === 'GuestList' ? <GuestList />: "" }
+          { component === 'Activities' ? <Activities />: "" }
           { component === 'FoodSupplies' ? <FoodSupplies />: "" }
           { component === 'Comments' ? <CommentTab />: "" }
           </div>
