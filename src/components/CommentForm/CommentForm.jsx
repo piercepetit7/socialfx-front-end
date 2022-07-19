@@ -19,7 +19,7 @@ const CommentForm = (props) => {
     eventService.createComment(formData, props.event.event._id)
     console.log(formData)
   }
-console.log('HELLO', props.event.event._id)
+// console.log('HELLO', props.event.event._id)
 
   return (
     <>
