@@ -7,6 +7,7 @@ import CommentForm from '../../components/CommentForm/CommentForm'
 import { show } from '../../services/eventService'
 import { useLocation } from 'react-router-dom';
 import styles from './EventShow.module.css'
+import { Link } from 'react-router-dom';
 
 const EventShow = (props) => {
   const [component, setComponent] = useState('FoodSupplies')
@@ -49,7 +50,7 @@ const EventShow = (props) => {
             <h3 className={styles.details}>Details:</h3>
             <p>{event.eventDetails}</p>
             {props.user?.profile === event.owner?._id && 
-              <button className='edit-btn' to='/edit' state={props.event}>Edit</button>
+              <Link to='/edit' state={{event}} className='edit-btn'>Edit</Link>
             }
           
           </div>
