@@ -1,0 +1,68 @@
+.eventShowMainBody{
+  display: flex;
+  flex-direction: row;
+  padding: 40px 10px;
+}
+
+.mainLeftShowPage{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 25vw;
+  height: 100vh;
+  border-left: solid 2px black;
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+}
+
+.mainRightShowPage{
+  display: flex;
+  flex-direction: row;
+  width: 75vw;
+  height: 100vh;
+  border: solid 2px black;
+  background-color: #ffe1a8;
+}
+
+.mainRightLeft{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  width: 20vw;
+  margin: 0;
+  margin: 20px 0 20px 20px;
+}
+
+.mainRightRight{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 55vw;
+  margin: 0;
+  text-align: center;
+}
+
+.tab{
+  font-size: 30px;
+  background-color: white;
+  border: none;
+  width: 15vw;
+  height: 6vh;
+}
+
+.mainLeftShowPage > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eventTitle {
+  margin: 0 0 30px 0;
+}
+
+.details {
+  margin: 0 0 25px 0;
+}

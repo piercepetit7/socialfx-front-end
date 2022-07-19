@@ -1,0 +1,42 @@
+.main{
+  border: solid 1px black;
+  width: 54vw;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1vw 0 0;
+}
+
+.mainFoodSupDiv{
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.hostList{
+  border: solid 1px black;
+  height: 40vh;
+  width: 35vw;
+  background-color: white;
+  padding: 0 30px;
+}
+
+.guestsBring{
+  border: solid 1px black;
+  height: 30vh;
+  width: 35vw;
+  background-color: white;
+}
+
+.addItemForm{
+  padding-top: 20px;
+}
+
+h2{
+  padding: 10px;
+}
+
+h3{
+  padding: 10px;
+}
