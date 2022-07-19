@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
-//import styles from './AddEvent.module.css'
+import styles from './AddEvent.module.css'
 
 const AddEvent = (props) => {
   const navigate = useNavigate()
@@ -38,58 +38,63 @@ const AddEvent = (props) => {
 
   return (
     <>
-      <h1>Add Event</h1>
-      <form onSubmit={handleSubmit} autoComplete="off">
-        <div>
-          <label htmlFor="eventName">Event Name</label>
-          <input
-            type="text"
-            autoComplete="off"
-            id="eventName"
-            value={eventName}
-            name="eventName"
-            onChange={handleChange}
-          />
+      <body className={styles.mainBody}>
+        <div className={styles.eventForm}>
+
+          <h1>Add Event</h1>
+          <form onSubmit={handleSubmit} autoComplete="off">
+            <div>
+              <label htmlFor="eventName">Event Name</label>
+              <input
+                type="text"
+                autoComplete="off"
+                id="eventName"
+                value={eventName}
+                name="eventName"
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="eventDate">Event Date</label>
+              <input
+                type="datetime-local"
+                id="eventDate"
+                value={eventDate}
+                name="eventDate"
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="eventDetails">Event Details</label>
+              <textarea
+                autoComplete="off"
+                id="eventDetails"
+                value={eventDetails}
+                name="eventDetails"
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="photo-upload">
+                Upload Photo
+              </label>
+              <input
+                type="file"
+                id={styles.photoUpload}
+                className="form-control"
+                name="photo"
+                onChange={handleChangePhoto}
+              />
+            </div>
+            <button disabled={isFormInvalid()} type='submit'>
+              Add Event
+            </button>
+            <Link to="/" state={eventPhotoData}>
+              <button>Cancel</button>
+            </Link>
+          </form>
         </div>
-        <div>
-          <label htmlFor="eventDate">Event Date</label>
-          <input
-            type="datetime-local"
-            id="eventDate"
-            value={eventDate}
-            name="eventDate"
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="eventDetails">Event Details</label>
-          <textarea
-            autoComplete="off"
-            id="eventDetails"
-            value={eventDetails}
-            name="eventDetails"
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="photo-upload">
-            Upload Photo
-          </label>
-          <input
-            type="file"
-            id="photo-upload"
-            className="form-control"
-            name="photo"
-            onChange={handleChangePhoto}
-          />
-        </div>
-        <button disabled={isFormInvalid()} type='submit'>
-          Add Event
-        </button>
-        <Link to="/" state={eventPhotoData}>
-          <button>Cancel</button>
-        </Link>
-      </form>
+      </body>
     </>
   )
 }
