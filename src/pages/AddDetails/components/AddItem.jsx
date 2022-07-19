@@ -1,4 +1,5 @@
 import { useState } from "react"
+import * as eventService from '../../../services/eventService'
 
 const ItemForm = (props) => {
   const [formData, setFormData] = useState({
@@ -10,7 +11,10 @@ const ItemForm = (props) => {
   }
 
   const handleItemSubmit = evt => {
-    
+    evt.preventDefault()
+    eventService.updateEvent(formData, props.event)
+    console.log('****ADD ITEM*****')
+    console.log(formData)
   }
 
 
@@ -26,10 +30,10 @@ const ItemForm = (props) => {
         onChange={handleChange}
       />
       <br />
-      <label>Item Name:</label>
+      <label>Item Type:</label>
       <input
         type="text"
-        placeholder="Item Type..."
+        placeholder="Food or Supplies..."
         name="itemType"
         value={formData.itemType}
         onChange={handleChange}
