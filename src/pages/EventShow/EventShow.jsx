@@ -1,9 +1,8 @@
 import { useState, useEffect, React } from 'react';
-//import GuestList from '../../components/GuestList/GuestList'
-//import Activities from '../../components/Activities/Activities'
+import GuestList from '../../components/GuestList/GuestList'
+import Activities from '../../components/Activities/Activities'
 import FoodSupplies from '../../components/FoodSupplies/FoodSupplies'
 import CommentTab from '../../components/CommentTab/CommentTab';
-import CommentForm from '../../components/CommentForm/CommentForm'
 import { show } from '../../services/eventService'
 import { useLocation } from 'react-router-dom';
 import styles from './EventShow.module.css'
@@ -14,6 +13,7 @@ const EventShow = (props) => {
   const location = useLocation()
   console.log('*************************')
   console.log(typeof location.state.event._id)
+  console.log('event show', props.state)
 
   useEffect(()=>{
     const fetchEvent = async() => {
@@ -48,23 +48,24 @@ const EventShow = (props) => {
           <div>
             <h3 className={styles.details}>Details:</h3>
             <p>{event.eventDetails}</p>
-             {/* {props.user?.profile === event.owner?._id &&  */}
-              <button>Edit</button>
-             {/* } */}
+            {props.user?.profile === event.owner?._id && 
+              <button className='edit-btn' to='/edit' state={props.event}>Edit</button>
+            }
+          
           </div>
         </div> 
         <div className={styles.mainRightShowPage}>
           <div className={styles.mainRightLeft}>
-            {/* <button className={styles.tab} onClick={() => setComponent('GuestList')}>Guest List</button> */}
-            {/* <button className={styles.tab} onClick={() => setComponent('Activities')}>Activities</button> */}
+            <button className={styles.tab} onClick={() => setComponent('GuestList')}> Guest List</button>
+            <button className={styles.tab} onClick={() => setComponent('Activities')}>Activities</button>
             <button className={styles.tab} onClick={() => setComponent('FoodSupplies')}>Food/Supplies</button>
             <button className={styles.tab} onClick={() => setComponent('Comments')}>Comments</button>
           </div>
           <div className={styles.mainRightRight}>
-          {/* { component === 'GuestList' ? <GuestList />: "" } */}
-          {/* { component === 'Activities' ? <Activities />: "" } */}
+          { component === 'GuestList' ? <GuestList />: "" }
+          { component === 'Activities' ? <Activities />: "" }
           { component === 'FoodSupplies' ? <FoodSupplies />: "" }
-          { component === 'Comments' ? <CommentTab />: "" }
+          { component === 'Comments' ? <CommentTab state={{event}}/>: "" }
           </div>
         </div>
       </div>
