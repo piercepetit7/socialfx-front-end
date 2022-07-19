@@ -50,6 +50,18 @@ async function updateEvent(eventData) {
   return await res.json()
 }
 
+async function editEvent(eventData) {
+  const res = await fetch(`${BASE_URL}/${eventData._id}`, {
+    method: "PUT",
+    headers: { 
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(eventData)
+  })
+  return await res.json()
+}
+
 async function addPhoto(photoData, eventId) {
   const res = await fetch(`${BASE_URL}/${eventId}/add-photo`, {
     method: "PUT",
@@ -95,6 +107,18 @@ async function deleteItem(eventId) {
   return await res.json()
 }
 
+async function getAllComments(commentData, eventId) {
+  const res = await fetch(`${BASE_URL}/${eventId}/comments`, {
+    method: "GET",
+    headers: { 
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(commentData)
+  })
+  return await res.json()
+}
+
 export { 
   create,
   getAll,
@@ -105,5 +129,6 @@ export {
   createComment,
   createItem,
   deleteItem,
-  
+  editEvent,
+  getAllComments
 }
