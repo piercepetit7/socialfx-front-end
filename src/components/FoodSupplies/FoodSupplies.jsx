@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import * as eventService from '../../services/eventService'
+import styles from './FoodSupplies.module.css'
 
 const FoodSupplies = () => {
   const [foodSuppliesItem, setFoodSuppliesItem] = useState([])
@@ -32,33 +33,35 @@ const FoodSupplies = () => {
 
   return (
     <>
-      <div>
-        <h2>Host is bringing:</h2>
-        <div>
-          {/* <ul>
-            {events.items.map((item, idx) =>
-              <li> {items.itemName}
+      <div className={styles.main}>
+        <div className={styles.mainFoodSupDiv}>
+          <h2>Host is bringing:</h2>
+          <div className={styles.hostList}>
+            <h3>List of items</h3>
+              {/* <ul>
+              {events.items.map((item, idx) =>
+                <li> {items.itemName}
                 <form onSubmit={handleDeleteItem} >
-                  <button id="deleteX" type="submit">X</button>
+                <button id="deleteX" type="submit">X</button>
                 </form>
                 </li>
-            )}
-          </ul> */}
+                )}
+              </ul> */}
+          </div>
         </div>
+          <h3>Guests bringing:</h3>
+        <div className={styles.guestsBring}>
+        </div>
+        <form className={styles.addItemForm} autoComplete="off" ref={formElement} onSubmit={handleItemSubmit}>
+          <input 
+            type="text" 
+            name="item"
+            value={addItemData.item}          
+            onChange={handleChange}
+            />
+          <button type='submit'> Add </button>
+        </form>
       </div>
-
-
-
-      <form autoComplete="off" ref={formElement} onSubmit={handleItemSubmit}>
-        <input 
-          type="text" 
-          name="item"
-          value={addItemData.item}
-          onChange={handleChange}
-        />
-        <button type='submit'> Add </button>
-      </form>
-
     </>
   );
 }
