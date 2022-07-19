@@ -13,6 +13,8 @@ import * as eventService from './services/eventService'
 import AddDetails from './pages/AddDetails/AddDetails'
 import EventList from './pages/EventList/EventList'
 import EventShow from './pages/EventShow/EventShow'
+import CommentForm from './components/CommentForm/CommentForm'
+import EditEvent from './pages/EditEvent/EditEvent'
 import CommentTab from './components/CommentTab/CommentTab'
 
 const App = () => {
@@ -60,6 +62,12 @@ const App = () => {
     const newEventsArray = events.filter(event => event._id !== deletedEvent._id)
     setEvents(newEventsArray)
   }
+
+  const handleEditEvent = async (eventData) => {
+    const editedEvent = await eventService.editEvent(eventData)
+    const newEventArray = events.map(event => event._id === editedEvent._id ? editedEvent : event)
+    setEvents(newEventArray)
+  }
   
   return (
     <>
@@ -68,6 +76,7 @@ const App = () => {
         <main>
           <Routes>
             <Route path="/" element={<Landing user={user}/>} />
+            <Route path="/edit" element={<EditEvent handleEditEvent={handleEditEvent} />} />
             <Route path="/add" element={<AddEvent handleAddEvent={handleAddEvent} events={events}/>} />
             <Route path="/all" element={<EventList handleDeleteEvent={handleDeleteEvent} events={events} user={user} setEvents={setEvents}/>} />
             <Route path="/events/:eventId/details" element={<AddDetails handleUpdateEvent={handleUpdateEvent} events={events}/>} />
