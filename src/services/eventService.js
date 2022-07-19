@@ -95,6 +95,17 @@ async function createAddItem(itemData, eventId) {
   })
   return await res.json()
 }
+async function createAddAct(actData, eventId) {
+  const res = await fetch(`${BASE_URL}/${eventId}/details`, {
+    method: "POST",
+    headers: { 
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(actData)
+  })
+  return await res.json()
+}
 async function createItem(itemData, eventId) {
   const res = await fetch(`${BASE_URL}/${eventId}/add-item`, {
     method: "POST",
@@ -138,6 +149,7 @@ export {
   addPhoto,
   createComment,
   createAddItem,
+  createAddAct,
   createItem,
   deleteItem,
   editEvent,
