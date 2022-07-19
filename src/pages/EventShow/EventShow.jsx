@@ -48,9 +48,10 @@ const EventShow = (props) => {
           <div>
             <h3 className={styles.details}>Details:</h3>
             <p>{event.eventDetails}</p>
-             {/* {props.user?.profile === event.owner?._id &&  */}
-              <button>Edit</button>
-             {/* } */}
+            {props.user?.profile === event.owner?._id && 
+              <button className='edit-btn' to='/edit' state={props.event}>Edit</button>
+            }
+          
           </div>
         </div> 
         <div className={styles.mainRightShowPage}>
