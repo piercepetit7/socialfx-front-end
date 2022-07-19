@@ -1,12 +1,8 @@
 import styles from './EventCard.module.css'
-import {  Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
-import EventShow from '../../pages/EventShow/EventShow';
+import {  Link,  } from 'react-router-dom';
 
 const EventCard = ({event, randEvtImgId, user, handleDeleteEvent, EventShow}) => {
-  const location = useLocation()
   
-  console.log(event)
 
   return (
     <>
@@ -24,7 +20,7 @@ const EventCard = ({event, randEvtImgId, user, handleDeleteEvent, EventShow}) =>
         <p className={styles.card_desc}>{event.eventDetails}</p>
         <p className={styles.owner}>{event.owner.name}</p>
       </h1>      
-        <Link to={`/events/${event._id}`} state={{event}} EventShow={EventShow}>View Event Details</Link>
+        <Link to={`/events/${event._id}`} state={{event}} >View Event Details</Link>
       {user?.profile === event.owner?._id && 
       <div className='card-footer'>
         <button onClick={() => handleDeleteEvent(event._id)} className='delete-btn'>Delete</button>
