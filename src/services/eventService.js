@@ -107,6 +107,18 @@ async function deleteItem(eventId) {
   return await res.json()
 }
 
+async function getAllComments(commentData, eventId) {
+  const res = await fetch(`${BASE_URL}/${eventId}/comments`, {
+    method: "GET",
+    headers: { 
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(commentData)
+  })
+  return await res.json()
+}
+
 export { 
   create,
   getAll,
@@ -117,5 +129,6 @@ export {
   createComment,
   createItem,
   deleteItem,
-  editEvent
+  editEvent,
+  getAllComments
 }
