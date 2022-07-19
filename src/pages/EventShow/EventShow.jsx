@@ -3,7 +3,6 @@ import { useState, useEffect, React } from 'react';
 //import Activities from '../../components/Activities/Activities'
 import FoodSupplies from '../../components/FoodSupplies/FoodSupplies'
 import CommentTab from '../../components/CommentTab/CommentTab';
-import CommentForm from '../../components/CommentForm/CommentForm'
 import { show } from '../../services/eventService'
 import { useLocation } from 'react-router-dom';
 import styles from './EventShow.module.css'
@@ -14,6 +13,7 @@ const EventShow = (props) => {
   const location = useLocation()
   console.log('*************************')
   console.log(typeof location.state.event._id)
+  console.log('event show', props.state)
 
   useEffect(()=>{
     const fetchEvent = async() => {
@@ -64,7 +64,7 @@ const EventShow = (props) => {
           {/* { component === 'GuestList' ? <GuestList />: "" } */}
           {/* { component === 'Activities' ? <Activities />: "" } */}
           { component === 'FoodSupplies' ? <FoodSupplies />: "" }
-          { component === 'Comments' ? <CommentTab />: "" }
+          { component === 'Comments' ? <CommentTab state={{event}}/>: "" }
           </div>
         </div>
       </div>

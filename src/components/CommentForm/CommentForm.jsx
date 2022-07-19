@@ -16,10 +16,10 @@ const CommentForm = (props) => {
 
   const handleCommentSubmit = evt => {
     evt.preventDefault()
-    eventService.createComment(formData, props.event._id)
+    eventService.createComment(formData, props.event.event._id)
     console.log(formData)
   }
-
+console.log('HELLO', props.event.event._id)
 
   return (
     <>
