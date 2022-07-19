@@ -3,35 +3,80 @@
   text-align: center;
   display: flex;
   margin-left: 0;
+  background-color: #333;
+  padding-bottom: 0;
 }
 
 .username{
   justify-content: left;
   display: flex;
   margin-right: 200px;
+  font-size: 20px;
+  color: whitesmoke;
+  margin-top: 14px;
 }
 
 .event{
   margin-right: 15px;
   text-decoration: none;
+  color: whitesmoke;
+  font-size: 20px;
+  margin-top: 14px;
+  transition: 0.4s;
+}
+
+.event:hover{
+  font-size: 22px;
 }
 
 .add_event{
   margin-right: 15px;
   text-decoration: none;
+  font-size: 20px;
+  color: whitesmoke;
+  margin-top: 14px;
+  transition: 0.4s;
+}
+
+.add_event:hover{
+  font-size: 22px;
 }
 
 .all_events{
   margin-right: 15px;
   text-decoration: none;
+  font-size: 20px;
+  color: whitesmoke;
+  margin-top: 14px;
+  transition: 0.4s;
+}
+
+.all_events:hover{
+  font-size: 22px;
 }
 
 .log_out{
   margin-right: 15px;
   text-decoration: none;
+  font-size: 20px;
+  color: whitesmoke;
+  margin-top: 14px;
+  transition: 0.4s;
+}
+
+.log_out:hover{
+  font-size: 22px;
 }
 
 .change{
   margin-right: 15px;
   text-decoration: none;
+  font-size: 20px;
+  color: whitesmoke;
+  margin-top: 14px;
+  transition: 0.4s;
+}
+
+.change:hover{
+  font-size: 22px;
 }

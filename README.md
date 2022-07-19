@@ -19,5 +19,8 @@ Social(fx) is a MERN application that allows users to simplify their event plann
 React, Mongoose, MongoDB, Express, Node, CSS, Bootstrap, Cloudinary
   
 
+## Credits:  
+- [Landing Page Photo](https://www.matchingfoodandwine.com/news/entertaining/-six-top-tips-for-creating-a-vegan-and-gluten-free-barbecue/)
+
 ## Next Steps:
 - [ ] Stretch Goals
