@@ -2,10 +2,12 @@
   display: grid;
   text-align: center;
   align-items: center;
+  font-size: 25px;
 }
 
 .owner{
   display: grid;
+  font-size: 15px;
 }
 
 .cards {
