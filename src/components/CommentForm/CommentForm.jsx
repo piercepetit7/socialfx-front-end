@@ -4,7 +4,7 @@ import * as eventService from '../../services/eventService'
 
 
 
-const CommentForm = () => {
+const CommentForm = (props) => {
   const formElement = useRef()
   const [formData, setFormData] = useState({
     comments:''
@@ -16,8 +16,10 @@ const CommentForm = () => {
 
   const handleCommentSubmit = evt => {
     evt.preventDefault()
-    eventService.createComment()
+    eventService.createComment(formData, props.event._id)
+    console.log(formData)
   }
+
 
   return (
     <>
