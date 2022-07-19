@@ -43,7 +43,7 @@ const EventShow = (props) => {
         {/* { component === 'GuestList' ? <GuestList />: "" } */}
         {/* { component === 'Activities' ? <Activities />: "" } */}
         { component === 'FoodSupplies' ? <FoodSupplies />: "" }
-        { component === 'Comments' ? <CommentForm />: "" }
+        { component === 'Comments' ? <CommentForm event={event}/>: "" }
       </div>
     </div>
     
