@@ -1,13 +1,16 @@
 .name{
-  display: flex;
+  display: grid;
   text-align: center;
   align-items: center;
+}
+
+.owner{
+  display: grid;
 }
 
 .cards {
   width: 100%;
   display: flex;
-
 }
 
 .card {
@@ -19,9 +22,20 @@
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-around;
+  border-radius: 9px;
 }
 
 .card_desc {
-
   font-size: 15px;
+  margin-top: 10px;
+}
+
+.details{
+  margin-left: 5px;
+  text-decoration: none;
+  color: #333;
+}
+
+.image{
+  border-radius: 9px;
 }
