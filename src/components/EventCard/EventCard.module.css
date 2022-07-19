@@ -3,6 +3,7 @@
   text-align: center;
   align-items: center;
   font-size: 25px;
+  border-bottom: 3px solid #333;
 }
 
 .owner{
@@ -40,4 +41,36 @@
 
 .image{
   border-radius: 9px;
+}
+
+.footer{
+  justify-content: center;
+  display: grid;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.edit{
+  margin-right: 10px;
+  margin-top: 10px;
+  padding-left: 13px;
+  color: #333;
+  transition: 0.5s;
+}
+
+.edit:hover{
+  font-size: 17px;
+}
+
+.delete{
+  border: none;
+  background-color: #333;
+  border-radius: 50px;
+  color: whitesmoke;
+  transition: 0.5s;
+}
+
+.delete:hover{
+  color: red;
+  background-color: whitesmoke;
 }
