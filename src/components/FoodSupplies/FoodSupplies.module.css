@@ -1,12 +1,12 @@
 .main{
-  border: solid 1px black;
-  width: 54vw;
+  border:  solid 1px #f96900;
+  width: 55vw;
   height: 95vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0 1vw 0 0;
+  margin: 0 5vw 0 0;
 }
 
 .mainFoodSupDiv{
