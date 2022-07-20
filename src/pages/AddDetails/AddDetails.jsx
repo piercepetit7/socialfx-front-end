@@ -9,7 +9,7 @@ import * as eventServices from "../../services/eventService"
 
 const AddDetails = (props) => {
   const {eventId} = useParams()
-  console.log('EVENTID',eventId)
+  // console.log('EVENTID',eventId)
 	const navigate = useNavigate()
   const [event, setEvent] = useState()
   const [activities, setAct] = useState([])

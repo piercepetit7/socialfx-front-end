@@ -13,7 +13,6 @@ import * as eventService from './services/eventService'
 import AddDetails from './pages/AddDetails/AddDetails'
 import EventList from './pages/EventList/EventList'
 import EventShow from './pages/EventShow/EventShow'
-import CommentForm from './components/CommentForm/CommentForm'
 import EditEvent from './pages/EditEvent/EditEvent'
 import CommentTab from './components/CommentTab/CommentTab'
 import ItemForm from './pages/AddDetails/components/AddItem'
@@ -23,6 +22,10 @@ const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [events, setEvents] =  useState([])
   const navigate = useNavigate()
+  const [comments, setComments] = useState([])
+  // const [commentData, setCommentData] = useState({
+  //   content:''
+  // })
 
   const handleLogout = () => {
     authService.logout()
@@ -71,7 +74,7 @@ const App = () => {
     setEvents(newEventArray)
     navigate('/all')
   }
-  
+
   return (
     <>
       <div className='App'>
@@ -83,7 +86,7 @@ const App = () => {
             <Route path="/add" element={<AddEvent handleAddEvent={handleAddEvent} events={events}/>} />
             <Route path="/all" element={<EventList handleDeleteEvent={handleDeleteEvent} events={events} user={user} setEvents={setEvents}/>} />
             <Route path="/events/:eventId/details" element={<AddDetails ActForm={ActForm} ItemForm={ItemForm} events={events} user={user}/>} />
-            <Route path="/events/:eventId" element={<EventShow handleDeleteEvent={handleDeleteEvent} events={events} user={user} setEvents={setEvents} CommentTab={CommentTab}/>} />
+            <Route path="/events/:eventId" element={<EventShow handleDeleteEvent={handleDeleteEvent} events={events} user={user} setEvents={setEvents} CommentTab={CommentTab} setComments={setComments} comments={comments} />} />
             <Route
               path="/signup"
               element={<Signup handleSignupOrLogin={handleSignupOrLogin} events={events}/>}
