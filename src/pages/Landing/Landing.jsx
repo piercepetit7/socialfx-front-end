@@ -5,23 +5,26 @@ const Landing = ({ user }) => {
   return (
     <>
       <main className={styles.container}>
-        <h1>Welcome to Social(fx)!</h1>
+        <h1 id={styles.welcome}>Welcome to Social(fx)!</h1>
       </main>
 
       <div className={styles.landing}>
         <div className={styles.left}>
-          <p>
+          <p className={styles.shadow}>
             Planning a trip to the lake? Pregaming at your house before the concert? Do you host get togethers in your backyard? Social Function is here to help you plan your event from guestlist to menu. Log in to get started!
           </p>
-          <button className={styles.btn}>
-            <Link className={styles.link} to="/login">Log In</Link>
-          </button>
-          <button className={styles.btn}>
-            <Link className={styles.link} to="/signup">Sign Up</Link>
-          </button>
+          <div className={styles.sign}>
+            <button className={styles.btn}>
+              <Link className={styles.link} to="/login">Log In</Link>
+            </button>
+            <br />
+            <button className={styles.btn}>
+              <Link className={styles.link} to="/signup">Sign Up</Link>
+            </button>
+          </div>
         </div>
 
-        <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="true" style={{width: "640px", display:"flex", justifyContent:"flex.end", flexDirection:"column"}}>
+        <div id={styles.carouselExampleIndicators} className="carousel slide" data-bs-ride="true" style={{width: "640px", display:"flex", justifyContent:"flex.end", flexDirection:"column"}}>
           <div className="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
