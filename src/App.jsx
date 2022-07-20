@@ -73,7 +73,7 @@ const App = () => {
 
   const handleDeleteComment = async (commentId, eventId) => {
     const savedEvent = await eventService.deleteComment(commentId, eventId)
-    setEvents(events.filter(event => eventId !== savedEvent))
+    setEvents(events.map(event => eventId !== savedEvent))
   }
   
   return (
