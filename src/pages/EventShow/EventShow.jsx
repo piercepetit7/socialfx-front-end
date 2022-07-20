@@ -7,6 +7,7 @@ import { show } from '../../services/eventService'
 import { useLocation } from 'react-router-dom';
 import styles from './EventShow.module.css'
 import { Link } from 'react-router-dom';
+import * as eventService from '../../services/eventService'
 
 const EventShow = (props) => {
   const [component, setComponent] = useState('FoodSupplies')
@@ -21,6 +22,12 @@ const EventShow = (props) => {
     }
     fetchEvent()
   },[location.state.event._id])
+
+  const handleDeleteComment = async (commentId, eventId) => {
+    const savedEvent = await eventService.deleteComment(commentId, eventId)
+    setEvent(savedEvent)
+    // setComments(savedEvent.preventDefault())
+  }
 
   // if(!props?.events?.length){
   //   return <h1>No Events</h1>
@@ -63,7 +70,7 @@ const EventShow = (props) => {
           { component === 'GuestList' ? <GuestList />: "" }
           { component === 'Activities' ? <Activities />: "" }
           { component === 'FoodSupplies' ? <FoodSupplies />: "" }
-          { component === 'Comments' ? <CommentTab event={event} handleDeleteComment={props.handleDeleteComment} setComments={props.setComments} comments={props.comments}/>: "" }
+          { component === 'Comments' ? <CommentTab event={event} handleDeleteComment={handleDeleteComment} setEvent={setEvent} comments={event.comments}/>: "" }
           </div>
         </div>
       </div>

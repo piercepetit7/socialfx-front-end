@@ -6,7 +6,7 @@ const CommentTab = (props) => {
     <>
       <div className={styles.main}>
         <div className={styles.mainNextDiv}>
-          <CommentForm event={props.event} comments={props.comments} setComments={props.setComments} handleDeleteComment={props.handleDeleteComment}/>
+          <CommentForm event={props.event} comments={props.comments} setEvent={props.setEvent} handleDeleteComment={props.handleDeleteComment}/>
         </div>
       </div>
     </>

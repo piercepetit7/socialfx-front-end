@@ -7,28 +7,30 @@ import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 
 const CommentForm = (props) => {
   const formElement = useRef()
-  const [formData, setFormData] = useState({
+  const [commentData, setCommentData] = useState({
     content:''
   })
 
   const handleChange = evt => {
-    setFormData({...formData, [evt.target.name]: evt.target.value})
+    setCommentData({...commentData, [evt.target.name]: evt.target.value})
   }
 
   const handleCommentSubmit = async (evt) => {
     evt.preventDefault()
-    const comment = await eventService.createComment(formData, props.event._id)
-    props.setComments([...props.comments, comment])
-    setFormData({content:''})
+    const updatedEvent = await eventService.createComment(commentData, props.event._id)
+    props.setEvent(updatedEvent)
+    setCommentData({content:''})
   }
+
+  console.log(props)
 
   return (
     <>
       <div>
         <h1>CommentTab</h1>
-        {//user?.profile === props.comment.owner?._id && 
+        {//props.user.profile === props.comment.author._id && 
           props.comments.map((comment, idx) =>
-            <li  key={idx}><button onClick={() => props.handleDeleteComment(comment._id, props.event._id)}><FontAwesomeIcon icon={faTrashCan}/></button>{}{comment.content}</li>
+            <li  key={idx}><button onClick={() => props.handleDeleteComment(comment._id, props.event._id)}><FontAwesomeIcon icon={faTrashCan}/></button>{comment.content}</li>
           )
         }
         </div>
@@ -37,7 +39,7 @@ const CommentForm = (props) => {
         <textarea 
           type="text" 
           name="content"
-          value={formData.content}
+          value={commentData.content}
           onChange={handleChange}
           required={true}
         />
