@@ -63,9 +63,9 @@ console.log('^^^^^^^^^^^^^^^^^^^^^^^^', event)
             <button className={styles.tab} onClick={() => setComponent('Comments')}>Comments</button>
           </div>
           <div className={styles.mainRightRight}>
-          { component === 'GuestList' ? <GuestList />: "" }
-          { component === 'Activities' ? <Activities />: "" }
-          { component === 'FoodSupplies' ? <FoodSupplies />: "" }
+          { component === 'GuestList' ? <GuestList  event={event}/>: "" }
+          { component === 'Activities' ? <Activities event={event}/>: "" }
+          { component === 'FoodSupplies' ? <FoodSupplies  event={event}/>: "" }
           { component === 'Comments' ? <CommentTab event={event}/>: "" }
           </div>
         </div>

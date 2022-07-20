@@ -2,13 +2,21 @@
   max-width: 300px;
 }
 
+#plainBackground {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh;
+}
+
 .mainBody {
-  background-image: url('../../../public/project-BBQ-image.jpeg');
+  background-image: url('../../../public/kelsey-chance-tAH2cA_BL5g-unsplash.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  width: 80vw;
+  height: 80vh;
   background-position: center;
-  height: 100vh;
-  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,3 +32,29 @@
   width: 50vw;
   height: 50vh;
 }
+
+#inputFields {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.addEvtBtn {
+    background-color: white;
+    border-radius: 5px;
+    width: 100px;
+    height: 25px;
+
+    margin:20px;
+    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+.input {
+  width: 30vw;
+  margin: 7px;
+}
+

@@ -36,7 +36,6 @@ const FoodSupplies = () => {
         <div className={styles.mainFoodSupDiv}>
           <h2>Host is bringing:</h2>
           <div className={styles.hostList}>
-            <h3>List of items</h3>
               {/* <ul>
               {events.items.map((item, idx) =>
                 <li> {items.itemName}
@@ -57,8 +56,9 @@ const FoodSupplies = () => {
             name="item"
             value={addItemData.item}          
             onChange={handleChange}
+            className='inputField'
             />
-          <button type='submit'> Add </button>
+          <button id='addBtn' type='submit'> Add </button>
         </form>
       </div>
     </>
