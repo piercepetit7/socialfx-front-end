@@ -27,7 +27,14 @@
   flex-wrap: wrap;
   justify-content: space-around;
   border-radius: 9px;
-  background-color: white;
+  background-color: #ff954a;
+  transition: 0.5s;
+}
+
+.card:hover{
+  background-color: grey;
+  color: whitesmoke;
+  cursor: pointer;
 }
 
 .card_desc {
@@ -47,15 +54,18 @@
 
 .footer{
   justify-content: center;
-  display: grid;
+  align-items: center;
+  display: inline-block;
   margin-top: 10px;
   margin-bottom: 10px;
+  margin-left: 225px;
 }
 
 .edit{
   margin-right: 10px;
   margin-top: 10px;
   padding-left: 13px;
+  margin-left: 20px;
   color: #333;
   transition: 0.5s;
 }
