@@ -16,7 +16,6 @@ const FoodSupplies = () => {
   // }, [])
 
 
-
   const handleChange = evt => {
     setAddItemData({...addItemData, [evt.target.name]: evt.target.value})
   }
@@ -37,7 +36,6 @@ const FoodSupplies = () => {
         <div className={styles.mainFoodSupDiv}>
           <h2>Host is bringing:</h2>
           <div className={styles.hostList}>
-            <h3>List of items</h3>
               {/* <ul>
               {events.items.map((item, idx) =>
                 <li> {items.itemName}

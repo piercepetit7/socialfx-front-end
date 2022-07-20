@@ -80,3 +80,7 @@
 .change:hover{
   font-size: 22px;
 }
+
+#nav:hover {
+  color: #fa8c3e;
+}

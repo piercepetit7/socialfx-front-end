@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: row;
   padding: 40px 10px;
+  color: white;
 }
 
 .mainLeftShowPage{
@@ -11,9 +12,10 @@
   justify-content: space-evenly;
   width: 25vw;
   height: 100vh;
-  border-left: solid 2px black;
-  border-top: solid 2px black;
-  border-bottom: solid 2px black;
+  border-left: solid 3px #f96900;
+  border-top: solid 3px #f96900;
+  border-bottom: solid 3px #f96900;
+  text-align: center;
 }
 
 .mainRightShowPage{
@@ -21,8 +23,8 @@
   flex-direction: row;
   width: 75vw;
   height: 100vh;
-  border: solid 2px black;
-  background-color: #ffe1a8;
+  border: solid 3px #f96900;
+  background-color: #243b4a;
 }
 
 .mainRightLeft{
@@ -30,7 +32,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-end;
-  width: 20vw;
+  width: 15vw;
   margin: 0;
   margin: 20px 0 20px 20px;
 }
@@ -40,7 +42,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 55vw;
+  width: 60vw;
   margin: 0;
   text-align: center;
 }
@@ -48,9 +50,10 @@
 .tab{
   font-size: 30px;
   background-color: white;
-  border: none;
+
   width: 15vw;
   height: 6vh;
+  border:  solid 1px #f96900;
 }
 
 .mainLeftShowPage > div {

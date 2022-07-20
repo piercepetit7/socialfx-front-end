@@ -23,13 +23,13 @@ const EventShow = (props) => {
       setEvent(eventData)
     }
     fetchEvent()
-  },[])
+  },[location.state.event._id])
 
   // if(!props?.events?.length){
   //   return <h1>No Events</h1>
   //   console.log("here",props.events)
   // }
-
+console.log('^^^^^^^^^^^^^^^^^^^^^^^^', event)
   return (
     <>
       <div className={styles.eventShowMainBody}>
@@ -38,8 +38,8 @@ const EventShow = (props) => {
             <h1 className={styles.eventTitle}>{event.eventName}</h1>
             <img 
               src={
-              event.eventPhoto
-              ? event.eventPhoto
+              event.photo
+              ? event.photo
               : `https://picsum.photos/id/131/640/480`
               } 
               alt="Events"
@@ -66,7 +66,7 @@ const EventShow = (props) => {
           { component === 'GuestList' ? <GuestList />: "" }
           { component === 'Activities' ? <Activities />: "" }
           { component === 'FoodSupplies' ? <FoodSupplies />: "" }
-          { component === 'Comments' ? <CommentTab state={{event}}/>: "" }
+          { component === 'Comments' ? <CommentTab event={event}/>: "" }
           </div>
         </div>
       </div>

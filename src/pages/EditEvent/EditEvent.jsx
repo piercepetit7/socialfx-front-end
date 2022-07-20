@@ -7,8 +7,11 @@ const EditEvent = (props) => {
   const location = useLocation()
   const {photo} = useLocation()
   const [formData, setFormData] = useState(location.state.event)
+  console.log(location.state.event)
+  console.log(formData)
+  
   const [eventPhotoData, setEventPhotoData] = useState({photo})
-
+  
   const handleChange = e => {
     setFormData({
       ...formData,
@@ -29,6 +32,7 @@ const EditEvent = (props) => {
   }
 
   const {eventName, eventDate, eventDetails } = formData
+  console.log(eventDate)
 
   const isFormInvalid = () => {
     return !(eventName && eventDate)
@@ -54,7 +58,7 @@ const EditEvent = (props) => {
           <input
             type="datetime-local"
             id="eventDate"
-            value={eventDate}
+            value={eventDate.slice(0,16)}
             name="eventDate"
             onChange={handleChange}
           />

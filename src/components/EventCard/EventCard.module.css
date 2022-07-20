@@ -2,15 +2,19 @@
   display: grid;
   text-align: center;
   align-items: center;
+  font-size: 25px;
+  border-bottom: 3px solid #333;
 }
 
 .owner{
   display: grid;
+  font-size: 15px;
 }
 
 .cards {
   width: 100%;
   display: flex;
+  
 }
 
 .card {
@@ -23,6 +27,14 @@
   flex-wrap: wrap;
   justify-content: space-around;
   border-radius: 9px;
+  background-color: #ff954a;
+  transition: 0.5s;
+}
+
+.card:hover{
+  background-color: grey;
+  color: whitesmoke;
+  cursor: pointer;
 }
 
 .card_desc {
@@ -38,4 +50,39 @@
 
 .image{
   border-radius: 9px;
+}
+
+.footer{
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 225px;
+}
+
+.edit{
+  margin-right: 10px;
+  margin-top: 10px;
+  padding-left: 13px;
+  margin-left: 20px;
+  color: #333;
+  transition: 0.5s;
+}
+
+.edit:hover{
+  font-size: 17px;
+}
+
+.delete{
+  border: none;
+  background-color: #333;
+  border-radius: 50px;
+  color: whitesmoke;
+  transition: 0.5s;
+}
+
+.delete:hover{
+  color: red;
+  background-color: whitesmoke;
 }
