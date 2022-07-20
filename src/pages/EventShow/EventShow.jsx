@@ -29,7 +29,7 @@ const EventShow = (props) => {
   //   return <h1>No Events</h1>
   //   console.log("here",props.events)
   // }
-
+console.log('^^^^^^^^^^^^^^^^^^^^^^^^', event)
   return (
     <>
       <div className={styles.eventShowMainBody}>
@@ -38,8 +38,8 @@ const EventShow = (props) => {
             <h1 className={styles.eventTitle}>{event.eventName}</h1>
             <img 
               src={
-              event.eventPhoto
-              ? event.eventPhoto
+              event.photo
+              ? event.photo
               : `https://picsum.photos/id/131/640/480`
               } 
               alt="Events"

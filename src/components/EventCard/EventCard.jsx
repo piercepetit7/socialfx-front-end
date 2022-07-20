@@ -3,14 +3,14 @@ import {  Link,  } from 'react-router-dom';
 
 const EventCard = ({event, randEvtImgId, user, handleDeleteEvent, EventShow}) => {
   
-  // console.log('event card', event)
+  console.log('event card', event)
   return (
     <>
     <div className={styles.card}>
       <img 
         src={
-          event.eventPhoto
-          ? event.eventPhoto
+          event.photo
+          ? event.photo
           : `https://picsum.photos/id/${randEvtImgId}/640/480`
         } 
         alt="Events"
