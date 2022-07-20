@@ -14,7 +14,7 @@ const AddDetails = (props) => {
   const [event, setEvent] = useState()
   const [activities, setAct] = useState([])
   const [items, setItems] = useState([])
-  const [guestList, setGuestList] =useState([])
+  const [guests, setGuests] =useState([])
   // const [formData, setFormData] = useState({
   //   activities: '',
   //   guestList: '',
@@ -84,7 +84,17 @@ const AddDetails = (props) => {
         </div>
       </div>
       <div>
-        <AddGuestList />
+        <AddGuestList setGuests={setGuests} guests={guests}/>
+        <div>
+          <ul>
+            {guests.map(guest => 
+              <li key={guest._id}>
+                {guest._id}
+              </li>
+            )
+          }
+          </ul>
+        </div>
       </div>
     </>
   )
