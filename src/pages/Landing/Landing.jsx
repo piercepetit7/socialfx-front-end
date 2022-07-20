@@ -5,13 +5,13 @@ const Landing = ({ user }) => {
   return (
     <>
       <main className={styles.container}>
-        <h1>Welcome {user ? user.name : " "} to Social(fx)!</h1>
+        <h1>Welcome to Social(fx)!</h1>
       </main>
 
       <div className={styles.landing}>
-        <div className="left">
+        <div className={styles.left}>
           <p>
-            Planning a trip to the lake? Or are your friends pregaming at your house before the concert? Log into Social Function!
+            Planning a trip to the lake? Pregaming at your house before the concert? Do you host get togethers in your backyard? Social Function is here to help you plan your event from guestlist to menu. Log in to get started!
           </p>
           <button className={styles.btn}>
             <Link className={styles.link} to="/login">Log In</Link>
@@ -27,7 +27,7 @@ const Landing = ({ user }) => {
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
           </div>
-          <div className="carousel-inner">
+          <div className="carousel-inner" id={styles.carousel}>
             <div className="carousel-item active">
               <img src={`https://picsum.photos/id/390/640/480`} className="d-block w-320" alt="Person jumping into a lake while friends stand on a dock." />
             </div>
