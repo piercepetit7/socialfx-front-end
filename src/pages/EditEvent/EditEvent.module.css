@@ -1,0 +1,99 @@
+.header{
+  color: whitesmoke;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.name{
+  color: whitesmoke;
+  margin-right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name_des{
+  margin-right: 42px;
+}
+
+.date{
+  color: whitesmoke;
+  margin-right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.date_des{
+  margin-left: 25px;
+
+}
+
+.date_input{
+  margin-left: 30px;
+}
+
+.details{
+  color: whitesmoke;
+  margin-right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+
+.event_des{
+  margin-right: 29px;
+}
+
+.photo{
+  color: whitesmoke;
+  margin-right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  width: 35%;
+  margin-left: 350px;
+}
+
+.photo_des{
+  display: inline;
+  text-align: center;
+}
+
+.edit{
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  border: none;
+  background-color: rgb(255, 175, 46);
+  border-radius: 50px;
+  transition: 0.5s;
+}
+
+.edit:hover{
+  background-color: rgb(255, 210, 137);
+}
+
+.cancel{
+  border: 0;
+  background-color: rgb(255, 175, 46);
+  border-radius: 50px;
+  transition: 0.5s;
+}
+
+.cancel:hover{
+  background-color: rgb(255, 210, 137);
+}
+
+.buttons{
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}

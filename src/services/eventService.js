@@ -39,8 +39,8 @@ async function deleteEvent(eventId) {
 }
 
 async function updateEvent(eventData) {
-  const res = await fetch(`${BASE_URL}/${eventData._id}/details`, {
-    method: "PATCH",
+  const res = await fetch(`${BASE_URL}/${eventData._id}/`, {
+    method: "PUT",
     headers: { 
       'Authorization': `Bearer ${tokenService.getToken()}`,
       'Content-Type': 'application/json'

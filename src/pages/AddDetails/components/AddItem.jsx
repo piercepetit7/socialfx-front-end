@@ -1,5 +1,4 @@
 import { useState, useRef } from "react"
-import * as eventService from '../../../services/eventService'
 import { useParams } from 'react-router-dom'
 
 const ItemForm = (props) => {
@@ -7,7 +6,7 @@ const ItemForm = (props) => {
   const formElement = useRef()
   const [formData, setFormData] = useState({
     itemName:'',
-    itemType:''
+    itemType: '',
   })
   const handleChange = evt => {
     setFormData({...formData, [evt.target.name]: evt.target.value})
@@ -15,34 +14,43 @@ const ItemForm = (props) => {
 
   const handleItemSubmit = evt => {
     evt.preventDefault()
-    eventService.createAddItem(formData, eventId)
-    console.log('****ADD ITEM*****')
-    console.log('*formData*',formData)
+    props.setItems([...props.items, formData ])
+    setFormData({itemName:''})
+    setFormData({itemType:''})
+    //console.log('****ADD ITEM*****')
+    //console.log('*formData*',formData)
   }
-  console.log(eventId)
+  console.log("ITEMS",props)
   
 
 
   return (
     <>
     <form ref={formElement} onSubmit={handleItemSubmit}>
-      <label>Item Name:</label>
       <input
         type="text"
         name="itemName"
         placeholder="Item..."
+        key={formData.itemName}
         value={formData.itemName}
         onChange={handleChange}
       />
       <br />
-      <label>Item Type:</label>
-      <input
+      <label>Select Type</label>
+        <select
+        value={formData.itemType} onChange={handleChange} name="itemType" id="itemType" >
+          {/* <option value="">Food or Supplies...</option> */}
+          <option>Pick Type</option>
+          <option name="itemType" key={formData.itemType['food']} value={formData.itemType['food']}>Food</option>
+          <option name="itemType" key={formData.itemType['supplies']} value={formData.itemType['supplies']}>Supplies</option>
+        </select>       
+      {/* <input
         type="text"
         placeholder="Food or Supplies..."
         name="itemType"
         value={formData.itemType}
         onChange={handleChange}
-      />
+      /> */}
       <button
         type="submit"
       >
