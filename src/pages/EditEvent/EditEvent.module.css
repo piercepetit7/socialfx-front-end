@@ -71,10 +71,24 @@
   justify-content: center;
   margin-right: 15px;
   border: none;
+  background-color: rgb(255, 175, 46);
+  border-radius: 50px;
+  transition: 0.5s;
+}
+
+.edit:hover{
+  background-color: rgb(255, 210, 137);
 }
 
 .cancel{
   border: 0;
+  background-color: rgb(255, 175, 46);
+  border-radius: 50px;
+  transition: 0.5s;
+}
+
+.cancel:hover{
+  background-color: rgb(255, 210, 137);
 }
 
 .buttons{
