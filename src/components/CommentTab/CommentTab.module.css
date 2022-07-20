@@ -23,8 +23,18 @@
   width: 45vw;
   background-color: white;
   padding: 30px;
+  overflow-y: auto;
 }
 
 .mainNextDiv > form {
   margin: 30px 0 0 0;
+}
+
+.comment {
+  color: black;
+  list-style: none;
+}
+
+.commentTab {
+  color: black;
 }

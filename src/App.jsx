@@ -13,7 +13,6 @@ import * as eventService from './services/eventService'
 import AddDetails from './pages/AddDetails/AddDetails'
 import EventList from './pages/EventList/EventList'
 import EventShow from './pages/EventShow/EventShow'
-import CommentForm from './components/CommentForm/CommentForm'
 import EditEvent from './pages/EditEvent/EditEvent'
 import CommentTab from './components/CommentTab/CommentTab'
 import ItemForm from './pages/AddDetails/components/AddItem'
@@ -71,6 +70,11 @@ const App = () => {
     setEvents(newEventArray)
     navigate('/all')
   }
+
+  const handleDeleteComment = async (commentId, eventId) => {
+    const savedEvent = await eventService.deleteComment(commentId, eventId)
+    setEvents(events.filter(event => eventId !== savedEvent))
+  }
   
   return (
     <>
@@ -83,7 +87,7 @@ const App = () => {
             <Route path="/add" element={<AddEvent handleAddEvent={handleAddEvent} events={events}/>} />
             <Route path="/all" element={<EventList handleDeleteEvent={handleDeleteEvent} events={events} user={user} setEvents={setEvents}/>} />
             <Route path="/events/:eventId/details" element={<AddDetails ActForm={ActForm} ItemForm={ItemForm} events={events} user={user}/>} />
-            <Route path="/events/:eventId" element={<EventShow handleDeleteEvent={handleDeleteEvent} events={events} user={user} setEvents={setEvents} CommentTab={CommentTab}/>} />
+            <Route path="/events/:eventId" element={<EventShow handleDeleteEvent={handleDeleteEvent} events={events} user={user} setEvents={setEvents} CommentTab={CommentTab} handleDeleteComment={handleDeleteComment}/>} />
             <Route
               path="/signup"
               element={<Signup handleSignupOrLogin={handleSignupOrLogin} events={events}/>}

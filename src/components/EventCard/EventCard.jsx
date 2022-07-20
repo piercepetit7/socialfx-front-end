@@ -6,7 +6,7 @@ import { faUserPen } from '@fortawesome/free-solid-svg-icons'
 
 const EventCard = ({event, randEvtImgId, user, handleDeleteEvent, EventShow}) => {
   
-  console.log('event card', event)
+  // console.log('event card', event)
   return (
     <>
     <div className={styles.card}>

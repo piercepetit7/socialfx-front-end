@@ -12,14 +12,11 @@ const EventShow = (props) => {
   const [component, setComponent] = useState('FoodSupplies')
   const [event, setEvent] = useState({}) 
   const location = useLocation()
-  console.log('*************************')
-  console.log(typeof location.state.event._id)
-  console.log('event show', props.state)
 
   useEffect(()=>{
     const fetchEvent = async() => {
       const eventData = await show(location.state.event._id)
-      console.log('EVENTDATA',eventData)
+
       setEvent(eventData)
     }
     fetchEvent()
@@ -29,7 +26,7 @@ const EventShow = (props) => {
   //   return <h1>No Events</h1>
   //   console.log("here",props.events)
   // }
-console.log('^^^^^^^^^^^^^^^^^^^^^^^^', event)
+
   return (
     <>
       <div className={styles.eventShowMainBody}>
@@ -66,7 +63,7 @@ console.log('^^^^^^^^^^^^^^^^^^^^^^^^', event)
           { component === 'GuestList' ? <GuestList />: "" }
           { component === 'Activities' ? <Activities />: "" }
           { component === 'FoodSupplies' ? <FoodSupplies />: "" }
-          { component === 'Comments' ? <CommentTab event={event}/>: "" }
+          { component === 'Comments' ? <CommentTab event={event} handleDeleteComment={props.handleDeleteComment}/>: "" }
           </div>
         </div>
       </div>
