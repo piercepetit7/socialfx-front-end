@@ -16,7 +16,6 @@ const FoodSupplies = () => {
   // }, [])
 
 
-
   const handleChange = evt => {
     setAddItemData({...addItemData, [evt.target.name]: evt.target.value})
   }
