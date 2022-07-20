@@ -23,7 +23,7 @@ const EventCard = ({event, randEvtImgId, user, handleDeleteEvent, EventShow}) =>
       <h1 className={styles.name}>{event.eventName}
         <p className={styles.card_desc}>{event.eventDetails}</p>
         <p className={styles.owner}>Host: {event.owner.name}</p>
-        <p className={styles.time}>{event.eventDate}</p>
+        <p className={styles.time}>{event.eventDate.slice(0,16,)}</p>
       </h1>      
       {user?.profile === event.owner?._id && 
       <div className={styles.footer}>
