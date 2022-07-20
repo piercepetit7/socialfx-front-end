@@ -1,12 +1,12 @@
 .main{
-  border: solid 1px black;
-  width: 54vw;
-  height: 95vh;
+  border:  solid 1px #f96900;
+  width: 53vw;
+  height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0 1vw 0 0;
+  margin: 0 2vw 0 0;
 }
 
 .mainNextDiv{
@@ -17,12 +17,16 @@
   padding: 0;
 }
 
+
 .commentArea {
   border: solid 1px black;
-  height: 75vh;
+  height: 60vh;
   width: 45vw;
-  background-color: white;
+  background-color: #e9ebed;
+  opacity: 0.9;
   padding: 30px;
+  color: black;
+  overflow-y: auto;
 }
 
 .mainNextDiv > form {
