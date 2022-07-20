@@ -59,7 +59,7 @@ console.log('^^^^^^^^^^^^^^^^^^^^^^^^', event)
           <div className={styles.mainRightLeft}>
             <button className={styles.tab} onClick={() => setComponent('GuestList')}> Guest List</button>
             <button className={styles.tab} onClick={() => setComponent('Activities')}>Activities</button>
-            <button className={styles.tab} onClick={() => setComponent('FoodSupplies')}>Food/Supplies</button>
+            <button className={styles.tab} onClick={() => setComponent('FoodSupplies')}>Food & Supplies</button>
             <button className={styles.tab} onClick={() => setComponent('Comments')}>Comments</button>
           </div>
           <div className={styles.mainRightRight}>
