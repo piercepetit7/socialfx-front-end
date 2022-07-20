@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import styles from './NavBar.module.css'
 
 const NavBar = ({ user, handleLogout }) => {
+  console.log('==========', user.profile.photo)
   return (
     <>
     <header>
