@@ -63,7 +63,7 @@ const EventShow = (props) => {
           { component === 'GuestList' ? <GuestList />: "" }
           { component === 'Activities' ? <Activities />: "" }
           { component === 'FoodSupplies' ? <FoodSupplies />: "" }
-          { component === 'Comments' ? <CommentTab event={event} handleDeleteComment={props.handleDeleteComment}/>: "" }
+          { component === 'Comments' ? <CommentTab event={event} handleDeleteComment={props.handleDeleteComment} setComments={props.setComments} comments={props.comments}/>: "" }
           </div>
         </div>
       </div>

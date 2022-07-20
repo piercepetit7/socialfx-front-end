@@ -6,7 +6,7 @@ import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import * as eventService from '../../services/eventService'
 
 const CommentTab = (props) => {
-  const [comments, setComments] = useState(props.event?.comments)
+  // const [comments, setComments] = useState(props.event?.comments)
   // useEffect(() => {
   //   const getComments = async () => {
   //     const formData = await eventService.getAllComments()
@@ -24,7 +24,7 @@ const CommentTab = (props) => {
               <li className={styles.comment} key={comment._id}><button onClick={() => handleDeleteComment(comment._id)}><FontAwesomeIcon icon={faTrashCan}/></button>{comment.content}</li>
             )}
           </div> */}
-          <CommentForm event={props.event} comments={comments} setComments={setComments} handleDeleteComment={props.handleDeleteComment}/>
+          <CommentForm event={props.event} comments={props.comments} setComments={props.setComments} handleDeleteComment={props.handleDeleteComment}/>
         </div>
       </div>
     </>

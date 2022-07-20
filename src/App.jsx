@@ -22,6 +22,7 @@ const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [events, setEvents] =  useState([])
   const navigate = useNavigate()
+  const [comments, setComments] = useState([])
 
   const handleLogout = () => {
     authService.logout()
@@ -74,6 +75,7 @@ const App = () => {
   const handleDeleteComment = async (commentId, eventId) => {
     const savedEvent = await eventService.deleteComment(commentId, eventId)
     setEvents(events.map(event => eventId !== savedEvent))
+    setComments([])
   }
   
   return (
@@ -87,7 +89,7 @@ const App = () => {
             <Route path="/add" element={<AddEvent handleAddEvent={handleAddEvent} events={events}/>} />
             <Route path="/all" element={<EventList handleDeleteEvent={handleDeleteEvent} events={events} user={user} setEvents={setEvents}/>} />
             <Route path="/events/:eventId/details" element={<AddDetails ActForm={ActForm} ItemForm={ItemForm} events={events} user={user}/>} />
-            <Route path="/events/:eventId" element={<EventShow handleDeleteEvent={handleDeleteEvent} events={events} user={user} setEvents={setEvents} CommentTab={CommentTab} handleDeleteComment={handleDeleteComment}/>} />
+            <Route path="/events/:eventId" element={<EventShow handleDeleteEvent={handleDeleteEvent} events={events} user={user} setEvents={setEvents} CommentTab={CommentTab} handleDeleteComment={handleDeleteComment} setComments={setComments} comments={comments}/>} />
             <Route
               path="/signup"
               element={<Signup handleSignupOrLogin={handleSignupOrLogin} events={events}/>}

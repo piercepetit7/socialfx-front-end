@@ -26,9 +26,11 @@ const CommentForm = (props) => {
     <>
       <div>
         <h1>CommentTab</h1>
-          {props.comments?.map((comment, idx) =>
+        {//user?.profile === props.comment.owner?._id && 
+          props.comments.map((comment, idx) =>
             <li  key={idx}><button onClick={() => props.handleDeleteComment(comment._id, props.event._id)}><FontAwesomeIcon icon={faTrashCan}/></button>{}{comment.content}</li>
-          )}
+          )
+        }
         </div>
       <form autoComplete="off" ref={formElement} onSubmit={handleCommentSubmit}>
         <label htmlFor="comment-input">Comment:</label>
