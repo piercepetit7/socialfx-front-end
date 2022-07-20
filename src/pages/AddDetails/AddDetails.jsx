@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { show } from '../../services/eventService'
 import ActForm from './components/AddAct';
+import AddGuestList from './components/AddGuestList';
 import ItemForm from './components/AddItem';
-
+import Profiles from '../Profiles/Profiles';
 
 
 const AddDetails = (props) => {
@@ -13,6 +14,7 @@ const AddDetails = (props) => {
   const [event, setEvent] = useState()
   const [activities, setAct] = useState([])
   const [items, setItems] = useState([])
+  const [guestList, setGuestList] =useState([])
   // const [formData, setFormData] = useState({
   //   activities: '',
   //   guestList: '',
@@ -57,9 +59,32 @@ const AddDetails = (props) => {
         <h5>{event?.eventDetails}</h5>
       </div>
       <div>
-        <ActForm state={{event}}/>
+        <ActForm setAct={setAct} activities={activities}/>
+        <div>
+          <ul>
+            {activities.map(activity => 
+              <li key={activity._id}>
+                {activity.actName}
+              </li>
+            )
+          }
+          </ul>
+        </div>
         <br/>
-        <ItemForm state={{event}}/>
+        <ItemForm setItems={setItems} items={items}/>
+        <div>
+          <ul>
+            {items.map(item => 
+              <li key={item._id}>
+                {item.itemName} {item.itemtype}
+              </li>
+            )
+          }
+          </ul>
+        </div>
+      </div>
+      <div>
+        <AddGuestList />
       </div>
     </>
   )
