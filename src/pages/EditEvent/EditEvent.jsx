@@ -32,8 +32,7 @@ const EditEvent = (props) => {
   }
 
   const {eventName, eventDate, eventDetails } = formData
-  
-  console.log(typeof eventDate)
+  console.log(eventDate)
 
   const isFormInvalid = () => {
     return !(eventName && eventDate)
@@ -59,7 +58,7 @@ const EditEvent = (props) => {
           <input
             type="datetime-local"
             id="eventDate"
-            value= {eventDate}
+            value={eventDate.slice(0,16)}
             name="eventDate"
             onChange={handleChange}
           />
