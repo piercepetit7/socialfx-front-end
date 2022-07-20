@@ -27,14 +27,48 @@
   flex-wrap: wrap;
   justify-content: space-around;
   border-radius: 9px;
-  background-color: #ff954a;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.604), rgb(243, 163, 77));
   transition: 0.5s;
 }
 
 .card:hover{
-  background-color: grey;
   color: whitesmoke;
   cursor: pointer;
+  border-radius: 9px;
+}
+
+.card {
+  position: relative;
+  min-height: 200px;
+  background-image: linear-gradient(
+    to right,
+    hsl(31, 92%, 49%)
+    hsl(33, 89%, 93%),
+  );
+  z-index: 1;
+  border-radius: 9px;
+}
+
+.card::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(
+    to bottom,
+    hsl(33, 89%, 93%),
+    hsl(31, 92%, 49%)
+  );
+  z-index: -1;
+  transition: opacity 0.5s linear;
+  opacity: 0;
+  border-radius: 9px;
+}
+.card:hover::before {
+  opacity: 1;
+  border-radius: 9px;
 }
 
 .card_desc {
