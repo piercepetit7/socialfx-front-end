@@ -24,16 +24,16 @@ const AddDetails = (props) => {
   //     [e.target.name]: e.target.value,
   //   })
   // }
-  const handleSubmit = async e => {
-    e.preventDefault()
-    try {
-      //props.handleUpdateEvent(formData)
-      // navigate('/')
-      // change to item and act page ^
-    } catch (err) {
-      console.log(err)
-    }
-  }
+  // const handleSubmit = async e => {
+  //   e.preventDefault()
+  //   try {
+  //     //props.handleUpdateEvent(formData)
+  //     // navigate('/')
+  //     // change to item and act page ^
+  //   } catch (err) {
+  //     console.log(err)
+  //   }
+  // }
   useEffect(()=>{
     const fetchEvent = async() => {
       const eventData = await show(eventId)
@@ -57,9 +57,9 @@ const AddDetails = (props) => {
         <h5>{event?.eventDetails}</h5>
       </div>
       <div>
-        <ActForm />
+        <ActForm state={{event}}/>
         <br/>
-        <ItemForm />
+        <ItemForm state={{event}}/>
       </div>
     </>
   )
