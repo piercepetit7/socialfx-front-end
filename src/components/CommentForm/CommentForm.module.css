@@ -1,0 +1,16 @@
+.list {
+  list-style: none;
+}
+
+.delete{
+  border: none;
+  background-color: #333;
+  border-radius: 50px;
+  color: whitesmoke;
+  transition: 0.5s;
+}
+
+.delete:hover{
+  color: red;
+  background-color: whitesmoke;
+}
