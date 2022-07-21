@@ -1,5 +1,5 @@
 .main{
-  border:  solid 1px #f96900;
+  border:  solid 1px #f968004b;
   width: 53vw;
   height: 85vh;
   display: flex;
@@ -7,16 +7,37 @@
   align-items: center;
   justify-content: center;
   margin: 0 2vw 0 0;
+  border-radius: 50px;
 }
 
 .mainNextDiv{
   text-align: center;
-  padding-bottom: 20px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
-  padding: 0;
+  height: 60vh;
+  width: 45vw;
+  border: solid 1px black;
+  background-color: #e9ebed;
+  overflow-y: auto;
+  color: black;
 }
 
 .list {
   list-style: none;
+}
+
+.addComment {
+  border: none;
+  background-color: #333;
+  border-radius: 50px;
+  color: whitesmoke;
+  transition: 0.5s;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.addComment:hover {
+  color: #f96900;
+  background-color: whitesmoke;
 }

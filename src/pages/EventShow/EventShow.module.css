@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .eventShowMainBody{
   display: flex;
   flex-direction: row;
   padding: 40px;
   color: #e9ebed;
+  font-family: 'Poppins', sans-serif;
 }
 
 .mainLeftShowPage{
@@ -12,10 +15,9 @@
   justify-content: space-evenly;
   width: 30vw;
   height: 87vh;
-  /* border-left: solid 3px #f96900;
-  border-top: solid 3px #f96900;
-  border-bottom: solid 3px #f96900; */
+  background-color: rgba(245, 245, 245, 0.054);
   text-align: center;
+  border-radius: 50px;
 }
 
 .mainRightShowPage{
@@ -23,7 +25,7 @@
   flex-direction: row;
   width: 70vw;
   height: 87vh;
-  border: solid 3px #f96900;
+  /* border: solid 3px #f96900; */
   background-color: #243b4a;
 }
 
@@ -50,18 +52,24 @@
 
 .tab{
   font-size: 30px;
-  background-color: #e9ebed;
+  background-color: transparent;
   width: 10vw;
   height: 6vh;
-  border:  solid 1px #f96900;
+  /* border:  solid 1px #f96900; */
   text-overflow: ellipsis;
   transition: 0.5s;
+  border-radius: 50px;
+  border: none;
+  color: orange;
 }
 
 
 .tab:hover {
-  background-color: #f96900;
-  border-color: whitesmoke;
+  color: whitesmoke;
+}
+
+.tab:focus{
+  color: whitesmoke;
 }
 
 .mainLeftShowPage > div {
@@ -89,6 +97,10 @@
   color: orange;
 }
 
+.photo_card{
+  overflow-y: hidden;
+}
+
 @media (max-width: 974px) {
   .eventShowMainBody{
     display: flex;
@@ -96,6 +108,11 @@
     padding: 40px;
     color: #e9ebed;
   }
+
+  .photo_card{
+    overflow-y: hidden;
+  }
+
   .mainLeftShowPage{
     display: flex;
     flex-direction: row;
@@ -104,6 +121,8 @@
     width: 90vw;
     height: 20vh;
     text-align: center;
+    position: relative;
+    overflow-y: hidden;
   }
   .mainRightShowPage{
     display: flex;
@@ -118,7 +137,6 @@
     justify-content: space-around;
     align-items: flex-end;
     width: 15vw;
-    /* margin: 0; */
     margin: 20px 20px 20px 20px;
   }
   .mainRightRight{
@@ -131,17 +149,17 @@
     text-align: center;
   }
   .tab{
-    font-size: 16px;
-    background-color: #e9ebed;
+    font-size: 20px;
     width: 15vw;
     height: 6vh;
-    border:  solid 1px #f96900;
   }
   .tab_food{
-    font-size: 14px;
-    background-color: #e9ebed;
+    font-size: 20px;
     width: 15vw;
     height: 6vh;
-    border:  solid 1px #f96900;
+  }
+
+  .details{
+    margin: 0;
   }
 }

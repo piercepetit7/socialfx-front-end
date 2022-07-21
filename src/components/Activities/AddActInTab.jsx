@@ -1,5 +1,8 @@
 import { useState, useRef } from "react"
 import * as eventServices from '../../services/eventService'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCirclePlus } from '@fortawesome/free-solid-svg-icons'
+import styles from './AddActInTab.module.css'
 
 const AddActInTab = ({event, setEvent}) => {
   const [formData, setFormData] = useState({
@@ -35,8 +38,11 @@ const AddActInTab = ({event, setEvent}) => {
       />
       <button
         type="submit"
+        className={styles.addBtn}
       >
-        Add Activity 
+        <FontAwesomeIcon 
+        icon={faCirclePlus} 
+        /> 
       </button>
     </form>
     </>

@@ -6,7 +6,7 @@ import EventShow from '../EventShow/EventShow'
 
 
 const EventList = (props) => {
-  const evtIds = [1042, 1047, 1059, 1060, 1070, 131]
+  const evtIds = [1042, 1047, 1059, 1060, 1070]
   useEffect(() => {
     const getEvents = async() => {
       const eventData = await eventService.getAll()
@@ -22,19 +22,21 @@ const EventList = (props) => {
   return (
     <>
     <h1 className={styles.header}>Current Events</h1>
-    <div className={styles.card}>
-    {props.events.map(event =>
-        <EventCard 
-        key={event._id} 
-        event={event}
-        randEvtImgId={evtIds[Math.floor(Math.random()*(evtIds.length))]}
-        user={props.user}
-        handleDeleteEvent={props.handleDeleteEvent}
-        EventShow={EventShow}
-        className={styles.card}
-        />
-      )}
+    <div id={styles.body}>
+      <div className={styles.card}>
+      {props.events.map(event =>
+          <EventCard 
+          key={event._id} 
+          event={event}
+          randEvtImgId={evtIds[Math.floor(Math.random()*(evtIds.length))]}
+          user={props.user}
+          handleDeleteEvent={props.handleDeleteEvent}
+          EventShow={EventShow}
+          className={styles.card}
+          />
+        )}
       </div>
+    </div>
     </>
   );
 }

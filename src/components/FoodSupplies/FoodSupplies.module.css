@@ -1,5 +1,5 @@
 .main{
-  border:  solid 1px #f96900;
+  border:  solid 1px #f968004b;
   width: 53vw;
   height: 85vh;
   display: flex;
@@ -7,6 +7,7 @@
   align-items: center;
   justify-content: center;
   margin: 0 2vw 0 0;
+  border-radius: 50px;
 }
 
 .mainFoodSupDiv{
@@ -67,4 +68,23 @@ h3{
     justify-content: center;
     margin: 0 2vw 0 0;
   }
+}
+
+.addComment {
+  border: none;
+  background-color: #333;
+  border-radius: 50px;
+  color: whitesmoke;
+  transition: 0.5s;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.addComment:hover {
+  color: #f96900;
+  background-color: whitesmoke;
+}
+
+.list {
+  list-style: none;
 }
