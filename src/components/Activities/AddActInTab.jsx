@@ -31,6 +31,7 @@ const AddActInTab = ({event, setEvent}) => {
         placeholder="Activity..."
         value={formData.actName}
         onChange={handleChange}
+        autoComplete="off"
       />
       <button
         type="submit"

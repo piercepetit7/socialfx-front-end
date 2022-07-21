@@ -26,6 +26,7 @@ const ActForm = (props) => {
         placeholder="Activity..."
         value={formData.actName}
         onChange={handleChange}
+        autoComplete="off"
       />
       <button
         type="submit"
