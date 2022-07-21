@@ -111,6 +111,10 @@
   font-size: 22px;
 }
 
+.edit:hover{
+  color: white;
+}
+
 
 .delete{
   border: none;

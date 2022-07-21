@@ -93,7 +93,7 @@ const EditEvent = (props) => {
         <button disabled={isFormInvalid()} type='submit' className={styles.edit}>
           Edit Event
         </button>
-        <Link to="/">
+        <Link to="/all">
           <button className={styles.cancel}>Cancel</button>
         </Link>
         </div>
