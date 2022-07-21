@@ -12,9 +12,9 @@
   justify-content: space-evenly;
   width: 30vw;
   height: 87vh;
-  border-left: solid 3px #f96900;
+  /* border-left: solid 3px #f96900;
   border-top: solid 3px #f96900;
-  border-bottom: solid 3px #f96900;
+  border-bottom: solid 3px #f96900; */
   text-align: center;
 }
 
@@ -48,15 +48,19 @@
 }
 
 .tab{
-  font-size: 18px;
+  font-size: 30px;
   background-color: #e9ebed;
   width: 10vw;
   height: 6vh;
   border:  solid 1px #f96900;
+  text-overflow: ellipsis;
+  transition: 0.5s;
 }
+
 
 .tab:hover {
   background-color: #f96900;
+  border-color: whitesmoke;
 }
 
 .mainLeftShowPage > div {
@@ -79,7 +83,7 @@
     flex-direction: column;
     padding: 40px;
     color: #e9ebed;
-  },
+  }
   .mainLeftShowPage{
     display: flex;
     flex-direction: row;
@@ -94,6 +98,7 @@
     flex-direction: row;
     width: 90vw;
     background-color: #243b4a;
+    margin-right: 20px;
   }
   .mainRightLeft{
     display: flex;
@@ -101,8 +106,8 @@
     justify-content: space-around;
     align-items: flex-end;
     width: 15vw;
-    margin: 0;
-    margin: 20px 0 20px 20px;
+    /* margin: 0; */
+    margin: 20px 20px 20px 20px;
   }
   .mainRightRight{
     display: flex;
@@ -115,6 +120,13 @@
   }
   .tab{
     font-size: 16px;
+    background-color: #e9ebed;
+    width: 15vw;
+    height: 6vh;
+    border:  solid 1px #f96900;
+  }
+  .tab_food{
+    font-size: 14px;
     background-color: #e9ebed;
     width: 15vw;
     height: 6vh;

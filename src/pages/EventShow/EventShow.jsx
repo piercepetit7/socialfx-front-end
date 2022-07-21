@@ -9,6 +9,11 @@ import styles from './EventShow.module.css'
 import { Link } from 'react-router-dom';
 import * as eventService from '../../services/eventService'
 import { DateTime } from "luxon";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPeopleGroup } from '@fortawesome/free-solid-svg-icons'
+import { faChampagneGlasses } from '@fortawesome/free-solid-svg-icons'
+import { faBurger } from '@fortawesome/free-solid-svg-icons'
+import { faComments } from '@fortawesome/free-solid-svg-icons'
 
 const EventShow = (props) => {
   const [component, setComponent] = useState('FoodSupplies')
@@ -63,10 +68,10 @@ const EventShow = (props) => {
         </div> 
         <div className={styles.mainRightShowPage}>
           <div className={styles.mainRightLeft}>
-            <button className={styles.tab} onClick={() => setComponent('GuestList')}> Guest List</button>
-            <button className={styles.tab} onClick={() => setComponent('Activities')}>Activities</button>
-            <button className={styles.tab} onClick={() => setComponent('FoodSupplies')}>Food & Supplies</button>
-            <button className={styles.tab} onClick={() => setComponent('Comments')}>Comments</button>
+            <button className={styles.tab} onClick={() => setComponent('GuestList')}><FontAwesomeIcon icon={faPeopleGroup}/></button>
+            <button className={styles.tab} onClick={() => setComponent('Activities')}><FontAwesomeIcon icon={faChampagneGlasses}/></button>
+            <button className={styles.tab} onClick={() => setComponent('FoodSupplies')}><FontAwesomeIcon icon={faBurger}/></button>
+            <button className={styles.tab} onClick={() => setComponent('Comments')}><FontAwesomeIcon icon={faComments}/></button>
           </div>
           <div className={styles.mainRightRight}>
           { component === 'GuestList' ? <GuestList />: "" }
