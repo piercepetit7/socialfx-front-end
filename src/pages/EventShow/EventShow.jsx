@@ -14,6 +14,7 @@ import { faPeopleGroup } from '@fortawesome/free-solid-svg-icons'
 import { faChampagneGlasses } from '@fortawesome/free-solid-svg-icons'
 import { faBurger } from '@fortawesome/free-solid-svg-icons'
 import { faComments } from '@fortawesome/free-solid-svg-icons'
+import { faPencil } from '@fortawesome/free-solid-svg-icons'
 
 const EventShow = (props) => {
   const [component, setComponent] = useState('FoodSupplies')
@@ -61,7 +62,7 @@ const EventShow = (props) => {
             <p>{event.eventDetails}</p>
             <p>{DateTime.fromISO(event.eventDate).toLocal().toLocaleString(DateTime.DATETIME_MED)}</p>
             {props.user?.profile === event.owner?._id && 
-              <Link to='/edit' state={{event}} className='edit-btn'>Edit</Link>
+              <Link to='/edit' state={{event}} className={styles.edit_link}><FontAwesomeIcon icon={faPencil} /></Link>
             }
           
           </div>
