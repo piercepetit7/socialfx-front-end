@@ -19,11 +19,9 @@ console.log(props.event)
                 className={styles.list}
                 >
                   {activity.actName}
-                  {props.user?.profile === activity?.supplier?._id &&
                     <button className={styles.delete} onClick={() => props.handleDeleteActivity(activity._id, props.event._id)}>
                     <FontAwesomeIcon icon={faTrashCan}/>
                     </button>
-                  }
                 </li>
               )}
               </ul>

@@ -35,6 +35,16 @@ const EventShow = (props) => {
     // setComments(savedEvent.preventDefault())
   }
 
+  const handleDeleteActivity = async (activityId, eventId) => {
+    const savedEvent = await eventService.deleteActivity(activityId, eventId)
+    setEvent(savedEvent)
+  }
+
+  const handleDeleteItem = async (itemId, eventId) => {
+    const savedEvent = await eventService.deleteItem(itemId, eventId)
+    setEvent(savedEvent)
+  }
+
   // if(!props?.events?.length){
   //   return <h1>No Events</h1>
   //   console.log("here",props.events)
@@ -74,9 +84,9 @@ const EventShow = (props) => {
             <button className={styles.tab} onClick={() => setComponent('Comments')}><FontAwesomeIcon icon={faComments}/></button>
           </div>
           <div className={styles.mainRightRight}>
-          { component === 'GuestList' ? <GuestList event={event}/>: "" }
-          { component === 'Activities' ? <Activities event={event} setEvent={setEvent}/>: "" }
-          { component === 'FoodSupplies' ? <FoodSupplies event={event} setEvent={setEvent}/>: "" }
+          { component === 'GuestList' ? <GuestList event={event} user={props.user}/>: "" }
+          { component === 'Activities' ? <Activities event={event}  handleDeleteActivity={handleDeleteActivity} setEvent={setEvent} user={props.user}/>: "" }
+          { component === 'FoodSupplies' ? <FoodSupplies event={event} handleDeleteItem={handleDeleteItem} setEvent={setEvent} user={props.user}/>: "" }
           { component === 'Comments' ? <CommentTab event={event} handleDeleteComment={handleDeleteComment} setEvent={setEvent} comments={event.comments} user={props.user}/>: "" }
           </div>
         </div>
