@@ -79,3 +79,55 @@
   color: whitesmoke;
   margin-right: 3px;
 }
+
+.guestdiv{
+  align-items: center;
+  display: grid;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.guest_txt{
+  color: whitesmoke;
+  margin-right: 10px;
+}
+
+.add_guest_btn{
+  background-color: whitesmoke;
+  border-radius: 10px;
+  box-shadow: 0 9px 3px -5px #f96900;
+  font-size: 18px;
+  margin-left: 20px;
+  margin-top: 20px;
+  border-color: #333;
+  transition: 0.3s;
+}
+
+.add_guest_btn:hover{
+  color: whitesmoke;
+  background-color: #333;
+  border-color: whitesmoke;
+}
+
+.main_submit_btn{
+  background-color: whitesmoke;
+  border-radius: 10px;
+  box-shadow: 0 9px 3px -5px #f96900;
+  font-size: 18px;
+  margin-left: 20px;
+  margin-top: 20px;
+  border-color: #333;
+  transition: 0.3s;
+}
+
+.main_submit_btn:hover{
+  color: whitesmoke;
+  background-color: #333;
+  border-color: whitesmoke;
+}
+
+.submit_btn_div{
+  align-items: center;
+  justify-content: center;
+  display: grid;
+}
