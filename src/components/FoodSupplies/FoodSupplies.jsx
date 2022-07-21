@@ -1,65 +1,24 @@
-import { useEffect, useState, useRef } from "react";
-import * as eventService from '../../services/eventService'
 import styles from './FoodSupplies.module.css'
+import AddItemsInTab from '../FoodSupplies/AddItemsInTab'
 
-const FoodSupplies = () => {
-  const [foodSuppliesItem, setFoodSuppliesItem] = useState([])
-  const formElement = useRef()
-  const [addItemData, setAddItemData] = useState({})
-
-  // useEffect(() => {
-  //   const fetchFoodSuppliesList = async () => {
-  //     const foodSuppliesData = await getAllFoodSupplies()
-  //     setFoodSuppliesItem(foodSuppliesData.results)
-  //   }
-  //   fetchFoodSuppliesList()
-  // }, [])
-
-
-  const handleChange = evt => {
-    setAddItemData({...addItemData, [evt.target.name]: evt.target.value})
-  }
-
-  const handleItemSubmit = evt => {
-    evt.preventDefault()
-    eventService.createItem()
-  }
-
-  const handleDeleteItem = evt => {
-    evt.preventDefault()
-    eventService.deleteItem()
-  }
+const FoodSupplies = (props) => {
 
   return (
     <>
       <div className={styles.main}>
         <div className={styles.mainFoodSupDiv}>
-          <h2>Host is bringing:</h2>
+          <h2>Foods & Supplies</h2>
           <div className={styles.hostList}>
-              {/* <ul>
-              {events.items.map((item, idx) =>
-                <li> {items.itemName}
-                <form onSubmit={handleDeleteItem} >
-                <button id="deleteX" type="submit">X</button>
-                </form>
+            <ul>
+              {props.event?.items?.map(item =>
+                <li style={{color: 'black'}}key={item._id}> {item.itemName}
+                  
                 </li>
                 )}
-              </ul> */}
+            </ul>
           </div>
+          <AddItemsInTab  event={props.event} setEvent={props.setEvent}/>
         </div>
-          <h3>Guests bringing:</h3>
-        <div className={styles.guestsBring}>
-        </div>
-        <form className={styles.addItemForm} autoComplete="off" ref={formElement} onSubmit={handleItemSubmit}>
-          <input 
-            type="text" 
-            name="item"
-            value={addItemData.item}          
-            onChange={handleChange}
-            className='inputField'
-            />
-          <button id='addBtn' type='submit'> Add </button>
-        </form>
       </div>
     </>
   );

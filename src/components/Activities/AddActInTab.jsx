@@ -1,11 +1,11 @@
-import { useState, useRef } from "react"
+import { useState } from "react"
 import * as eventServices from '../../services/eventService'
 
 const AddActInTab = ({event, setEvent}) => {
-  const formElement = useRef()
   const [formData, setFormData] = useState({
     actName: ''
   })
+  
   const handleChange = evt => {
     setFormData({...formData, [evt.target.name]: evt.target.value})
   }
@@ -24,13 +24,12 @@ const AddActInTab = ({event, setEvent}) => {
 
   return (
     <>
-    <form ref={formElement} onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
         name="actName"
         placeholder="Activity..."
         value={formData.actName}
-        key={formData.actName}
         onChange={handleChange}
       />
       <button
