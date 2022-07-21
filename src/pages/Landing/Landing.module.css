@@ -38,6 +38,10 @@
   color: black;
 }
 
+.link:hover {
+  color: #f96900;
+}
+
 .left {
   display: flex;
   align-items: center;
@@ -59,7 +63,7 @@
   margin: 0 10px;
 }
 
-#carouselExampleIndicators {
+#carouselExampleSlidesOnly {
   padding: 50px
 }
 
