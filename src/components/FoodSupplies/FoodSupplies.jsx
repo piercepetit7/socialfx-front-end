@@ -1,4 +1,6 @@
 import styles from './FoodSupplies.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import AddItemsInTab from '../FoodSupplies/AddItemsInTab'
 
 const FoodSupplies = (props) => {
@@ -11,8 +13,15 @@ const FoodSupplies = (props) => {
           <div className={styles.hostList}>
             <ul>
               {props.event?.items?.map(item =>
-                <li style={{color: 'black'}}key={item._id}> {item.itemName}
-                  
+                <li 
+                style={{color: 'black'}}
+                key={item._id}
+                className={styles.list}
+                > 
+                  {item.itemName}
+                    <button className={styles.delete} onClick={() => props.handleDeleteItem(item._id, props.event._id)}>
+                    <FontAwesomeIcon icon={faTrashCan}/>
+                    </button>
                 </li>
                 )}
             </ul>
