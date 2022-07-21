@@ -23,7 +23,7 @@
   flex-direction: row;
   width: 70vw;
   height: 87vh;
-  border: solid 3px #f96900;
+  /* border: solid 3px #f96900; */
   background-color: #243b4a;
 }
 
@@ -50,18 +50,25 @@
 
 .tab{
   font-size: 30px;
-  background-color: #e9ebed;
+  background-color: transparent;
   width: 10vw;
   height: 6vh;
-  border:  solid 1px #f96900;
+  /* border:  solid 1px #f96900; */
   text-overflow: ellipsis;
   transition: 0.5s;
+  border-radius: 50px;
+  margin-right: 10px;
+  border: none;
+  color: orange;
 }
 
 
 .tab:hover {
-  background-color: #f96900;
-  border-color: whitesmoke;
+  color: whitesmoke;
+}
+
+.tab:focus{
+  color: whitesmoke;
 }
 
 .mainLeftShowPage > div {
@@ -89,6 +96,10 @@
   color: orange;
 }
 
+.photo_card{
+  overflow-y: hidden;
+}
+
 @media (max-width: 974px) {
   .eventShowMainBody{
     display: flex;
@@ -96,6 +107,11 @@
     padding: 40px;
     color: #e9ebed;
   }
+
+  .photo_card{
+    overflow-y: hidden;
+  }
+
   .mainLeftShowPage{
     display: flex;
     flex-direction: row;
@@ -104,6 +120,8 @@
     width: 90vw;
     height: 20vh;
     text-align: center;
+    position: relative;
+    overflow-y: hidden;
   }
   .mainRightShowPage{
     display: flex;
@@ -131,17 +149,19 @@
     text-align: center;
   }
   .tab{
-    font-size: 16px;
-    background-color: #e9ebed;
+    font-size: 20px;
     width: 15vw;
     height: 6vh;
-    border:  solid 1px #f96900;
+    /* border:  solid 1px #f96900; */
   }
   .tab_food{
-    font-size: 14px;
-    background-color: #e9ebed;
+    font-size: 20px;
     width: 15vw;
     height: 6vh;
-    border:  solid 1px #f96900;
+    /* border:  solid 1px #f96900; */
+  }
+
+  .details{
+    margin: 0;
   }
 }
