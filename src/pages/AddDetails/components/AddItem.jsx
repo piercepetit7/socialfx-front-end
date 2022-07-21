@@ -16,8 +16,7 @@ const ItemForm = (props) => {
   const handleItemSubmit = evt => {
     evt.preventDefault()
     props.setItems([...props.items, formData ])
-    setFormData({itemName:''})
-    setFormData({itemType:''})
+    setFormData({itemName:'',itemType:''})
     //console.log('****ADD ITEM*****')
     //console.log('*formData*',formData)
   }
