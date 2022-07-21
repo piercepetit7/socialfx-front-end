@@ -102,23 +102,21 @@
   margin-left: 20px;
   color: #333;
   transition: 0.5s;
+  font-size: 22px;
 }
 
-.edit:hover{
-  font-size: 17px;
-}
 
 .delete{
   border: none;
-  background-color: #333;
   border-radius: 50px;
-  color: whitesmoke;
+  color: #333;
   transition: 0.5s;
+  background-color: transparent;
+  font-size: 22px;
 }
 
 .delete:hover{
   color: red;
-  background-color: whitesmoke;
 }
 
 .event_card_link{
