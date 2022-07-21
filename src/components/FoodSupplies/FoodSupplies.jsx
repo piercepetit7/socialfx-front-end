@@ -19,7 +19,11 @@ const FoodSupplies = (props) => {
                 className={styles.list}
                 > 
                   {item.itemName}
-                    <button className={styles.delete} onClick={() => props.handleDeleteItem(item._id, props.event._id)}>
+                    <button 
+                    className={styles.delete} 
+                    onClick={() => props.handleDeleteItem(item._id, props.event._id)}
+                    className={styles.addComment}
+                    >
                     <FontAwesomeIcon icon={faTrashCan}/>
                     </button>
                 </li>
