@@ -142,8 +142,6 @@ async function getAllComments(commentData, eventId) {
 
 
 async function deleteComment(commentId, eventId) {
-  console.log(eventId, "eventId")
-  console.log(commentId, "commentId")
   const res = await fetch(`${BASE_URL}/${eventId}/comments/${commentId}`, {
     method: "DELETE",
     headers: {

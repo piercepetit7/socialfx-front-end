@@ -2,6 +2,7 @@ import { useState, useRef} from 'react';
 import * as eventService from '../../services/eventService'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
+import styles from './CommentForm.module.css'
 
 
 
@@ -21,18 +22,26 @@ const CommentForm = (props) => {
     props.setEvent(updatedEvent)
     setCommentData({content:''})
   }
-
-  console.log(props)
-
+console.log(props.user.profile, 'hello')
   return (
     <>
       <div>
         <h1>CommentTab</h1>
-        {//props.user.profile === props.comment.author._id && 
-          props.comments.map((comment, idx) =>
-            <li  key={idx}><button onClick={() => props.handleDeleteComment(comment._id, props.event._id)}><FontAwesomeIcon icon={faTrashCan}/></button>{comment.content}</li>
-          )
-        }
+          {props.comments.map((comment, idx) =>
+            <li 
+              className={styles.list} 
+              key={idx}
+            >
+              {comment.author?.name} said: {comment.content}
+              {props.user?.profile === comment?.author?._id &&
+                <button className={styles.delete} onClick={() => props.handleDeleteComment(comment._id, props.event._id)}>
+                  <FontAwesomeIcon icon={faTrashCan}/>
+                </button>
+              }
+            </li>,
+          
+          console.log(props.comments)
+        )}
         </div>
       <form autoComplete="off" ref={formElement} onSubmit={handleCommentSubmit}>
         <label htmlFor="comment-input">Comment:</label>
