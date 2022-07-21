@@ -13,6 +13,7 @@ const EventCard = ({event, randEvtImgId, user, handleDeleteEvent, EventShow}) =>
   return (
     <>
     <div className={styles.card}>
+      <Link to={`/events/${event._id}`} state={{event}} className={styles.event_card_link}>
       <img 
         src={
           event.photo
@@ -23,7 +24,6 @@ const EventCard = ({event, randEvtImgId, user, handleDeleteEvent, EventShow}) =>
         style={{width: "500px"}}
         className={styles.image}
       />
-      <Link to={`/events/${event._id}`} state={{event}} className={styles.event_card_link}>
       <h1 className={styles.name}>Title: {event.eventName}
         <p className={styles.card_desc}>Description: {event.eventDetails}</p>
         <p className={styles.owner}>Host: {event.owner.name}</p>
@@ -36,7 +36,7 @@ const EventCard = ({event, randEvtImgId, user, handleDeleteEvent, EventShow}) =>
         <Link to='/edit' state={{event}} className={styles.edit}><FontAwesomeIcon icon={faUserPen}/></Link>
       </div>
       }
-        <Link to={`/events/${event._id}`} state={{event}} className={styles.details}>Event Details</Link>
+        {/* <Link to={`/events/${event._id}`} state={{event}} className={styles.details}>Event Details</Link> */}
     </div>
     </>
   )
