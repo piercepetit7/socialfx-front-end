@@ -1,7 +1,7 @@
 import { useState, useRef} from 'react';
 import * as eventService from '../../services/eventService'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
+import { faTrashCan, faComment } from '@fortawesome/free-solid-svg-icons'
 import styles from './CommentForm.module.css'
 
 
@@ -25,8 +25,8 @@ const CommentForm = (props) => {
 console.log(props.user.profile, 'hello')
   return (
     <>
-      <div>
-        <h1>CommentTab</h1>
+      <div className={styles.commentArea}>
+        <h1 className={styles.tab}>Comments</h1>
           {props.comments.map((comment, idx) =>
             <li 
               className={styles.list} 
@@ -44,7 +44,7 @@ console.log(props.user.profile, 'hello')
         )}
         </div>
       <form autoComplete="off" ref={formElement} onSubmit={handleCommentSubmit}>
-        <label htmlFor="comment-input">Comment:</label>
+        <label htmlFor="comment-input"></label>
         <textarea 
           type="text" 
           name="content"
@@ -54,8 +54,10 @@ console.log(props.user.profile, 'hello')
         />
         <button
           type='submit'
+          className={styles.addComment}
           >
-            Add Comment!
+          <FontAwesomeIcon icon={faComment} />
+          
         </button>
       </form>
 
