@@ -11,7 +11,7 @@ const EventCard = ({event, randEvtImgId, user, handleDeleteEvent, EventShow}) =>
   // console.log('event card', event)
 
   return (
-    <>
+    <div className={styles.main_font}>
     <div className={styles.card}>
       <Link to={`/events/${event._id}`} state={{event}} className={styles.event_card_link}>
       <img 
@@ -38,7 +38,7 @@ const EventCard = ({event, randEvtImgId, user, handleDeleteEvent, EventShow}) =>
       }
         {/* <Link to={`/events/${event._id}`} state={{event}} className={styles.details}>Event Details</Link> */}
     </div>
-    </>
+    </div>
   )
 }
 
