@@ -38,8 +38,11 @@
   color: black;
 }
 
-.link:hover {
-  color: #f96900;
+
+.link:hover{
+  text-decoration: none;
+  color: whitesmoke;
+
 }
 
 .left {
@@ -75,4 +78,38 @@
 .shadow {
   font-size: 22px;
   text-shadow: 2px 2px 2px black;
+}
+
+.btn_login{
+  background-color: whitesmoke;
+  border-radius: 10px;
+  box-shadow: 0 9px 3px -5px #f96900;
+  font-size: 18px;
+  margin-left: 20px;
+  margin-top: 20px;
+  border-color: #333;
+  transition: 0.3s;
+}
+
+.btn_login:hover{
+  color: whitesmoke;
+  background-color: #333;
+  border-color: whitesmoke;
+}
+
+.btn_signup{
+  background-color: whitesmoke;
+  border-radius: 10px;
+  box-shadow: 0 9px 3px -5px #f96900;
+  font-size: 18px;
+  margin-left: 20px;
+  margin-top: 20px;
+  border-color: #333;
+  transition: 0.3s;
+}
+
+.btn_signup:hover{
+  color: whitesmoke;
+  background-color: #333;
+  border-color: whitesmoke;
 }
