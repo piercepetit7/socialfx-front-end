@@ -22,7 +22,7 @@ const CommentForm = (props) => {
     props.setEvent(updatedEvent)
     setCommentData({content:''})
   }
-console.log(props.user.profile, 'hello')
+
   return (
     <>
       <div className={styles.commentArea}>
@@ -39,9 +39,7 @@ console.log(props.user.profile, 'hello')
                 </button>
               }
             </li>,
-          
-          console.log(props.comments)
-        )}
+          )}
         </div>
       <form autoComplete="off" ref={formElement} onSubmit={handleCommentSubmit}>
         <label htmlFor="comment-input"></label>
