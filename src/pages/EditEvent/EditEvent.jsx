@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import styles from './EditEvent.module.css'
+import { DateTime } from "luxon";
+
 
 const EditEvent = (props) => {
   const navigate = useNavigate()
@@ -32,7 +34,8 @@ const EditEvent = (props) => {
   }
 
   const {eventName, eventDate, eventDetails } = formData
-  console.log(eventDate)
+  console.log(DateTime.fromISO(eventDate).toLocal().toISO());
+  console.log(new Date(DateTime.fromISO(eventDate).toLocal()).toISOString());
 
   const isFormInvalid = () => {
     return !(eventName && eventDate)
@@ -58,7 +61,7 @@ const EditEvent = (props) => {
           <input
             type="datetime-local"
             id="eventDate"
-            value={eventDate.slice(0,16)}
+            value={DateTime.fromISO(eventDate).toLocal().toISO().slice(0,16)}
             name="eventDate"
             onChange={handleChange}
             className={styles.date_input}
