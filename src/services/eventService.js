@@ -84,6 +84,7 @@ async function createComment(commentData, eventId) {
   })
   return await res.json()
 }
+
 async function createAddItem(itemData, eventId) {
   const res = await fetch(`${BASE_URL}/${eventId}/details`, {
     method: "POST",
@@ -95,6 +96,7 @@ async function createAddItem(itemData, eventId) {
   })
   return await res.json()
 }
+
 async function createAddAct(actData, eventId) {
   const res = await fetch(`${BASE_URL}/${eventId}/details`, {
     method: "POST",
@@ -106,6 +108,7 @@ async function createAddAct(actData, eventId) {
   })
   return await res.json()
 }
+
 async function createItem(itemData, eventId) {
   const res = await fetch(`${BASE_URL}/${eventId}/add-item`, {
     method: "POST",
@@ -140,10 +143,7 @@ async function getAllComments(commentData, eventId) {
   return await res.json()
 }
 
-
 async function deleteComment(commentId, eventId) {
-  console.log(eventId, "eventId")
-  console.log(commentId, "commentId")
   const res = await fetch(`${BASE_URL}/${eventId}/comments/${commentId}`, {
     method: "DELETE",
     headers: {
@@ -151,6 +151,18 @@ async function deleteComment(commentId, eventId) {
     }
   })
   return res.json()
+}
+
+async function addActOrItem(data, eventId, resource) {
+  const res = await fetch(`${BASE_URL}/${eventId}/${resource}`, {
+    method: "POST",
+    headers: { 
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  return await res.json()
 }
 
 export { 
@@ -167,5 +179,6 @@ export {
   deleteItem,
   editEvent,
   getAllComments,
-  deleteComment
+  deleteComment,
+  addActOrItem,
 }
