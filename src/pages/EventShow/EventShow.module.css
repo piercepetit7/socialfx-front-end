@@ -12,10 +12,9 @@
   justify-content: space-evenly;
   width: 30vw;
   height: 87vh;
-  /* border-left: solid 3px #f96900;
-  border-top: solid 3px #f96900;
-  border-bottom: solid 3px #f96900; */
+  background-color: rgba(245, 245, 245, 0.054);
   text-align: center;
+  border-radius: 50px;
 }
 
 .mainRightShowPage{
@@ -136,7 +135,6 @@
     justify-content: space-around;
     align-items: flex-end;
     width: 15vw;
-    /* margin: 0; */
     margin: 20px 20px 20px 20px;
   }
   .mainRightRight{
@@ -152,13 +150,11 @@
     font-size: 20px;
     width: 15vw;
     height: 6vh;
-    /* border:  solid 1px #f96900; */
   }
   .tab_food{
     font-size: 20px;
     width: 15vw;
     height: 6vh;
-    /* border:  solid 1px #f96900; */
   }
 
   .details{
