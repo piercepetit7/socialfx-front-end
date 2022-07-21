@@ -7,11 +7,13 @@ const Profiles = () => {
   useEffect(() => {
     const fetchProfiles = async () => {
       const profileData = await profileService.getAllProfiles()
+      console.log();
       setProfiles(profileData)
     }
     fetchProfiles()
   }, [])
 
+  console.log(profiles)
   return (
     <>
       <h1>Hello. This is a list of all the profiles.</h1>

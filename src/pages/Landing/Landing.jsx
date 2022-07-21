@@ -11,7 +11,7 @@ const Landing = ({ user }) => {
       <div className={styles.landing}>
         <div className={styles.left}>
           <p className={styles.shadow}>
-            Planning a trip to the lake? Pregaming at your house before the concert? Do you host get togethers in your backyard? Social Function is here to help you plan your event from guestlist to menu. Log in to get started!
+            Planning a trip to the lake? Pregaming at your house before the concert? Backyard bbq host? From guestlist to menu, Social Function is here to help you plan your event. Log in to get started!
           </p>
           <div className={styles.sign}>
             <button className={styles.btn}>
@@ -38,7 +38,7 @@ const Landing = ({ user }) => {
               <img src={`https://picsum.photos/id/452/640/480`} className="d-block w-320" alt="People in a crowd at a concert." />
             </div>
             <div className="carousel-item">
-              <img style={{width: 640, height: 480}} src={'../valiant-made-UrzN-8K1PCE-unsplash.jpg'} className="d-block w-320" alt="..." />
+              <img style={{width: 640, height: 480}} src={'../valiant-made-UrzN-8K1PCE-unsplash.jpg'} className="d-block w-320" alt="People outside, eating at a table during the evening." />
             </div>
           </div>
         </div>

@@ -38,63 +38,62 @@ const AddEvent = (props) => {
 
   return (
     <>
-      <body className={styles.mainBody}>
-        <div className={styles.eventForm}>
-
-          <h1>Add Event</h1>
-          <form onSubmit={handleSubmit} autoComplete="off">
-            <div>
-              <label htmlFor="eventName">Event Name</label>
-              <input
-                type="text"
-                autoComplete="off"
-                id="eventName"
-                value={eventName}
-                name="eventName"
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="eventDate">Event Date</label>
-              <input
-                type="datetime-local"
-                id="eventDate"
-                value={eventDate}
-                name="eventDate"
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="eventDetails">Event Details</label>
-              <textarea
-                autoComplete="off"
-                id="eventDetails"
-                value={eventDetails}
-                name="eventDetails"
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="photo-upload">
-                Upload Photo
-              </label>
-              <input
-                type="file"
-                id={styles.photoUpload}
-                className="form-control"
-                name="photo"
-                onChange={handleChangePhoto}
-              />
-            </div>
-            <button disabled={isFormInvalid()} type='submit'>
-              Add Event
-            </button>
-            <Link to="/" state={eventPhotoData}>
-              <button>Cancel</button>
-            </Link>
-          </form>
-        </div>
-      </body>
+      <div id={styles.plainBackground}>
+        <body className={styles.mainBody}>
+          <div className={styles.eventForm}>
+            <h1 className={styles.header}>Add Event</h1>
+            <form onSubmit={handleSubmit} autoComplete="off">
+              <div id={styles.inputFields}>
+                <input
+                  type="text"
+                  autoComplete="off"
+                  id="eventName"
+                  value={eventName}
+                  name="eventName"
+                  onChange={handleChange}
+                  className={styles.input}
+                  placeholder='Event Name'
+                />
+                <input
+                  type="datetime-local"
+                  id="eventDate"
+                  value={eventDate}
+                  name="eventDate"
+                  onChange={handleChange}
+                  className={styles.input}
+                />
+                <textarea
+                  autoComplete="off"
+                  id="eventDetails"
+                  value={eventDetails}
+                  name="eventDetails"
+                  onChange={handleChange}
+                  className={styles.input}
+                  placeholder='Event Details...'
+                />
+                <label htmlFor="photo-upload">
+                  Upload Photo
+                </label>
+                  <input
+                    type="file"
+                    id={styles.photoUpload}
+                    className="form-control"
+                    name="photo"
+                    onChange={handleChangePhoto}
+                  />
+                <div id={styles.addBtnContainer}>
+                  <button disabled={isFormInvalid()} type='submit' className={styles.addEvtBtn}>
+                    Add Event
+                  </button>
+                  <Link to="/" state={eventPhotoData}>
+                    <button className={styles.addEvtBtn}>Cancel</button>
+                  </Link>
+                </div>
+              </div>
+            </form>
+          </div>
+        </body>
+      </div>
     </>
   )
 }

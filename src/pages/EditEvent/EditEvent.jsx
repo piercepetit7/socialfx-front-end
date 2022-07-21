@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom'
-//import styles from './AddEvent.module.css'
+import styles from './EditEvent.module.css'
+import { DateTime } from "luxon";
+
 
 const EditEvent = (props) => {
   const navigate = useNavigate()
@@ -32,7 +34,8 @@ const EditEvent = (props) => {
   }
 
   const {eventName, eventDate, eventDetails } = formData
-  console.log(eventDate)
+  console.log(DateTime.fromISO(eventDate).toLocal().toISO());
+  console.log(new Date(DateTime.fromISO(eventDate).toLocal()).toISOString());
 
   const isFormInvalid = () => {
     return !(eventName && eventDate)
@@ -40,10 +43,10 @@ const EditEvent = (props) => {
 
   return (
     <>
-      <h1>Edit Event</h1>
+      <h1 className={styles.header}>Edit Event</h1>
       <form onSubmit={handleSubmit} autoComplete="off">
-        <div>
-          <label htmlFor="eventName">Event Name</label>
+        <div className={styles.name}>
+          <label htmlFor="eventName" className={styles.name_des}>Event Name:</label>
           <input
             type="text"
             autoComplete="off"
@@ -53,18 +56,19 @@ const EditEvent = (props) => {
             onChange={handleChange}
           />
         </div>
-        <div>
-          <label htmlFor="eventDate">Event Date</label>
+        <div className={styles.date}>
+          <label htmlFor="eventDate" className={styles.date_des}>Event Date: </label>
           <input
             type="datetime-local"
             id="eventDate"
-            value={eventDate.slice(0,16)}
+            value={DateTime.fromISO(eventDate).toLocal().toISO().slice(0,16)}
             name="eventDate"
             onChange={handleChange}
+            className={styles.date_input}
           />
         </div>
-        <div>
-          <label htmlFor="eventDetails">Event Details</label>
+        <div className={styles.details}>
+          <label htmlFor="eventDetails" className={styles.event_des}>Event Details: </label>
           <textarea
             autoComplete="off"
             id="eventDetails"
@@ -73,8 +77,8 @@ const EditEvent = (props) => {
             onChange={handleChange}
           />
         </div>
-        <div>
-          <label htmlFor="photo-upload">
+        <div className={styles.photo}>
+          <label htmlFor="photo-upload" className={styles.photo_des}>
             Upload Photo
           </label>
           <input
@@ -85,12 +89,14 @@ const EditEvent = (props) => {
             onChange={handleChangePhoto}
           />
         </div>
-        <button disabled={isFormInvalid()} type='submit'>
+        <div className={styles.buttons}>
+        <button disabled={isFormInvalid()} type='submit' className={styles.edit}>
           Edit Event
         </button>
         <Link to="/">
-          <button>Cancel</button>
+          <button className={styles.cancel}>Cancel</button>
         </Link>
+        </div>
       </form>
     </>
   )

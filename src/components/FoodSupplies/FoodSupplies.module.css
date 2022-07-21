@@ -1,12 +1,12 @@
 .main{
   border:  solid 1px #f96900;
-  width: 55vw;
-  height: 95vh;
+  width: 53vw;
+  height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0 5vw 0 0;
+  margin: 0 2vw 0 0;
 }
 
 .mainFoodSupDiv{
@@ -18,7 +18,7 @@
   border: solid 1px black;
   height: 40vh;
   width: 35vw;
-  background-color: white;
+  background-color: #e9ebed;
   padding: 0 30px;
 }
 
@@ -26,7 +26,7 @@
   border: solid 1px black;
   height: 30vh;
   width: 35vw;
-  background-color: white;
+  background-color: #e9ebed;
 }
 
 .addItemForm{
@@ -39,4 +39,32 @@ h2{
 
 h3{
   padding: 10px;
+}
+
+#addBtn {
+  background-color: #e9ebed;
+}
+
+#inputField {
+  background-color: #e9ebed;
+}
+
+.addEvtBtn {
+
+}
+
+.inputField {
+  width: 30vw;
+}
+
+@media (max-width: 974px) {
+  .main{
+    border:  solid 1px #f96900;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2vw 0 0;
+  }
 }

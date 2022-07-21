@@ -1,0 +1,109 @@
+.header{
+  color: whitesmoke;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.name{
+  color: whitesmoke;
+  margin-right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name_des{
+  margin-right: 42px;
+}
+
+.date{
+  color: whitesmoke;
+  margin-right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.date_des{
+  margin-left: 25px;
+
+}
+
+.date_input{
+  margin-left: 30px;
+}
+
+.details{
+  color: whitesmoke;
+  margin-right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+
+.event_des{
+  margin-right: 29px;
+}
+
+.photo{
+  color: whitesmoke;
+  margin-right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  width: 35%;
+  margin-left: 350px;
+}
+
+.photo_des{
+  display: inline;
+  text-align: center;
+}
+
+.edit{
+  background-color: white;
+  border-radius: 5px;
+  width: 100px;
+  height: 25px;
+  box-shadow: 0 9px 3px -5px #f96900;
+  margin:20px;
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.edit:hover{
+  background-color: rgb(255, 210, 137);
+}
+
+.cancel{
+  background-color: white;
+  border-radius: 5px;
+  width: 100px;
+  height: 25px;
+  box-shadow: 0 9px 3px -5px #f96900;
+  margin:20px;
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  text-decoration: none;
+}
+
+.cancel:hover{
+  background-color: rgb(255, 210, 137);
+}
+
+.buttons{
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}

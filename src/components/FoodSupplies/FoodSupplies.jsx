@@ -56,8 +56,9 @@ const FoodSupplies = () => {
             name="item"
             value={addItemData.item}          
             onChange={handleChange}
+            className='inputField'
             />
-          <button type='submit'> Add </button>
+          <button id='addBtn' type='submit'> Add </button>
         </form>
       </div>
     </>

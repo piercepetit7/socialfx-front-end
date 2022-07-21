@@ -1,5 +1,4 @@
 import { useState, useRef } from "react"
-import * as eventService from '../../../services/eventService'
 import { useParams } from 'react-router-dom'
 
 const ActForm = (props) => {
@@ -14,22 +13,21 @@ const ActForm = (props) => {
 
   const handleActSubmit = evt => {
     evt.preventDefault()
-    eventService.createAddAct(formData, eventId)
-    console.log('****ADD ACT*****')
-    console.log('*formData*',formData)
+    props.setAct([...props.activities, formData ])
+    setFormData({actName:''})
   }
-  console.log(eventId)
+  console.log("ACT",props)
 
 
   return (
     <>
     <form ref={formElement} onSubmit={handleActSubmit}>
-      <label>Activity Name:</label>
       <input
         type="text"
         name="actName"
         placeholder="Activity..."
         value={formData.actName}
+        key={formData.actName}
         onChange={handleChange}
       />
       <button

@@ -5,6 +5,7 @@
   margin-left: 0;
   background-color: #333;
   padding-bottom: 0;
+  overflow-x: hidden;
 }
 
 .username{
@@ -82,5 +83,57 @@
 }
 
 #nav:hover {
-  color: #f96900;
+  color: #fa8c3e;
+}
+
+@media (max-width: 974px){
+  .nav{
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    margin-left: 0;
+    background-color: #333;
+    padding-bottom: 0;
+    overflow-x: hidden;
+  }
+
+  .username{
+    justify-content: left;
+    display: flex;
+    font-size: 20px;
+    color: whitesmoke;
+    margin-top: 14px;
+  }
+  
+  .event{
+    margin-right: 30px;
+    display: flex;
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 15px;
+    margin-top: 14px;
+    transition: 0.4s;
+    margin-left: 20px;
+  }
+
+  .add_event{
+    font-size: 15px;
+  }
+
+  .all_events{
+    font-size: 15px;
+  }
+
+  .change{
+    font-size: 15px;
+  }
+
+  .log_out{
+    font-size: 15px;
+    margin-right: 90px;
+  }
+
+  .username{
+    display: none;
+  }
 }

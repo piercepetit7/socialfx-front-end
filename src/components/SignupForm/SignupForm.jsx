@@ -102,6 +102,7 @@ const SignupForm = props => {
           type="file"
           id="photo-upload"
           name="photo"
+          className={styles.label}
           onChange={handleChangePhoto}
         />
       </div>
