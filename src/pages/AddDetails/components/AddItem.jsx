@@ -1,5 +1,6 @@
 import { useState, useRef } from "react"
 import { useParams } from 'react-router-dom'
+import styles from '../../AddDetails/AddDetails.module.css'
 
 const ItemForm = (props) => {
   const {eventId} = useParams()
@@ -34,7 +35,7 @@ const ItemForm = (props) => {
         onChange={handleChange}
       />
       <br />
-      <label>Select Type</label>
+      <label className={styles.type_des}>Select Type: </label>
         <select
         value={formData.itemType} onChange={handleChange} name="itemType" id="itemType" >
           {/* <option value="">Food or Supplies...</option> */}
@@ -51,6 +52,7 @@ const ItemForm = (props) => {
       /> */}
       <button
         type="submit"
+        className={styles.item_btn}
       >
         Add Item
       </button>

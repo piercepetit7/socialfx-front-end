@@ -120,3 +120,13 @@
   color: red;
   background-color: whitesmoke;
 }
+
+.event_card_link{
+  text-decoration: none;
+  color: #333;
+  transition: 0.5s;
+}
+
+.event_card_link:hover{
+  color: whitesmoke;
+}

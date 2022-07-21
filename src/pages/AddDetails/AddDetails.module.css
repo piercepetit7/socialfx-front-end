@@ -1,0 +1,81 @@
+.header{
+  color: whitesmoke;
+  align-items: center;
+  display: grid;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.details{
+  align-items: center;
+  display: grid;
+  justify-content: center;
+}
+
+.details_1{
+  align-items: center;
+  display: grid;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.name{
+  align-items: center;
+  display: grid;
+  justify-content: center;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+.date{
+  align-items: center;
+  display: grid;
+  justify-content: center;
+}
+
+.activity_input{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.act_btn{
+  background-color: whitesmoke;
+  border-radius: 10px;
+  box-shadow: 0 9px 3px -5px #f96900;
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+  margin-top: 20px;
+  border-color: #333;
+  transition: 0.3s;
+}
+
+.act_btn:hover{
+  color: whitesmoke;
+  background-color: #333;
+  border-color: whitesmoke;
+}
+
+.item_btn{
+  background-color: whitesmoke;
+  border-radius: 10px;
+  box-shadow: 0 9px 3px -5px #f96900;
+  font-size: 18px;
+  margin-left: 20px;
+  margin-top: 20px;
+  border-color: #333;
+  transition: 0.3s;
+}
+
+.item_btn:hover{
+  color: whitesmoke;
+  background-color: #333;
+  border-color: whitesmoke;
+}
+
+.type_des{
+  color: whitesmoke;
+  margin-right: 3px;
+}

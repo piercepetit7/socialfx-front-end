@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 import * as eventServices from '../../services/eventService'
 
 const AddActInTab = ({event, setEvent}) => {
