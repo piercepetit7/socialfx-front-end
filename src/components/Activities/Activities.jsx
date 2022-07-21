@@ -19,7 +19,11 @@ console.log(props.event)
                 className={styles.list}
                 >
                   {activity.actName}
-                    <button className={styles.delete} onClick={() => props.handleDeleteActivity(activity._id, props.event._id)}>
+                    <button 
+                    className={styles.delete} 
+                    onClick={() => props.handleDeleteActivity(activity._id, props.event._id)}
+                    className={styles.addComment}
+                    >
                     <FontAwesomeIcon icon={faTrashCan}/>
                     </button>
                 </li>

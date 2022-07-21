@@ -1,5 +1,9 @@
 import { useState, useRef } from "react"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCirclePlus } from '@fortawesome/free-solid-svg-icons'
 import * as eventServices from '../../services/eventService'
+import styles from './AddItemsInTab.module.css'
+
 
 const AddItemsInTab = ({event, setEvent}) => {
   const formElement = useRef()
@@ -42,8 +46,9 @@ const AddItemsInTab = ({event, setEvent}) => {
         </select>  
       <button
         type="submit"
+        className={styles.addBtn}
       >
-        Add 
+        <FontAwesomeIcon icon={faCirclePlus} />
       </button>
     </form>
     </>
