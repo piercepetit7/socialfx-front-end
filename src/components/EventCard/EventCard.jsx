@@ -23,11 +23,13 @@ const EventCard = ({event, randEvtImgId, user, handleDeleteEvent, EventShow}) =>
         style={{width: "500px"}}
         className={styles.image}
       />
+      <Link to={`/events/${event._id}`} state={{event}} className={styles.event_card_link}>
       <h1 className={styles.name}>Title: {event.eventName}
         <p className={styles.card_desc}>Description: {event.eventDetails}</p>
         <p className={styles.owner}>Host: {event.owner.name}</p>
         <p className={styles.time}>Time: {DateTime.fromISO(event.eventDate).toLocal().toLocaleString(DateTime.DATETIME_MED)}</p>
-      </h1>      
+      </h1>
+      </Link>      
       {user?.profile === event.owner?._id && 
       <div className={styles.footer}>
         <button onClick={() => handleDeleteEvent(event._id)} className={styles.delete}><FontAwesomeIcon icon={faTrashCan}/></button>
