@@ -15,8 +15,6 @@ const ActForm = (props) => {
     evt.preventDefault()
     props.setAct([...props.activities, formData ])
     setFormData({actName:''})
-    //console.log('****ADD ACT*****')
-    //console.log('*formData*',props.actName)
   }
   console.log("ACT",props)
 
@@ -29,6 +27,7 @@ const ActForm = (props) => {
         name="actName"
         placeholder="Activity..."
         value={formData.actName}
+        key={formData.actName}
         onChange={handleChange}
       />
       <button

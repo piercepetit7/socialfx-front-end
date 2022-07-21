@@ -39,8 +39,8 @@ async function deleteEvent(eventId) {
 }
 
 async function updateEvent(eventData) {
-  const res = await fetch(`${BASE_URL}/${eventData._id}/details`, {
-    method: "PATCH",
+  const res = await fetch(`${BASE_URL}/${eventData._id}/`, {
+    method: "PUT",
     headers: { 
       'Authorization': `Bearer ${tokenService.getToken()}`,
       'Content-Type': 'application/json'
@@ -74,7 +74,6 @@ async function addPhoto(photoData, eventId) {
 }
 
 async function createComment(commentData, eventId) {
-  console.log('****eventSERVICE',commentData)
   const res = await fetch(`${BASE_URL}/${eventId}/comments`, {
     method: "POST",
     headers: { 
@@ -141,6 +140,19 @@ async function getAllComments(commentData, eventId) {
   return await res.json()
 }
 
+
+async function deleteComment(commentId, eventId) {
+  console.log(eventId, "eventId")
+  console.log(commentId, "commentId")
+  const res = await fetch(`${BASE_URL}/${eventId}/comments/${commentId}`, {
+    method: "DELETE",
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+    }
+  })
+  return res.json()
+}
+
 export { 
   create,
   getAll,
@@ -154,5 +166,6 @@ export {
   createItem,
   deleteItem,
   editEvent,
-  getAllComments
+  getAllComments,
+  deleteComment
 }

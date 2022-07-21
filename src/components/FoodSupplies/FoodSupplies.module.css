@@ -49,3 +49,22 @@ h3{
   background-color: #e9ebed;
 }
 
+.addEvtBtn {
+
+}
+
+.inputField {
+  width: 30vw;
+}
+
+@media (max-width: 974px) {
+  .main{
+    border:  solid 1px #f96900;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2vw 0 0;
+  }
+}

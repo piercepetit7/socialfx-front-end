@@ -15,6 +15,8 @@ const ItemForm = (props) => {
   const handleItemSubmit = evt => {
     evt.preventDefault()
     props.setItems([...props.items, formData ])
+    setFormData({itemName:''})
+    setFormData({itemType:''})
     //console.log('****ADD ITEM*****')
     //console.log('*formData*',formData)
   }
@@ -29,6 +31,7 @@ const ItemForm = (props) => {
         type="text"
         name="itemName"
         placeholder="Item..."
+        key={formData.itemName}
         value={formData.itemName}
         onChange={handleChange}
       />
@@ -38,8 +41,8 @@ const ItemForm = (props) => {
         value={formData.itemType} onChange={handleChange} name="itemType" id="itemType" >
           {/* <option value="">Food or Supplies...</option> */}
           <option>Pick Type</option>
-          <option name="itemType" value={formData.itemType['food']}>Food</option>
-          <option name="itemType" value={formData.itemType['supplies']}>Supplies</option>
+          <option name="itemType" key={formData.itemType['food']} value={formData.itemType['food']}>Food</option>
+          <option name="itemType" key={formData.itemType['supplies']} value={formData.itemType['supplies']}>Supplies</option>
         </select>       
       {/* <input
         type="text"
