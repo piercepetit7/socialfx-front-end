@@ -6,6 +6,7 @@ import AddGuestList from './components/AddGuestList';
 import ItemForm from './components/AddItem';
 import Profiles from '../Profiles/Profiles';
 import * as eventServices from "../../services/eventService"
+import * as profileService  from "../../services/profileService"
 import styles from './AddDetails.module.css'
 import { DateTime } from "luxon";
 
@@ -14,9 +15,11 @@ const AddDetails = (props) => {
   // console.log('EVENTID',eventId)
 	const navigate = useNavigate()
   const [event, setEvent] = useState()
+  const [profiles, setProfiles] = useState([])
   const [activities, setAct] = useState([])
   const [items, setItems] = useState([])
   const [guests, setGuests] =useState([])
+  const [filteredProfiles, setFilteredProfiles] = useState([])
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -40,8 +43,19 @@ const AddDetails = (props) => {
       setEvent(eventData)
     }
     fetchEvent()
+    const fetchProfiles = async () => {
+      const profileData = await profileService.getAllProfiles()
+      setProfiles(profileData)
+    }
+    fetchProfiles()
   },[])
-  
+
+  useEffect(() => {
+    const going = profiles.filter(profile => {
+      return guests.includes(profile._id)
+    })
+    setFilteredProfiles(going)
+  }, [profiles, guests])
 
   
   return (
@@ -56,8 +70,8 @@ const AddDetails = (props) => {
         <ActForm setAct={setAct} activities={activities}/>
         <div>
           <ul>
-            {activities.map(activity => 
-              <li key={activity._id}>
+            {activities.map((activity, idx) => 
+              <li key={idx}>
                 {activity.actName}
               </li>
             )
@@ -68,8 +82,8 @@ const AddDetails = (props) => {
         <ItemForm setItems={setItems} items={items}/>
         <div>
           <ul>
-            {items.map(item => 
-              <li key={item._id}>
+            {items.map((item, idx) => 
+              <li key={idx}>
                 {item.itemName} {item.itemtype}
               </li>
             )
@@ -78,12 +92,12 @@ const AddDetails = (props) => {
         </div>
       </div>
       <div>
-        <AddGuestList setGuests={setGuests} guests={guests}/>
+        <AddGuestList profiles={profiles} setGuests={setGuests} guests={guests}/>
         <div>
           <ul>
-            {guests.map(guest => 
+            {filteredProfiles.map(guest => 
               <li key={guest._id}>
-                {guest.guestList}
+                {guest.name}
               </li>
             )
           }
