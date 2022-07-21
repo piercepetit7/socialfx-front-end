@@ -41,7 +41,7 @@ const AddEvent = (props) => {
       <div id={styles.plainBackground}>
         <body className={styles.mainBody}>
           <div className={styles.eventForm}>
-            <h1>Add Event</h1>
+            <h1 className={styles.header}>Add Event</h1>
             <form onSubmit={handleSubmit} autoComplete="off">
               <div id={styles.inputFields}>
                 <input

@@ -7,29 +7,34 @@ import { show } from '../../services/eventService'
 import { useLocation } from 'react-router-dom';
 import styles from './EventShow.module.css'
 import { Link } from 'react-router-dom';
+import * as eventService from '../../services/eventService'
+import { DateTime } from "luxon";
 
 const EventShow = (props) => {
   const [component, setComponent] = useState('FoodSupplies')
   const [event, setEvent] = useState({}) 
   const location = useLocation()
-  console.log('*************************')
-  console.log(typeof location.state.event._id)
-  console.log('event show', props.state)
 
   useEffect(()=>{
     const fetchEvent = async() => {
       const eventData = await show(location.state.event._id)
-      console.log('EVENTDATA',eventData)
+
       setEvent(eventData)
     }
     fetchEvent()
   },[location.state.event._id])
 
+  const handleDeleteComment = async (commentId, eventId) => {
+    const savedEvent = await eventService.deleteComment(commentId, eventId)
+    setEvent(savedEvent)
+    // setComments(savedEvent.preventDefault())
+  }
+
   // if(!props?.events?.length){
   //   return <h1>No Events</h1>
   //   console.log("here",props.events)
   // }
-console.log('^^^^^^^^^^^^^^^^^^^^^^^^', event)
+
   return (
     <>
       <div className={styles.eventShowMainBody}>
@@ -49,6 +54,7 @@ console.log('^^^^^^^^^^^^^^^^^^^^^^^^', event)
           <div>
             <h3 className={styles.details}>Details:</h3>
             <p>{event.eventDetails}</p>
+            <p>{DateTime.fromISO(event.eventDate).toLocal().toLocaleString(DateTime.DATETIME_MED)}</p>
             {props.user?.profile === event.owner?._id && 
               <Link to='/edit' state={{event}} className='edit-btn'>Edit</Link>
             }
@@ -59,14 +65,14 @@ console.log('^^^^^^^^^^^^^^^^^^^^^^^^', event)
           <div className={styles.mainRightLeft}>
             <button className={styles.tab} onClick={() => setComponent('GuestList')}> Guest List</button>
             <button className={styles.tab} onClick={() => setComponent('Activities')}>Activities</button>
-            <button className={styles.tab} onClick={() => setComponent('FoodSupplies')}>Food/Supplies</button>
+            <button className={styles.tab} onClick={() => setComponent('FoodSupplies')}>Food & Supplies</button>
             <button className={styles.tab} onClick={() => setComponent('Comments')}>Comments</button>
           </div>
           <div className={styles.mainRightRight}>
-          { component === 'GuestList' ? <GuestList  event={event}/>: "" }
-          { component === 'Activities' ? <Activities event={event}/>: "" }
-          { component === 'FoodSupplies' ? <FoodSupplies  event={event}/>: "" }
-          { component === 'Comments' ? <CommentTab event={event}/>: "" }
+          { component === 'GuestList' ? <GuestList />: "" }
+          { component === 'Activities' ? <Activities />: "" }
+          { component === 'FoodSupplies' ? <FoodSupplies />: "" }
+          { component === 'Comments' ? <CommentTab event={event} handleDeleteComment={handleDeleteComment} setEvent={setEvent} comments={event.comments}/>: "" }
           </div>
         </div>
       </div>
