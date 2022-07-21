@@ -77,7 +77,7 @@ const EditEvent = (props) => {
             onChange={handleChange}
           />
         </div>
-        <div className={styles.photo}>
+        {/* <div className={styles.photo}>
           <label htmlFor="photo-upload" className={styles.photo_des}>
             Upload Photo
           </label>
@@ -88,7 +88,7 @@ const EditEvent = (props) => {
             name="photo"
             onChange={handleChangePhoto}
           />
-        </div>
+        </div> */}
         <div className={styles.buttons}>
         <button disabled={isFormInvalid()} type='submit' className={styles.edit}>
           Edit Event
