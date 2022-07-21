@@ -38,9 +38,11 @@
   color: black;
 }
 
+
 .link:hover{
   text-decoration: none;
   color: whitesmoke;
+
 }
 
 .left {
@@ -64,7 +66,7 @@
   margin: 0 10px;
 }
 
-#carouselExampleIndicators {
+#carouselExampleSlidesOnly {
   padding: 50px
 }
 
