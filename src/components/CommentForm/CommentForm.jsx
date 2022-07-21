@@ -28,17 +28,20 @@ const CommentForm = (props) => {
       <div className={styles.commentArea}>
         <h1 className={styles.tab}>Comments</h1>
           {props.comments.map((comment, idx) =>
-            <li 
-              className={styles.list} 
-              key={idx}
-            >
-              {comment.author?.name} said: {comment.content}
-              {props.user?.profile === comment?.author?._id &&
-                <button className={styles.delete} onClick={() => props.handleDeleteComment(comment._id, props.event._id)}>
-                  <FontAwesomeIcon icon={faTrashCan}/>
-                </button>
-              }
-            </li>,
+            <>
+              <li 
+                className={styles.list} 
+                key={idx}
+              >
+                {comment.author?.name} said: "{comment.content}"
+                {props.user?.profile === comment?.author?._id &&
+                  <button className={styles.delete} onClick={() => props.handleDeleteComment(comment._id, props.event._id)}>
+                    <FontAwesomeIcon icon={faTrashCan}/>
+                  </button>
+                }
+              </li>
+              <br/>
+            </>,
           )}
         </div>
       <form autoComplete="off" ref={formElement} onSubmit={handleCommentSubmit}>
