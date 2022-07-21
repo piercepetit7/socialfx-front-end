@@ -74,7 +74,7 @@ const EventShow = (props) => {
             <button className={styles.tab} onClick={() => setComponent('Comments')}><FontAwesomeIcon icon={faComments}/></button>
           </div>
           <div className={styles.mainRightRight}>
-          { component === 'GuestList' ? <GuestList />: "" }
+          { component === 'GuestList' ? <GuestList event={event} />: "" }
           { component === 'Activities' ? <Activities />: "" }
           { component === 'FoodSupplies' ? <FoodSupplies />: "" }
           { component === 'Comments' ? <CommentTab event={event} handleDeleteComment={handleDeleteComment} setEvent={setEvent} comments={event.comments}/>: "" }
