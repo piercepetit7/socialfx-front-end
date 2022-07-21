@@ -61,7 +61,7 @@
   transition: 0.5s;
   border-radius: 50px;
   border: none;
-  color: orange;
+  color: #f96900;
 }
 
 
@@ -95,7 +95,7 @@
 }
 
 .edit_link:hover{
-  color: orange;
+  color: #f96900;
 }
 
 .photo_card{

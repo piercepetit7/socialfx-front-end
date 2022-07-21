@@ -39,7 +39,7 @@ const AddEvent = (props) => {
   return (
     <>
       <div id={styles.plainBackground}>
-        <body className={styles.mainBody}>
+        <div className={styles.mainBody}>
           <div className={styles.eventForm}>
             <h1 className={styles.header}>Add Event</h1>
             <form onSubmit={handleSubmit} autoComplete="off">
@@ -92,7 +92,7 @@ const AddEvent = (props) => {
               </div>
             </form>
           </div>
-        </body>
+        </div>
       </div>
     </>
   )
