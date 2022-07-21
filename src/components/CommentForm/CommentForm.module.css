@@ -2,15 +2,46 @@
   list-style: none;
 }
 
-.delete{
+.addComment {
   border: none;
   background-color: #333;
   border-radius: 50px;
   color: whitesmoke;
   transition: 0.5s;
+  margin-left: 10px;
+  margin-bottom: 20px;
 }
 
-.delete:hover{
+.addComment:hover {
+  color: #f96900;
+  background-color: whitesmoke;
+}
+
+.delete {
+  border: none;
+  background-color: #333;
+  border-radius: 50px;
+  color: whitesmoke;
+  transition: 0.5s;
+  margin-left: 10px;
+}
+
+.delete:hover {
   color: red;
   background-color: whitesmoke;
+}
+
+.commentArea {
+  border: solid 1px black;
+  height: 60vh;
+  width: 45vw;
+  background-color: #e9ebed;
+  opacity: 0.9;
+  padding: 30px;
+  overflow-y: auto;
+  color: black;
+}
+
+.tab {
+  color: black;
 }
