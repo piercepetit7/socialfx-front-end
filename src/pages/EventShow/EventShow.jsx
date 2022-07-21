@@ -55,7 +55,7 @@ const EventShow = (props) => {
     <>
       <div className={styles.eventShowMainBody}>
         <div className={styles.mainLeftShowPage}>
-          <div>
+          <div className={styles.photo_card}>
             <h1 className={styles.eventTitle}>{event.eventName}</h1>
             <img 
               src={
@@ -67,7 +67,7 @@ const EventShow = (props) => {
               style={{width: "20vw"}}
               />
           </div>
-          <div>
+          <div className={styles.all_details}>
             <h3 className={styles.details}>Details:</h3>
             <p>{event.eventDetails}</p>
             <p>{DateTime.fromISO(event.eventDate).toLocal().toLocaleString(DateTime.DATETIME_MED)}</p>
