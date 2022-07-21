@@ -1,4 +1,5 @@
 import { useState, } from "react"
+import styles from '../../AddDetails/AddDetails.module.css'
 
 const ActForm = (props) => {
   const [formData, setFormData] = useState({
@@ -28,6 +29,7 @@ const ActForm = (props) => {
       />
       <button
         type="submit"
+        className={styles.act_btn}
       >
         Add Activity 
       </button>

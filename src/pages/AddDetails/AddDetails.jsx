@@ -6,6 +6,8 @@ import AddGuestList from './components/AddGuestList';
 import ItemForm from './components/AddItem';
 import Profiles from '../Profiles/Profiles';
 import * as eventServices from "../../services/eventService"
+import styles from './AddDetails.module.css'
+import { DateTime } from "luxon";
 
 const AddDetails = (props) => {
   const {eventId} = useParams()
@@ -44,13 +46,13 @@ const AddDetails = (props) => {
   
   return (
     <>
-      <div className="event-header">
-        <h1>Add details</h1>
-        <h3>{event?.eventName}</h3>
-        <h4>{event?.eventDate}</h4>
-        <h5>{event?.eventDetails}</h5>
+      <div className={styles.header}>
+        <h1 className={styles.details}>Build out your event</h1>
+        <h3 className={styles.name}>Title: {event?.eventName}</h3>
+        <h4 className={styles.date}>Date: {DateTime.fromISO(event?.eventDate).toLocal().toLocaleString(DateTime.DATETIME_MED)}</h4>
+        <h5 className={styles.details_1}>Description: {event?.eventDetails}</h5>
       </div>
-      <div>
+      <div className={styles.activity_input}>
         <ActForm setAct={setAct} activities={activities}/>
         <div>
           <ul>
