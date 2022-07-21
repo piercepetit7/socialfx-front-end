@@ -8,6 +8,7 @@ import { useLocation } from 'react-router-dom';
 import styles from './EventShow.module.css'
 import { Link } from 'react-router-dom';
 import * as eventService from '../../services/eventService'
+import { DateTime } from "luxon";
 
 const EventShow = (props) => {
   const [component, setComponent] = useState('FoodSupplies')
@@ -53,6 +54,7 @@ const EventShow = (props) => {
           <div>
             <h3 className={styles.details}>Details:</h3>
             <p>{event.eventDetails}</p>
+            <p>{DateTime.fromISO(event.eventDate).toLocal().toLocaleString(DateTime.DATETIME_MED)}</p>
             {props.user?.profile === event.owner?._id && 
               <Link to='/edit' state={{event}} className='edit-btn'>Edit</Link>
             }
