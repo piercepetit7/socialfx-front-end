@@ -1,4 +1,6 @@
 import { useEffect, useState, useRef } from "react";
+import * as profileService  from "../../../services/profileService"
+import styles from '../../AddDetails/AddDetails.module.css'
 
 
 const AddGuestList = (props) => {
@@ -26,10 +28,10 @@ const handleGuestSubmit = evt => {
 
 
   return (
-    <> 
+    <div className={styles.guestdiv}> 
     <form ref={formElement} onSubmit={handleGuestSubmit}>
-      <label>
-        Who's Invited?
+      <label className={styles.guest_txt}>
+        Add Guests: 
       </label>
       <select name="guestList" onChange={handleChange}>
         <option value={null}>pick guest</option>
@@ -41,11 +43,12 @@ const handleGuestSubmit = evt => {
       </select>
       <button
         type="submit"
+        className={styles.add_guest_btn}
       >
         Add guest
       </button>
     </form>
-    </>
+    </div>
   )
 }
 

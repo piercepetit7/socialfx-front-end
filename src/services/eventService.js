@@ -121,16 +121,6 @@ async function createItem(itemData, eventId) {
   return await res.json()
 }
 
-async function deleteItem(eventId) {
-  const res = await fetch(`${BASE_URL}/${eventId}/deleteItem`, {
-    method: "DELETE",
-    headers: { 
-      'Authorization': `Bearer ${tokenService.getToken()}`,
-    }
-  })
-  return await res.json()
-}
-
 async function getAllComments(commentData, eventId) {
   const res = await fetch(`${BASE_URL}/${eventId}/comments`, {
     method: "GET",
@@ -145,6 +135,26 @@ async function getAllComments(commentData, eventId) {
 
 async function deleteComment(commentId, eventId) {
   const res = await fetch(`${BASE_URL}/${eventId}/comments/${commentId}`, {
+    method: "DELETE",
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+    }
+  })
+  return res.json()
+}
+
+async function deleteActivity(activityId, eventId) {
+  const res = await fetch(`${BASE_URL}/${eventId}/activities/${activityId}`, {
+    method: "DELETE",
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+    }
+  })
+  return res.json()
+}
+
+async function deleteItem(itemId, eventId) {
+  const res = await fetch(`${BASE_URL}/${eventId}/items/${itemId}`, {
     method: "DELETE",
     headers: {
       'Authorization': `Bearer ${tokenService.getToken()}`,
@@ -181,4 +191,5 @@ export {
   getAllComments,
   deleteComment,
   addActOrItem,
+  deleteActivity,
 }

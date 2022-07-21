@@ -14,6 +14,7 @@ import { faPeopleGroup } from '@fortawesome/free-solid-svg-icons'
 import { faChampagneGlasses } from '@fortawesome/free-solid-svg-icons'
 import { faBurger } from '@fortawesome/free-solid-svg-icons'
 import { faComments } from '@fortawesome/free-solid-svg-icons'
+import { faPencil } from '@fortawesome/free-solid-svg-icons'
 
 const EventShow = (props) => {
   const [component, setComponent] = useState('FoodSupplies')
@@ -33,6 +34,16 @@ const EventShow = (props) => {
     const savedEvent = await eventService.deleteComment(commentId, eventId)
     setEvent(savedEvent)
     // setComments(savedEvent.preventDefault())
+  }
+
+  const handleDeleteActivity = async (activityId, eventId) => {
+    const savedEvent = await eventService.deleteActivity(activityId, eventId)
+    setEvent(savedEvent)
+  }
+
+  const handleDeleteItem = async (itemId, eventId) => {
+    const savedEvent = await eventService.deleteItem(itemId, eventId)
+    setEvent(savedEvent)
   }
 
   // if(!props?.events?.length){
@@ -61,7 +72,7 @@ const EventShow = (props) => {
             <p>{event.eventDetails}</p>
             <p>{DateTime.fromISO(event.eventDate).toLocal().toLocaleString(DateTime.DATETIME_MED)}</p>
             {props.user?.profile === event.owner?._id && 
-              <Link to='/edit' state={{event}} className='edit-btn'>Edit</Link>
+              <Link to='/edit' state={{event}} className={styles.edit_link}><FontAwesomeIcon icon={faPencil} /></Link>
             }
           
           </div>
@@ -75,8 +86,8 @@ const EventShow = (props) => {
           </div>
           <div className={styles.mainRightRight}>
           { component === 'GuestList' ? <GuestList event={event} user={props.user}/>: "" }
-          { component === 'Activities' ? <Activities event={event} setEvent={setEvent}/>: "" }
-          { component === 'FoodSupplies' ? <FoodSupplies event={event} setEvent={setEvent}/>: "" }
+          { component === 'Activities' ? <Activities event={event}  handleDeleteActivity={handleDeleteActivity} setEvent={setEvent} user={props.user}/>: "" }
+          { component === 'FoodSupplies' ? <FoodSupplies event={event} handleDeleteItem={handleDeleteItem} setEvent={setEvent} user={props.user}/>: "" }
           { component === 'Comments' ? <CommentTab event={event} handleDeleteComment={handleDeleteComment} setEvent={setEvent} comments={event.comments} user={props.user}/>: "" }
           </div>
         </div>

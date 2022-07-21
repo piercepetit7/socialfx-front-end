@@ -103,7 +103,9 @@ const AddDetails = (props) => {
           }
           </ul>
         </div>
-        <button onClick={handleSubmit}>submit</button>
+        <div className={styles.submit_btn_div}>
+        <button onClick={handleSubmit} className={styles.main_submit_btn}>Submit Event</button>
+        </div>
       </div>
     </>
   )

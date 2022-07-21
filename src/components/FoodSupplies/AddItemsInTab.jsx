@@ -32,6 +32,7 @@ const AddItemsInTab = ({event, setEvent}) => {
         placeholder="Add Food or Supplies..."
         value={formData.itemName}
         onChange={handleChange}
+        autoComplete="off"
       />
       <br />
         <select

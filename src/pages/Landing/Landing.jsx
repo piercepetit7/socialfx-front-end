@@ -13,11 +13,11 @@ const Landing = ({ user }) => {
             Planning a trip to the lake? Pregaming at your house before the concert? Backyard bbq host? From guestlist to menu, Social Function is here to help you plan your event. Log in to get started!
           </p>
           <div className={styles.sign}>
-            <button className={styles.btn}>
+            <button className={styles.btn_login}>
               <Link className={styles.link} to="/login">Log In</Link>
             </button>
             <br />
-            <button className={styles.btn}>
+            <button className={styles.btn_signup}>
               <Link className={styles.link} to="/signup">Sign Up</Link>
             </button>
           </div>
