@@ -6,6 +6,7 @@
   padding: 40px;
   color: #e9ebed;
   font-family: 'Poppins', sans-serif;
+  
 }
 
 .mainLeftShowPage{
@@ -99,6 +100,10 @@
 
 .photo_card{
   overflow-y: hidden;
+}
+
+.image{
+  border-radius: 50px;
 }
 
 @media (max-width: 974px) {

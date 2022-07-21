@@ -65,6 +65,7 @@ const EventShow = (props) => {
               } 
               alt="Events"
               style={{width: "20vw"}}
+              className={styles.image}
               />
           </div>
           <div className={styles.all_details}>
