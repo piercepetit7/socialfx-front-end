@@ -15,7 +15,7 @@ Social(fx) is a MERN application that allows users to simplify their event plann
 - All as Designer
 
 ## Screenshots:
-![Landing](../../../projects/socialfx/socialfx-front-end/public/landing.png)
+![Landing](/public/landing.png)
 ## Technologies Used:
 React, Mongoose, MongoDB, Express, Node, CSS, Bootstrap, Cloudinary, Font Awesome
 
@@ -26,4 +26,5 @@ React, Mongoose, MongoDB, Express, Node, CSS, Bootstrap, Cloudinary, Font Awesom
 - [Favicon](https://freeicons.io/profile/3")
 
 ## Next Steps:
-- [ ] Stretch Goals
+- [ ] Only allowing users to see events that they host or are part of the guest list.
+- [ ] Users being able to specify what they're bringing on Items/Supplies tab.
