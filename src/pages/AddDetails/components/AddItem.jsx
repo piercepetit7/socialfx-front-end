@@ -26,39 +26,37 @@ const ItemForm = (props) => {
 
   return (
     <>
-    <form ref={formElement} onSubmit={handleItemSubmit}>
-      <input
-        type="text"
-        name="itemName"
-        placeholder="Item..."
-        value={formData.itemName}
-        onChange={handleChange}
-        autoComplete="off"
-        className={styles.item_input}
-      />
-      <br />
-      <label className={styles.type_des}>Select Type: </label>
-        <select
-        value={formData.itemType} onChange={handleChange} name="itemType" id="itemType" >
-          {/* <option value="">Food or Supplies...</option> */}
-          <option>Pick Type</option>
-          <option name="itemType" key={formData.itemType['food']} value={formData.itemType['food']}>Food</option>
-          <option name="itemType" key={formData.itemType['supplies']} value={formData.itemType['supplies']}>Supplies</option>
-        </select>       
-      {/* <input
-        type="text"
-        placeholder="Food or Supplies..."
-        name="itemType"
-        value={formData.itemType}
-        onChange={handleChange}
-      /> */}
-      <button
-        type="submit"
-        className={styles.item_btn}
-      >
-        Add Item
-      </button>
-    </form>
+      <div id={styles.itemForm}>
+        <form ref={formElement} onSubmit={handleItemSubmit}>
+          <input
+            type="text"
+            name="itemName"
+            placeholder="Item..."
+            value={formData.itemName}
+            onChange={handleChange}
+            autoComplete="off"
+            className={styles.item_input}
+          />
+          <br />
+          <div className={styles.selectAndAddBtns}>
+            <select
+            value={formData.itemType} onChange={handleChange} name="itemType" id="itemType" >
+              {/* <option value="">Food or Supplies...</option> */}
+                <option>Select Type</option>
+                <option name="itemType" key={formData.itemType['food']} value={formData.itemType['food']}>Food</option>
+                <option name="itemType" key={formData.itemType['supplies']} value={formData.itemType['supplies']}>Supplies</option>
+            </select>       
+          {/* <input
+            type="text"
+            placeholder="Food or Supplies..."
+            name="itemType"
+            value={formData.itemType}
+            onChange={handleChange}
+          /> */}
+            <button type="submit" className={styles.item_btn}> Add Item </button>
+          </div>
+        </form>
+      </div>
     </>
   )
 }
