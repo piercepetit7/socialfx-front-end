@@ -22,7 +22,8 @@ React, Mongoose, MongoDB, Express, Node, CSS, Bootstrap, Cloudinary, Font Awesom
 
 ## Credits:  
 - [First & Second Landing Page Photos](https://picsum.photos/)
-- [Third Landing Page Photo](https://unsplash.com/photos/UrzN-8K1PCE)
+- [Third Landing Page Photo](https://unsplash.com/photos/UrzN-8K1PCE)  
+- [Favicon](https://freeicons.io/profile/3")
 
 ## Next Steps:
 - [ ] Stretch Goals

@@ -9,8 +9,8 @@ const FoodSupplies = (props) => {
     <>
       <div className={styles.main}>
         <div className={styles.mainFoodSupDiv}>
-          <h2>Foods & Supplies</h2>
           <div className={styles.hostList}>
+          <h1>Foods & Supplies</h1>
             <ul>
               {props.event?.items?.map(item =>
                 <li 

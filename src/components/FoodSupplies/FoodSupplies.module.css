@@ -17,17 +17,17 @@
 
 .hostList{
   border: solid 1px black;
-  height: 40vh;
-  width: 35vw;
+  height: 60vh;
+  width: 45vw;
   background-color: #e9ebed;
+  opacity: 0.9;
   padding: 0 30px;
+  margin-bottom: 15px;
 }
 
-.guestsBring{
-  border: solid 1px black;
-  height: 30vh;
-  width: 35vw;
-  background-color: #e9ebed;
+.hostList > h1 {
+  color: black;
+  margin: 25px;
 }
 
 .addItemForm{
