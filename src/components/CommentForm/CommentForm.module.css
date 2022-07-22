@@ -27,7 +27,9 @@
 .addComment:hover + .hide{
   color: #f96900;
 }
-
+li {
+  margin-bottom: 10px;
+}
 .delete {
   border: none;
   color: white;
