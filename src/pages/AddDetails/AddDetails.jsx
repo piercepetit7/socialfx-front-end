@@ -108,4 +108,5 @@ const AddDetails = (props) => {
       </div>
   )
 }
+
 export default AddDetails;
