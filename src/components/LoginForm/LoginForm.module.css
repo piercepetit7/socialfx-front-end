@@ -1,16 +1,54 @@
 .container {
-  display: flex;
+  display: table-column;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 15px;
 }
 
 .label,
 .button {
   margin-right: 0.5rem;
+  font-size: 18px;
+  font-weight: bold;
+}
+.inputContainer {
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+button {
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+}
+button:hover {
+  background-color: #f96900;
+}
+.cancel {
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 50px;
+}
+.cancelBtn {
+  text-decoration: none;
+}
+
+
+input{
+  border-radius: 15px;
 }
 
 .inputContainer {
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
 }
