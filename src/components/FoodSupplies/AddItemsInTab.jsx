@@ -26,7 +26,6 @@ const AddItemsInTab = ({event, setEvent}) => {
     }
   }
 
-
   return (
     <>
     <form ref={formElement} onSubmit={handleSubmit}>
@@ -42,8 +41,8 @@ const AddItemsInTab = ({event, setEvent}) => {
         <select
         value={formData.itemType} onChange={handleChange} name="itemType" id="itemType" >
           <option>--Category--</option>
-          <option name="itemType" key={formData.itemType['food']} value={formData.itemType['food']}>Food</option>
-          <option name="itemType" key={formData.itemType['supplies']} value={formData.itemType['supplies']}>Supplies</option>
+          <option name="itemType" key={formData.itemType['food']} value={formData.itemType['food']}>food</option>
+          <option name="itemType" key={formData.itemType['supplies']} value={formData.itemType['supplies']}>supplies</option>
         </select>  
       <button
         type="submit"

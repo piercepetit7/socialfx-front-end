@@ -16,7 +16,9 @@
   color: #f96900;
   background-color: whitesmoke;
 }
-
+li {
+  margin-bottom: 10px;
+}
 .delete {
   border: none;
   background-color: #333;
