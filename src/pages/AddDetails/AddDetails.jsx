@@ -62,40 +62,38 @@ const AddDetails = (props) => {
     <div className={styles.main_all}>
       <div className={styles.header}>
         <h1 className={styles.details}>Build out your event</h1>
-        <h3 className={styles.name}>Title: {event?.eventName}</h3>
-        <h4 className={styles.date}>Date: {DateTime.fromISO(event?.eventDate).toLocal().toLocaleString(DateTime.DATETIME_MED)}</h4>
-        <h5 className={styles.details_1}>Description: {event?.eventDetails}</h5>
+        <h3 className={styles.name}>{event?.eventName}</h3>
+        <h4 className={styles.date}>{DateTime.fromISO(event?.eventDate).toLocal().toLocaleString(DateTime.DATETIME_MED)}</h4>
+        <h5 className={styles.details_1}>{event?.eventDetails}</h5>
       </div>
       <div className={styles.activity_input}>
         <ActForm setAct={setAct} activities={activities}/>
-        <div>
           <ul className={styles.activites}>
             {activities.map((activity, idx) => 
-              <li key={idx}>
+              <li key={idx} className={styles.li}>
                 {activity.actName}
               </li>
             )
           }
           </ul>
-        </div>
+      </div>
         <br/>
         <div className={styles.item_div}>
         <ItemForm setItems={setItems} items={items} className={styles.item_input}/>
           <ul className={styles.items_list}>
             {items.map((item, idx) => 
-              <li key={idx}>
+              <li key={idx} className={styles.li}>
                 {item.itemName} {item.itemtype}
               </li>
             )
           }
           </ul>
         </div>
-      </div>
       <div className={styles.guest_div}>
         <AddGuestList profiles={profiles} setGuests={setGuests} guests={guests}/>
-          <ul>
+          <ul className={styles.guest_list}>
             {filteredProfiles.map(guest => 
-              <li key={guest._id}>
+              <li key={guest._id} className={styles.li}>
                 {guest.name}
               </li>
             )
