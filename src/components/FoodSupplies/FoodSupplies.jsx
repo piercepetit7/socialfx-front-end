@@ -20,7 +20,7 @@ const FoodSupplies = (props) => {
                 > 
                   {item.itemName}
                     <button 
-                    className={styles.delete} 
+                    // className={styles.delete} 
                     onClick={() => props.handleDeleteItem(item._id, props.event._id)}
                     className={styles.addComment}
                     >

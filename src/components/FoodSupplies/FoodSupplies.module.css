@@ -50,9 +50,9 @@ h3{
   background-color: #e9ebed;
 }
 
-.addEvtBtn {
+/* .addEvtBtn {
 
-}
+} */
 
 .inputField {
   width: 30vw;
@@ -60,7 +60,7 @@ h3{
 
 @media (max-width: 974px) {
   .main{
-    border:  solid 1px #f96900;
+    border:  solid 1px #f968004b;
     width: 70vw;
     display: flex;
     flex-direction: column;
