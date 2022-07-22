@@ -58,8 +58,8 @@ const CommentForm = (props) => {
           className={styles.addComment}
           >
           <FontAwesomeIcon icon={faComment} />
-          
         </button>
+          <p className={styles.hide}>Add Comment</p>
       </form>
 
     </>

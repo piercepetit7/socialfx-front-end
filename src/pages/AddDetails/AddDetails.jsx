@@ -59,7 +59,7 @@ const AddDetails = (props) => {
 
   
   return (
-    <>
+    <div className={styles.main_all}>
       <div className={styles.header}>
         <h1 className={styles.details}>Build out your event</h1>
         <h3 className={styles.name}>Title: {event?.eventName}</h3>
@@ -69,7 +69,7 @@ const AddDetails = (props) => {
       <div className={styles.activity_input}>
         <ActForm setAct={setAct} activities={activities}/>
         <div>
-          <ul>
+          <ul className={styles.activites}>
             {activities.map((activity, idx) => 
               <li key={idx}>
                 {activity.actName}
@@ -79,9 +79,9 @@ const AddDetails = (props) => {
           </ul>
         </div>
         <br/>
-        <ItemForm setItems={setItems} items={items}/>
-        <div>
-          <ul>
+        <div className={styles.item_div}>
+        <ItemForm setItems={setItems} items={items} className={styles.item_input}/>
+          <ul className={styles.items_list}>
             {items.map((item, idx) => 
               <li key={idx}>
                 {item.itemName} {item.itemtype}
@@ -91,9 +91,8 @@ const AddDetails = (props) => {
           </ul>
         </div>
       </div>
-      <div>
+      <div className={styles.guest_div}>
         <AddGuestList profiles={profiles} setGuests={setGuests} guests={guests}/>
-        <div>
           <ul>
             {filteredProfiles.map(guest => 
               <li key={guest._id}>
@@ -107,7 +106,6 @@ const AddDetails = (props) => {
         <button onClick={handleSubmit} className={styles.main_submit_btn}>Submit Event</button>
         </div>
       </div>
-    </>
   )
 }
 export default AddDetails;
