@@ -8,7 +8,7 @@ const GuestList = (props) => {
       <div className={styles.main}>
         <div className={styles.mainNextDiv}>
           <div className={styles.commentArea}>
-            <h1>GuestList Tab</h1>
+            <h1>GuestList</h1>
             
             <ul>
             {props.event?.guestList.map(guest => 
