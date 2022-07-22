@@ -19,6 +19,7 @@
   width: 45vw;
   border: solid 1px black;
   background-color: #e9ebed;
+  opacity: 0.9;
   overflow-y: auto;
   color: black;
 }
@@ -32,6 +33,7 @@
   background-color: #333;
   border-radius: 50px;
   color: whitesmoke;
+  padding: 10px;
   transition: 0.5s;
   margin-left: 10px;
   margin-bottom: 20px;
@@ -40,4 +42,8 @@
 .addComment:hover {
   color: #f96900;
   background-color: whitesmoke;
+}
+.commentArea > h1 {
+  color: black;
+  margin-bottom: 25px;
 }

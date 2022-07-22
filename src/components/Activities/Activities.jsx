@@ -10,8 +10,7 @@ console.log(props.event)
       <div className={styles.main}>
         <div className={styles.mainNextDiv}>
           <div className={styles.commentArea}>
-            <h1>Activities Tab</h1>
-            <div>
+            <h1>Activities</h1>
               <ul>
               {props.event.activities.map(activity => 
                 <li 
@@ -30,9 +29,8 @@ console.log(props.event)
               )}
               </ul>
             </div>
-            <AddActInTab event={props.event} setEvent={props.setEvent}/>
-          </div>
         </div>
+            <AddActInTab event={props.event} setEvent={props.setEvent}/>
       </div>
     </>
   );

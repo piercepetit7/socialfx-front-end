@@ -19,7 +19,7 @@ const ActForm = (props) => {
 
   return (
     <>
-    <form onSubmit={handleActSubmit}>
+    <form onSubmit={handleActSubmit} className={styles.activites_input}>
       <input
         type="text"
         name="actName"

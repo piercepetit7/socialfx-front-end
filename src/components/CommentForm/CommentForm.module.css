@@ -4,33 +4,44 @@
 
 .addComment {
   border: none;
-  background-color: #333;
   border-radius: 50px;
-  color: whitesmoke;
+  color: #f96900;
   transition: 0.5s;
   margin-left: 10px;
   margin-bottom: 20px;
+  background-color: transparent;
 }
 
 .addComment:hover {
+  color: whitesmoke;
+  background-color: transparent;
+  font-size: 22px;
+}
+
+.hide{
+  color: transparent;
+  display: inline-block;
+  transition: 0.6s;
+}
+
+.addComment:hover + .hide{
   color: #f96900;
-  background-color: whitesmoke;
 }
 li {
   margin-bottom: 10px;
 }
 .delete {
   border: none;
-  background-color: #333;
+  color: white;
   border-radius: 50px;
-  color: whitesmoke;
   transition: 0.5s;
   margin-left: 10px;
+  background-color: #333;
 }
 
 .delete:hover {
-  color: red;
-  background-color: whitesmoke;
+  background-color: white;
+  color: #f96900;
 }
 
 .commentArea {
@@ -46,4 +57,5 @@ li {
 
 .tab {
   color: black;
+  margin-bottom: 25px;
 }
