@@ -34,6 +34,7 @@ const ItemForm = (props) => {
         value={formData.itemName}
         onChange={handleChange}
         autoComplete="off"
+        className={styles.item_input}
       />
       <br />
       <label className={styles.type_des}>Select Type: </label>
