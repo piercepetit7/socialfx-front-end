@@ -12,7 +12,7 @@ const GuestList = (props) => {
             
             <ul>
             {props.event?.guestList.map(guest => 
-              <li key={guest._id}>
+              <li key={guest._id} style={{listStyle:"none"}}>
                 {guest.name}
               </li>
             )

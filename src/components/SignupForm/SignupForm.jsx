@@ -95,7 +95,7 @@ const SignupForm = props => {
         />
       </div>
       <div className={styles.inputContainer}>
-        <button className={styles.button}>Sign Up!</button>
+        <button className={styles.signup}>Sign Up!</button>
         <div className={styles.cancel}>
           <Link className={styles.cancelBtn} to="/">
             <button>Cancel</button>
